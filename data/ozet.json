@@ -16,5 +16,18 @@
  "bolum_sonu": {
   "yere carpma": 168,
   "sure doldu": 12
+ },
+ "karsilastirma": {
+  "aciklama": "Karar 12, fark daha oynak grubun iki sapmasindan kucukse FARK YOK",
+  "a": "kosular_uzun",
+  "b": "kosular_genis_kesif",
+  "a_ort": 216371,
+  "b_ort": 161382,
+  "a_sd": 58231,
+  "b_sd": 41461,
+  "daha_oynak": "kosular_uzun",
+  "fark": 54989,
+  "esik": 116463,
+  "hukum": "FARK YOK"
  }
 }
