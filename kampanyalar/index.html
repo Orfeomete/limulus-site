@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kampanyalar ve Koşu Kayıtları — LIMULUS-eVTOL</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/limulus.css">
+<script>document.documentElement.classList.add("js")</script>
+
+<script src="/vendor/chart.umd.js"></script>
+</head>
+<body data-kok="/">
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
+  <ul class="nav-links">
+    <li><a href="/ikiz/" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
+    <li><a href="/kararlar/" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
+    <li><a href="/kampanyalar/" class="on" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
+    <li><a href="/arsiv/" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<header class="page-head">
+  <div class="section-label" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</div>
+  <h1 data-tr="On dört koşu dizini, yüz kırk dört koşu" data-en="Fourteen run directories, one hundred and forty-four runs">On dört koşu dizini, yüz kırk dört koşu</h1>
+  <div class="badge-line">
+    <span class="precomp-badge" data-tr="Arşivlenmiş koşu günlüklerinden türetildi, ara özet dosyasından değil" data-en="Derived from the archived run logs, not from an intermediate summary file">Arşivlenmiş koşu günlüklerinden türetildi, ara özet dosyasından değil</span>
+    <span class="meta-tag" id="metaSayi"></span>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:1rem">
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <section>
+    <h2 data-tr="Keşif genişliği bir hızlandırmadır, bir açma değildir" data-en="Widening exploration accelerates, it does not unlock">Keşif genişliği bir hızlandırmadır, bir açma değildir</h2>
+    <p class="lead" style="margin-bottom:1.2rem"
+       data-tr="İki tam ölçekli kampanya, koşu başına üç milyon adım, tek değişen ayar başlangıç keşif ölçeği. Aşağıdaki grafik ikisinin ortalama ödül eğrisini üst üste koyuyor. Sağdaki tablo asıl karşılaştırmayı veriyor."
+       data-en="Two full-scale campaigns, three million steps per run, one changed setting, the initial exploration scale. The chart below overlays their mean reward curves. The table beside it gives the comparison that matters.">
+      İki tam ölçekli kampanya, koşu başına üç milyon adım, tek değişen ayar başlangıç keşif ölçeği. Aşağıdaki grafik ikisinin ortalama ödül eğrisini üst üste koyuyor. Sağdaki tablo asıl karşılaştırmayı veriyor.
+    </p>
+    <div class="card" style="height:400px"><canvas id="kiyasChart"></canvas></div>
+
+    <div class="card" style="margin-top:1.2rem;overflow-x:auto">
+      <table class="cfg" id="kiyasTablo"></table>
+    </div>
+
+    <div class="stop-box"
+         data-tr="<strong>Bu sonuç bir kez yanlış yazıldı ve düzeltildi.</strong> Karar 53'ün sonuç bölümü önce donmuş kampanyada koşuların <span class='mono'>gecis</span> görevine ulaşamadığını söylüyordu. Ölçüm bunu desteklemedi, donmuş kampanyada da yirmi koşunun yirmisi o göreve ulaşıyor. Ön kayıt gövdesine dokunulmadı, hatalı cümleler silinmedi, üzerine 14.08.2026 tarihli bir düzeltme yazıldı. Ortalamalar arasındaki fark iki sapma eşiğinin altında kaldığı için birincil metrikte iki kampanya <strong>ayırt edilemiyor</strong>."
+         data-en="<strong>This result was written wrongly once and corrected.</strong> The results section of decision 53 first said that in the frozen campaign the runs failed to reach the <span class='mono'>gecis</span> task. Measurement did not support that, in the frozen campaign too twenty of twenty runs reach it. The preregistration body was not touched, the erroneous sentences were not deleted, and a correction dated 14 August 2026 was written over them. Because the difference between the means falls below the two-deviation threshold, on the primary metric the two campaigns are <strong>indistinguishable</strong>.">
+      <strong>Bu sonuç bir kez yanlış yazıldı ve düzeltildi.</strong> Karar 53'ün sonuç bölümü önce donmuş kampanyada koşuların <span class="mono">gecis</span> görevine ulaşamadığını söylüyordu. Ölçüm bunu desteklemedi, donmuş kampanyada da yirmi koşunun yirmisi o göreve ulaşıyor. Ön kayıt gövdesine dokunulmadı, hatalı cümleler silinmedi, üzerine 14.08.2026 tarihli bir düzeltme yazıldı. Ortalamalar arasındaki fark iki sapma eşiğinin altında kaldığı için birincil metrikte iki kampanya <strong>ayırt edilemiyor</strong>.
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Seviye 2'ye varış adımı, kampanya kampanya" data-en="Arrival step at level 2, campaign by campaign">Seviye 2'ye varış adımı, kampanya kampanya</h2>
+    <div class="card" style="height:420px"><canvas id="varisChart"></canvas></div>
+    <p style="margin-top:0.8rem;font-size:0.8rem;color:var(--text-muted)"
+       data-tr="Her nokta bir koşudur. Çubuk o kampanyanın ortancasıdır. Seviye 2'ye hiç ulaşamayan koşular çizilmez ve kart üzerinde ayrıca sayılır. <strong>Kampanyaların bütçeleri eşit değildir</strong>, üç yüz binlik bir kampanya tanımı gereği üç yüz binden sonra varamaz, dolayısıyla bu eksen kampanyaları birbirine karşı sıralamaz. İmleç her noktanın bütçesini gösterir."
+       data-en="Each point is one run. The bar is that campaign's median. Runs that never reach level 2 are not plotted and are counted separately on the card. <strong>The campaigns do not share a budget</strong>, a three-hundred-thousand-step campaign cannot by definition arrive after three hundred thousand, so this axis does not rank campaigns against one another. Hovering a point shows its budget.">
+      Her nokta bir koşudur. Çubuk o kampanyanın ortancasıdır. Seviye 2'ye hiç ulaşamayan koşular çizilmez ve kart üzerinde ayrıca sayılır. <strong>Kampanyaların bütçeleri eşit değildir</strong>, üç yüz binlik bir kampanya tanımı gereği üç yüz binden sonra varamaz, dolayısıyla bu eksen kampanyaları birbirine karşı sıralamaz. İmleç her noktanın bütçesini gösterir.
+    </p>
+  </section>
+
+  <section>
+    <h2 data-tr="Bütün kampanyalar" data-en="All campaigns">Bütün kampanyalar</h2>
+    <div class="kamp-grid" id="kampGrid"></div>
+  </section>
+
+  <section>
+    <h2 data-tr="Seçilen kampanyanın öğrenme eğrisi" data-en="Learning curve of the selected campaign">Seçilen kampanyanın öğrenme eğrisi</h2>
+    <div class="card">
+      <div class="filters" style="margin-bottom:1rem">
+        <select class="search" id="kampSec" style="flex:1 1 420px;max-width:100%"></select>
+      </div>
+      <div style="height:340px"><canvas id="egriChart"></canvas></div>
+    </div>
+    <p style="margin-top:0.8rem;font-size:0.8rem;color:var(--text-muted)"
+       data-tr="Çizgiler varyant başına ortalama bölüm ödülüdür, o varyantın tohumları üzerinden. Kaynak, arşivdeki her koşunun kendi günlük dosyası."
+       data-en="Lines are the mean episode reward per variant, over that variant's seeds. Source, the individual log file of every run in the archive.">
+      Çizgiler varyant başına ortalama bölüm ödülüdür, o varyantın tohumları üzerinden. Kaynak, arşivdeki her koşunun kendi günlük dosyası.
+    </p>
+    <div class="note-box"
+         data-tr="<strong>Süre alanı bir maliyet ölçüsü değildir.</strong> Devam ettirilen koşularda yalnız son dilimi sayar ve <span class='mono'>kosular_uzun</span> kampanyasının yirmi koşusunun yirmisi en az bir kez devam ettirildi, dolayısıyla o kampanyanın verimi kendi günlüklerinden kurtarılamaz. Raporlanan verim, geniş keşif kampanyasının kesintisiz on üç koşusundan gelir."
+         data-en="<strong>The duration field is not a cost measure.</strong> For resumed runs it counts only the final slice, and all twenty runs of <span class='mono'>kosular_uzun</span> were resumed at least once, so that campaign's throughput cannot be recovered from its own logs. Reported throughput comes from the thirteen uninterrupted runs of the wide-exploration campaign.">
+      <strong>Süre alanı bir maliyet ölçüsü değildir.</strong> Devam ettirilen koşularda yalnız son dilimi sayar ve <span class="mono">kosular_uzun</span> kampanyasının yirmi koşusunun yirmisi en az bir kez devam ettirildi, dolayısıyla o kampanyanın verimi kendi günlüklerinden kurtarılamaz. Raporlanan verim, geniş keşif kampanyasının kesintisiz on üç koşusundan gelir.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="/" data-tr="← Ana Sayfa" data-en="← Home">← Ana Sayfa</a> ·
+  <a href="https://github.com/Orfeomete/limulus-evtol/tree/main/9-DIJITAL-IKIZ/ogrenme" target="_blank" rel="noopener" data-tr="Koşu kayıtları" data-en="Run records">Koşu kayıtları</a> ·
+  <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
+</footer>
+
+<script src="/assets/limulus.js"></script>
+<script>
+var KAMP = [], EGRI = {}, C1 = null, C2 = null, C3 = null;
+var RENK = { limulus: '#2563eb', senkron: '#0891b2', ikili: '#7c3aed', liftcruise: '#db2777' };
+var GH = 'https://github.com/Orfeomete/limulus-evtol/tree/main/9-DIJITAL-IKIZ/ogrenme/';
+function T(tr, en) { return window.LANG === 'en' ? en : tr; }
+function bul(d) { for (var i = 0; i < KAMP.length; i++) if (KAMP[i].dizin === d) return KAMP[i]; }
+
+function chips() {
+  var toplam = KAMP.reduce(function (a, k) { return a + k.kosu; }, 0);
+  var ulasan = KAMP.reduce(function (a, k) { return a + k.seviye2_ulasan; }, 0);
+  var butce = KAMP.reduce(function (a, k) { return a + k.kosu * k.butce; }, 0);
+  document.getElementById('metaSayi').textContent = binlik(butce / 1e6) + ' M ' + T('adım toplam eğitim bütçesi', 'steps of total training budget');
+  document.getElementById('chips').innerHTML =
+    '<div class="chip"><div class="v">' + KAMP.length + '</div><div class="k">' + T('koşu dizini', 'run directories') + '</div></div>' +
+    '<div class="chip"><div class="v">' + toplam + '</div><div class="k">' + T('eğitim koşusu', 'training runs') + '</div></div>' +
+    '<div class="chip"><div class="v">' + ulasan + '/' + toplam + '</div><div class="k">' + T('koşu seviye 2 görevine ulaştı', 'runs reached the level 2 task') + '</div></div>' +
+    '<div class="chip"><div class="v">0/' + toplam + '</div><div class="k">' + T('koşu görevi tamamladı, merkez olumsuz sonuç', 'runs completed the task, the central negative result') + '</div></div>';
+}
+
+function kiyas() {
+  var a = bul('kosular_uzun'), b = bul('kosular_genis_kesif');
+  var ea = EGRI['kosular_uzun'], eb = EGRI['kosular_genis_kesif'];
+  function ort(e) {
+    var ks = Object.keys(e), n = e[ks[0]].odul_ort.length, out = [];
+    for (var i = 0; i < n; i++) { var s = 0; ks.forEach(function (k) { s += e[k].odul_ort[i]; }); out.push(s / ks.length); }
+    return out;
+  }
+  var etk = EGRI['kosular_uzun'][Object.keys(EGRI['kosular_uzun'])[0]].adim;
+  if (C1) C1.destroy();
+  C1 = new Chart(document.getElementById('kiyasChart'), {
+    type: 'line',
+    data: {
+      labels: etk.map(function (x) { return (x / 1e6).toFixed(1).replace('.', ',') + 'M'; }),
+      datasets: [
+        { label: T('donmuş, log_std0 −1,5', 'frozen, log_std0 −1.5'), data: ort(ea), borderColor: '#64748b', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 0, tension: 0.25 },
+        { label: T('geniş keşif, log_std0 −0,5', 'wide exploration, log_std0 −0.5'), data: ort(eb), borderColor: '#2563eb', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 0, tension: 0.25 }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { title: { display: true, text: T('eğitim adımı', 'training step') }, ticks: { maxTicksLimit: 10 }, grid: { display: false } },
+        y: { title: { display: true, text: T('ortalama bölüm ödülü', 'mean episode reward') } }
+      },
+      plugins: { legend: { position: 'bottom' } }
+    }
+  });
+
+  var esik = 2 * b.varis_std;
+  var fark = Math.abs(a.varis_ort - b.varis_ort);
+  document.getElementById('kiyasTablo').innerHTML =
+    '<thead><tr><th>' + T('Ölçüt', 'Metric') + '</th><th>' + T('Donmuş, −1,5', 'Frozen, −1.5') + '</th><th>' + T('Geniş keşif, −0,5', 'Wide expl., −0.5') + '</th></tr></thead><tbody>' +
+    '<tr><td>' + T('Koşu sayısı', 'Number of runs') + '</td><td class="mono">' + a.kosu + '</td><td class="mono">' + b.kosu + '</td></tr>' +
+    '<tr><td>' + T('Seviye 2 görevine ulaşan', 'Reached the level 2 task') + '</td><td class="mono">' + a.seviye2_ulasan + '/' + a.toplam + '</td><td class="mono">' + b.seviye2_ulasan + '/' + b.toplam + '</td></tr>' +
+    '<tr class="hl"><td>' + T('Varış adımı, ortanca', 'Arrival step, median') + '</td><td class="mono">' + binlik(a.varis_ortanca) + '</td><td class="mono">' + binlik(b.varis_ortanca) + '</td></tr>' +
+    '<tr><td>' + T('Varış adımı, ortalama', 'Arrival step, mean') + '</td><td class="mono">' + binlik(a.varis_ort) + '</td><td class="mono">' + binlik(b.varis_ort) + '</td></tr>' +
+    '<tr><td>' + T('Sapma', 'Deviation') + '</td><td class="mono">± ' + binlik(a.varis_std) + '</td><td class="mono">± ' + binlik(b.varis_std) + '</td></tr>' +
+    '<tr><td>' + T('Ortalamalar farkı', 'Difference of means') + '</td><td class="mono" colspan="2">' + binlik(fark) + '  ·  ' + T('iki sapma eşiği', 'two-deviation threshold') + ' ' + binlik(esik) + '  →  <strong>' + (fark < esik ? T('FARK YOK', 'NO DIFFERENCE') : T('FARK VAR', 'DIFFERENT')) + '</strong></td></tr>' +
+    '</tbody>';
+}
+
+function varisGrafik() {
+  var v = KAMP.filter(function (k) { return k.varis_ortanca !== null; });
+  var etiketler = v.map(function (k) { return k.dizin.replace('sonda/', '').replace('kosular_', '').replace(/^kosular$/, 'pilot'); });
+  var ds = [{
+    type: 'bar', label: T('ortanca varış adımı', 'median arrival step'),
+    data: v.map(function (k) { return k.varis_ortanca; }),
+    backgroundColor: 'rgba(37,99,235,0.18)', borderColor: 'rgba(37,99,235,0.55)', borderWidth: 1, order: 2
+  }];
+  var pts = [];
+  v.forEach(function (k, i) {
+    k.kosular.forEach(function (r) {
+      if (r.varis2 !== null) pts.push({ x: etiketler[i], y: r.varis2, ad: r.ad, va: r.varyant, bt: k.butce });
+    });
+  });
+  ds.push({
+    type: 'scatter', label: T('tek koşu', 'single run'), data: pts,
+    backgroundColor: pts.map(function (p) { return RENK[p.va] || '#64748b'; }), pointRadius: 3.5, order: 1
+  });
+  if (C2) C2.destroy();
+  C2 = new Chart(document.getElementById('varisChart'), {
+    data: { labels: etiketler, datasets: ds },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        x: { type: 'category', ticks: { maxRotation: 60, minRotation: 45, font: { size: 10 } }, grid: { display: false } },
+        y: { title: { display: true, text: T('seviye 2 görevine varış adımı', 'arrival step at the level 2 task') }, ticks: { callback: function (x) { return binlik(x); } } }
+      },
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: { callbacks: { label: function (c) {
+          if (c.raw && c.raw.ad) return c.raw.ad + '  ' + binlik(c.raw.y) + '  /  ' + T('bütçe', 'budget') + ' ' + binlik(c.raw.bt);
+          return binlik(c.parsed.y);
+        } } }
+      }
+    }
+  });
+}
+
+function kartlar() {
+  document.getElementById('kampGrid').innerHTML = KAMP.map(function (k) {
+    return '<div class="kamp"><h3>' + T(k.tr, k.en) + '</h3><div class="dir">' + k.dizin + '/</div>'
+      + '<div class="kv"><span class="k">' + T('koşu', 'runs') + '</span><span class="v">' + k.kosu + '</span></div>'
+      + '<div class="kv"><span class="k">' + T('koşu başına bütçe', 'budget per run') + '</span><span class="v">' + binlik(k.butce) + '</span></div>'
+      + '<div class="kv"><span class="k">' + T('varyantlar', 'variants') + '</span><span class="v">' + k.varyantlar.join(', ') + '</span></div>'
+      + '<div class="kv"><span class="k">' + T('seviye 2 görevine ulaşan', 'reached level 2 task') + '</span><span class="v">' + k.seviye2_ulasan + '/' + k.toplam + '</span></div>'
+      + '<div class="kv"><span class="k">' + T('varış ortancası', 'median arrival') + '</span><span class="v">' + (k.varis_ortanca === null ? '—' : binlik(k.varis_ortanca)) + '</span></div>'
+      + '<div class="kar-alt" style="margin-top:0.9rem"><span class="pill">' + T('ön kayıt', 'preregistration') + ' ' + k.onkayit + '</span>'
+      + '<a class="pill arsiv" href="' + GH + k.dizin + '" target="_blank" rel="noopener">' + T('kayıtlar ↗', 'records ↗') + '</a></div></div>';
+  }).join('');
+}
+
+function egriGrafik(d) {
+  var e = EGRI[d]; if (!e) return;
+  var ks = Object.keys(e);
+  if (C3) C3.destroy();
+  C3 = new Chart(document.getElementById('egriChart'), {
+    type: 'line',
+    data: {
+      labels: e[ks[0]].adim.map(function (x) { return x >= 1e6 ? (x / 1e6).toFixed(1).replace('.', ',') + 'M' : Math.round(x / 1000) + 'k'; }),
+      datasets: ks.map(function (k) {
+        return { label: k + ' (' + e[k].n + ')', data: e[k].odul_ort, borderColor: RENK[k] || '#64748b', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 0, tension: 0.25 };
+      })
+    },
+    options: {
+      maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { title: { display: true, text: T('eğitim adımı', 'training step') }, ticks: { maxTicksLimit: 10 }, grid: { display: false } },
+        y: { title: { display: true, text: T('ortalama bölüm ödülü', 'mean episode reward') } }
+      },
+      plugins: { legend: { position: 'bottom' } }
+    }
+  });
+}
+
+function secDoldur() {
+  var s = document.getElementById('kampSec');
+  var mevcut = s.value;
+  s.innerHTML = KAMP.map(function (k) { return '<option value="' + k.dizin + '">' + T(k.tr, k.en) + '  ·  ' + k.dizin + '</option>'; }).join('');
+  s.value = mevcut || 'kosular_genis_kesif';
+  egriGrafik(s.value);
+}
+
+function hepsiCiz() { chips(); kiyas(); varisGrafik(); kartlar(); secDoldur(); }
+
+document.getElementById('kampSec').addEventListener('change', function (e) { egriGrafik(e.target.value); });
+document.addEventListener('langchange', function () { if (KAMP.length) hepsiCiz(); });
+
+Promise.all([veri('kampanyalar.json'), veri('egriler.json')]).then(function (r) {
+  KAMP = r[0]; EGRI = r[1]; hepsiCiz();
+}).catch(function (e) { document.getElementById('chips').innerHTML = '<div class="stop-box">' + e.message + '</div>'; });
+</script>
+</body>
+</html>
