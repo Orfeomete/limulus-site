@@ -1,0 +1,20 @@
+{
+ "kosu": 144,
+ "seviye_dagilimi": {
+  "0": 12,
+  "1": 7,
+  "2": 122,
+  "4": 3
+ },
+ "seviye4": 3,
+ "degerlendirilen": 60,
+ "tirmanan": 0,
+ "h_azami_min": 150.0,
+ "h_azami_max": 150.0,
+ "k53_kosu": 20,
+ "k53_kapi": 0,
+ "bolum_sonu": {
+  "yere carpma": 168,
+  "sure doldu": 12
+ }
+}
