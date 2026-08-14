@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arşiv, Depo ve DOI — LIMULUS-eVTOL</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/limulus.css">
+<script>document.documentElement.classList.add("js")</script>
+
+<style>
+pre.kod { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 1.1rem 1.3rem; overflow-x: auto; font-size: 0.82rem; line-height: 1.8; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+pre.kod .c { color: #64748b; }
+.kopyala { background: var(--surface2); border: 1px solid var(--border); border-radius: 16px; padding: 0.35rem 0.9rem; font-size: 0.78rem; cursor: pointer; font-family: inherit; color: var(--text-muted); }
+.kopyala:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body data-kok="/">
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
+  <ul class="nav-links">
+    <li><a href="/ikiz/" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
+    <li><a href="/kararlar/" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
+    <li><a href="/kampanyalar/" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
+    <li><a href="/arsiv/" class="on" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<header class="page-head">
+  <div class="section-label" data-tr="Arşiv" data-en="Archive">Arşiv</div>
+  <h1 data-tr="Depo, DOI ve yeniden üretim" data-en="Repository, DOI and reproduction">Depo, DOI ve yeniden üretim</h1>
+  <div class="badge-line">
+    <a class="precomp-badge" href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener" style="text-decoration:none">DOI 10.5281/zenodo.21934971</a>
+    <a class="meta-tag" href="https://github.com/Orfeomete/limulus-evtol" target="_blank" rel="noopener" style="text-decoration:none">Orfeomete/limulus-evtol</a>
+    <span class="meta-tag">v1.0.0 · 14.08.2026</span>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:1rem">
+    <div class="chips">
+      <div class="chip"><div class="v">465</div><div class="k" data-tr="dosya, 41 MB kaynak" data-en="files, 41 MB source">dosya, 41 MB kaynak</div></div>
+      <div class="chip"><div class="v">144</div><div class="k" data-tr="koşu günlüğü ve 136 politika ağırlığı" data-en="run logs and 136 policy checkpoints">koşu günlüğü ve 136 politika ağırlığı</div></div>
+      <div class="chip"><div class="v">51</div><div class="k" data-tr="Python betiği, hiçbiri arşiv için değiştirilmedi" data-en="Python scripts, none edited for archiving">Python betiği, hiçbiri arşiv için değiştirilmedi</div></div>
+      <div class="chip"><div class="v">11</div><div class="k" data-tr="ön kayıt belgesi, dokunulmamış" data-en="preregistration documents, untouched">ön kayıt belgesi, dokunulmamış</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Neden dizin adları Türkçe" data-en="Why the directory names are Turkish">Neden dizin adları Türkçe</h2>
+    <p class="lead"
+       data-tr="Çünkü projenin kendi adları bunlar. Arşiv, daha derli toplu bir düzen yerine özgün proje dizin düzenini yineliyor, çünkü betikler girdilerini göreli yolla buluyor ve dizinleri yeniden adlandırmak kanıtı düzenlemek olurdu. Bu iddia edilmedi, ölçüldü. Temiz bir kopyada değerlendirme betiği koşturulduğunda çıktı dosyası bit düzeyinde aynı üretiliyor."
+       data-en="Because they are the project's own names. The archive reproduces the original project directory layout rather than a tidier one, because the scripts locate their inputs by relative path and renaming the directories would have meant editing the evidence. This was measured rather than asserted. Running the evaluation script in a fresh clone regenerates the output file bit-identically.">
+      Çünkü projenin kendi adları bunlar. Arşiv, daha derli toplu bir düzen yerine özgün proje dizin düzenini yineliyor, çünkü betikler girdilerini göreli yolla buluyor ve dizinleri yeniden adlandırmak kanıtı düzenlemek olurdu. Bu iddia edilmedi, ölçüldü. Temiz bir kopyada değerlendirme betiği koşturulduğunda çıktı dosyası bit düzeyinde aynı üretiliyor.
+    </p>
+    <div class="card" style="margin-top:1.5rem;overflow-x:auto">
+      <table class="cfg">
+        <thead><tr><th data-tr="Dizin" data-en="Directory">Dizin</th><th style="text-align:left" data-tr="İçerik" data-en="Contents">İçerik</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">2-CIZIM-MOTORU/</td><td style="text-align:left" data-tr="geometri.py, her boyut ve başarım değerinin tek kaynağı" data-en="geometri.py, the single source of truth for every dimension and performance value">geometri.py, her boyut ve başarım değerinin tek kaynağı</td></tr>
+          <tr><td class="mono">4-KARARLAR/</td><td style="text-align:left" data-tr="Ön kayıt belgeleri, Türkçe, değiştirilmemiş" data-en="The preregistration documents, in Turkish, unmodified">Ön kayıt belgeleri, Türkçe, değiştirilmemiş</td></tr>
+          <tr><td class="mono">9-DIJITAL-IKIZ/dinamik/</td><td style="text-align:left" data-tr="Altı serbestlik dereceli model, rotor, aerodinamik, aktüatör, sensör, denge çözücüsü" data-en="Six-degree-of-freedom model, rotor, aerodynamics, actuator, sensor, trim solver">Altı serbestlik dereceli model, rotor, aerodinamik, aktüatör, sensör, denge çözücüsü</td></tr>
+          <tr><td class="mono">9-DIJITAL-IKIZ/ogrenme/</td><td style="text-align:left" data-tr="Gymnasium ortamı, PPO, klasik kontrolcü, kampanya koşucuları ve koşu kayıtları" data-en="Gymnasium environment, PPO, classical controller, campaign runners and the run records">Gymnasium ortamı, PPO, klasik kontrolcü, kampanya koşucuları ve koşu kayıtları</td></tr>
+          <tr><td class="mono">9-DIJITAL-IKIZ/testler/</td><td style="text-align:left" data-tr="Doğrulama ve değerlendirme betikleri" data-en="Verification and evaluation scripts">Doğrulama ve değerlendirme betikleri</td></tr>
+          <tr><td class="mono">10-MAKALELER/</td><td style="text-align:left" data-tr="M1 ve M5 için figür üreticileri ve figür girdi verisi" data-en="Figure generators and figure input data for M1 and M5">M1 ve M5 için figür üreticileri ve figür girdi verisi</td></tr>
+          <tr><td class="mono">preregistration-en/</td><td style="text-align:left" data-tr="Donmuş karar kurallarının İngilizce özetleri, kampanya kampanya" data-en="English summaries of the frozen decision rules, campaign by campaign">Donmuş karar kurallarının İngilizce özetleri, kampanya kampanya</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Raporlanan sayıları yeniden üretmek" data-en="Reproducing the reported numbers">Raporlanan sayıları yeniden üretmek</h2>
+    <p class="lead" style="margin-bottom:1.2rem"
+       data-tr="Python 3.11, NumPy, PyTorch, Gymnasium ve Matplotlib gerekiyor. Hepsi CPU üzerinde koşar, GPU gerekmez ve kullanılmadı."
+       data-en="Requires Python 3.11, NumPy, PyTorch, Gymnasium and Matplotlib. Everything runs on CPU, no GPU is required and none was used.">
+      Python 3.11, NumPy, PyTorch, Gymnasium ve Matplotlib gerekiyor. Hepsi CPU üzerinde koşar, GPU gerekmez ve kullanılmadı.
+    </p>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:0.6rem"><button class="kopyala" onclick="kopyala('kodBlok', this)" data-tr="komutları kopyala" data-en="copy commands">komutları kopyala</button></div>
+<pre class="kod" id="kodBlok">git clone https://github.com/Orfeomete/limulus-evtol
+cd limulus-evtol
+
+<span class="c"># düzeltme öncesi ortam bayrağının birim doğrulaması, M5 bölüm 3.4</span>
+python3 9-DIJITAL-IKIZ/testler/dogrulama_ortam_v0.py
+
+<span class="c"># beş tohumlu tekrarların belirlenimci değerlendirmesi, M5 Tablo 2 ve 3</span>
+python3 9-DIJITAL-IKIZ/testler/degerlendirme_k52.py
+
+<span class="c"># geniş keşif kampanyasının belirlenimci değerlendirmesi, M1 Tablo 6 ve 7</span>
+python3 9-DIJITAL-IKIZ/testler/degerlendirme_k53.py
+
+<span class="c"># iki kampanya tek kod yolundan, M1 bölüm 4.4 ve 5.9</span>
+python3 10-MAKALELER/M1_DIJITAL_IKIZ_CERCEVESI/02_MAKALE_AKTIF/figurler/kampanya_karsilastirma.py
+
+<span class="c"># figürler, iki dilde</span>
+python3 10-MAKALELER/M1_DIJITAL_IKIZ_CERCEVESI/02_MAKALE_AKTIF/figurler/fig_uret.py
+python3 10-MAKALELER/M5_OGRENME_ORTAMI_KUSURLARI/02_MAKALE_AKTIF/figurler/fig_uret.py</pre>
+
+    <div class="note-box"
+         data-tr="<strong>Belirlenimcilik makineye bağlıdır.</strong> Eğitim, tek bir makinede tohum verildiğinde belirlenimcidir. Aynı tohum farklı bir işlemcide ya da farklı bir BLAS çekirdeğinde ilk günlük kaydının dokuzuncu ondalığında ayrışır, ve kaotik eğitim dinamiği bunu altı yüz bin adımda farklı bölüm sayılarına büyütür. Nitel sonuç değişmez. Makineler arasında bulguların yeniden üretilmesi beklenir, bit örüntülerinin değil."
+         data-en="<strong>Determinism is machine-dependent.</strong> Training is deterministic given a seed on one machine. The same seed on a different CPU or BLAS kernel diverges at the ninth decimal of the first log record, and chaotic training dynamics amplify that into different episode counts by six hundred thousand steps. The qualitative outcome is unchanged. Across machines, expect to reproduce findings rather than bit patterns.">
+      <strong>Belirlenimcilik makineye bağlıdır.</strong> Eğitim, tek bir makinede tohum verildiğinde belirlenimcidir. Aynı tohum farklı bir işlemcide ya da farklı bir BLAS çekirdeğinde ilk günlük kaydının dokuzuncu ondalığında ayrışır, ve kaotik eğitim dinamiği bunu altı yüz bin adımda farklı bölüm sayılarına büyütür. Nitel sonuç değişmez. Makineler arasında bulguların yeniden üretilmesi beklenir, bit örüntülerinin değil.
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Anma ve lisans" data-en="Citation and licence">Anma ve lisans</h2>
+    <div class="card">
+      <table class="cfg">
+        <tbody>
+          <tr><td data-tr="Sürüm DOI'si, makalelerin andığı" data-en="Version DOI, cited by the manuscripts">Sürüm DOI'si, makalelerin andığı</td><td class="mono"><a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">10.5281/zenodo.21934971</a></td></tr>
+          <tr><td data-tr="Kavram DOI'si, en yeni sürüme çözülür" data-en="Concept DOI, resolves to the newest version">Kavram DOI'si, en yeni sürüme çözülür</td><td class="mono"><a href="https://doi.org/10.5281/zenodo.21934970" target="_blank" rel="noopener">10.5281/zenodo.21934970</a></td></tr>
+          <tr><td data-tr="Kod lisansı" data-en="Code licence">Kod lisansı</td><td class="mono">MIT</td></tr>
+          <tr><td data-tr="Veri lisansı, koşu kayıtları ve ön kayıtlar" data-en="Data licence, run records and preregistrations">Veri lisansı, koşu kayıtları ve ön kayıtlar</td><td class="mono">CC BY 4.0</td></tr>
+          <tr><td>ORCID</td><td class="mono"><a href="https://orcid.org/0009-0001-6990-6340" target="_blank" rel="noopener">0009-0001-6990-6340</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-top:2.5rem" data-tr="Gönderim formuna yazılacak veri erişilebilirliği metni" data-en="Data availability text for the submission form">Gönderim formuna yazılacak veri erişilebilirliği metni</h2>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:0.6rem"><button class="kopyala" onclick="kopyala('daBlok', this)" data-tr="kopyala" data-en="copy">kopyala</button></div>
+<pre class="kod" id="daBlok">Code, run records and evaluation outputs are openly available at
+https://doi.org/10.5281/zenodo.21934971 (GitHub: Orfeomete/limulus-evtol,
+release v1.0.0). No third-party data were used.</pre>
+
+    <div class="ok-box"
+         data-tr="<strong>v1.0.0 arşivinin içindeki README ve CITATION.cff yer tutucu taşır, bu bilerek bırakılmıştır.</strong> DOI, arşivleme eyleminin kendisiyle üretiliyor, dolayısıyla arşivlenen şeyin içinde bulunamaz. Yer tutucu <span class='mono'>main</span> dalında düz bir dosya commit'iyle düzeltildi, ikinci bir release açılmadı, çünkü yeni release yeni DOI üretir ve makalelerin andığı DOI'yi geçersiz kılardı."
+         data-en="<strong>The README and CITATION.cff inside the v1.0.0 archive carry a placeholder, and that was left there deliberately.</strong> The DOI is minted by the act of archiving, so it cannot exist inside the thing being archived. The placeholder was corrected on <span class='mono'>main</span> in a plain file commit, and no second release was cut, because a new release would mint a new DOI and invalidate the one the manuscripts cite.">
+      <strong>v1.0.0 arşivinin içindeki README ve CITATION.cff yer tutucu taşır, bu bilerek bırakılmıştır.</strong> DOI, arşivleme eyleminin kendisiyle üretiliyor, dolayısıyla arşivlenen şeyin içinde bulunamaz. Yer tutucu <span class="mono">main</span> dalında düz bir dosya commit'iyle düzeltildi, ikinci bir release açılmadı, çünkü yeni release yeni DOI üretir ve makalelerin andığı DOI'yi geçersiz kılardı.
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Arşivde olmayanlar" data-en="What the archive does not contain">Arşivde olmayanlar</h2>
+    <p class="lead"
+       data-tr="Uçuş verisi yok, rüzgâr tüneli verisi yok, hesaplamalı akışkanlar dinamiği ya da sonlu eleman sonucu yok. Hakem sürecindeki makalelerin tam metinleri de yok, her metnin tam hâli kendi süreci sonuçlandığında yayımlanır."
+       data-en="No flight data, no wind tunnel data, and no computational fluid dynamics or finite element results. Nor the full texts of the manuscripts under review, the full text of each is published when its own process concludes.">
+      Uçuş verisi yok, rüzgâr tüneli verisi yok, hesaplamalı akışkanlar dinamiği ya da sonlu eleman sonucu yok. Hakem sürecindeki makalelerin tam metinleri de yok, her metnin tam hâli kendi süreci sonuçlandığında yayımlanır.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <a href="/" data-tr="← Ana Sayfa" data-en="← Home">← Ana Sayfa</a> ·
+  <a href="https://github.com/Orfeomete/limulus-evtol" target="_blank" rel="noopener">GitHub</a> ·
+  <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">Zenodo</a>
+</footer>
+
+<script src="/assets/limulus.js"></script>
+<script>
+function kopyala(id, btn) {
+  var t = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(t).then(function () {
+    var eski = btn.textContent;
+    btn.textContent = window.LANG === 'en' ? 'copied' : 'kopyalandı';
+    setTimeout(function () { btn.textContent = eski; }, 1600);
+  });
+}
+</script>
+</body>
+</html>
