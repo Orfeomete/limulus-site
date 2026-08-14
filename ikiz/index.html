@@ -57,6 +57,49 @@
   </section>
 
   <section>
+    <h2 data-tr="Görünüşler" data-en="Views">Görünüşler</h2>
+    <p class="lead" style="margin-bottom:1.5rem"
+       data-tr="Dört mühendislik çizimi de <span class='mono'>2-CIZIM-MOTORU</span> tarafından <span class='mono'>geometri.py</span>'deki tek sözlükten üretilir. Bir boyut değişirse yalnız orası düzenlenir ve çizimler yeniden koşturulunca hepsi birden güncellenir, yani çizimde okuduğun sayı ile aşağıdaki tabloda okuduğun sayı ayrışamaz."
+       data-en="All four engineering drawings are produced by <span class='mono'>2-CIZIM-MOTORU</span> from the single dictionary in <span class='mono'>geometri.py</span>. If a dimension changes only that file is edited, and rerunning the drawings updates all of them at once, so a number read off a drawing cannot drift from the number in the table below.">
+      Dört mühendislik çizimi de <span class="mono">2-CIZIM-MOTORU</span> tarafından <span class="mono">geometri.py</span>'deki tek sözlükten üretilir. Bir boyut değişirse yalnız orası düzenlenir ve çizimler yeniden koşturulunca hepsi birden güncellenir, yani çizimde okuduğun sayı ile aşağıdaki tabloda okuduğun sayı ayrışamaz.
+    </p>
+
+    <div class="cizim-sec">
+      <button class="on" data-yan="hover" data-tr="Hover · θ = 0°" data-en="Hover · θ = 0°">Hover · θ = 0°</button>
+      <button data-yan="cruise" data-tr="Cruise · θ = 85°" data-en="Cruise · θ = 85°">Cruise · θ = 85°</button>
+    </div>
+    <figure class="cizim">
+      <img id="yanGorunus" src="../gorseller/limulus_yan_gorunus_hover.svg" alt="Limulus eVTOL yan görünüş">
+      <figcaption>
+        <span id="yanAciklama"></span>
+        <a class="bak" id="yanBag" href="../gorseller/limulus_yan_gorunus_hover.svg" target="_blank" rel="noopener" data-tr="tam boyut ↗" data-en="full size ↗">tam boyut ↗</a>
+      </figcaption>
+    </figure>
+
+    <figure class="cizim" style="margin-top:1.5rem">
+      <img src="../gorseller/limulus_on_gorunus.svg" alt="Limulus eVTOL ön görünüş">
+      <figcaption>
+        <span data-tr="Ön görünüş. Yayvan karapas gövde, 12,0 m açıklıklı kanat ve dört modülün lateral yerleşimi. Modül ekseni arası 7,00 m." data-en="Front view. The flattened carapace body, the 12.0 m span wing and the lateral placement of the four modules. Module axes are 7.00 m apart.">Ön görünüş. Yayvan karapas gövde, 12,0 m açıklıklı kanat ve dört modülün lateral yerleşimi. Modül ekseni arası 7,00 m.</span>
+        <a class="bak" href="../gorseller/limulus_on_gorunus.svg" target="_blank" rel="noopener" data-tr="tam boyut ↗" data-en="full size ↗">tam boyut ↗</a>
+      </figcaption>
+    </figure>
+
+    <figure class="cizim cizim-dikey" style="margin-top:1.5rem">
+      <img src="../gorseller/limulus_ust_gorunus.svg" alt="Limulus eVTOL üst görünüş">
+      <figcaption>
+        <span data-tr="Üst görünüş, hover. Dört RDP modülü boyuna kirişler üzerinde, ön çift ve arka çift bağımsız eğimlenebiliyor. Kabin dört kişilik." data-en="Top view, hover. Four RDP modules on longitudinal booms, the front pair and the rear pair can tilt independently. The cabin seats four.">Üst görünüş, hover. Dört RDP modülü boyuna kirişler üzerinde, ön çift ve arka çift bağımsız eğimlenebiliyor. Kabin dört kişilik.</span>
+        <a class="bak" href="../gorseller/limulus_ust_gorunus.svg" target="_blank" rel="noopener" data-tr="tam boyut ↗" data-en="full size ↗">tam boyut ↗</a>
+      </figcaption>
+    </figure>
+
+    <div class="note-box"
+         data-tr="Çizimlerin üzerindeki başlıklar ve etiketler <strong>Türkçedir ve öyle bırakılmıştır</strong>, çünkü çizimler projenin kendi motorundan çıktığı gibi duruyor. Bir çizimi yeniden etiketlemek, onu üreten koddan koparmak olurdu."
+         data-en="The titles and labels on the drawings are <strong>in Turkish and are left that way</strong>, because the drawings stand exactly as the project's own engine produced them. Relabelling a drawing would cut it loose from the code that generates it.">
+      Çizimlerin üzerindeki başlıklar ve etiketler <strong>Türkçedir ve öyle bırakılmıştır</strong>, çünkü çizimler projenin kendi motorundan çıktığı gibi duruyor. Bir çizimi yeniden etiketlemek, onu üreten koddan koparmak olurdu.
+    </div>
+  </section>
+
+  <section>
     <h2 data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</h2>
     <div class="chips" id="chips"></div>
   </section>
@@ -147,7 +190,30 @@ function ciz() {
     '<div class="chip"><div class="v">' + v('D_ROTOR') + ' m</div><div class="k">' + T(v('N_ROTOR') + ' rotor, ' + v('N_MOTOR') + ' motor', v('N_ROTOR') + ' rotors, ' + v('N_MOTOR') + ' motors') + '</div></div>';
   tablo('geoTablo', GEO); tablo('perfTablo', PERF);
 }
-document.addEventListener('langchange', function () { if (Object.keys(IKIZ).length) ciz(); });
+/* yan gorunus, hover ve cruise arasinda gecis */
+var YAN = {
+  hover: { dosya: '../gorseller/limulus_yan_gorunus_hover.svg',
+    tr: 'Yan görünüş, hover. Dört modül yatay konumda, koaksiyel rotorlar dikey itki üretiyor. Toplam yükseklik 2,70 m.',
+    en: 'Side view, hover. The four modules are horizontal and the coaxial rotors produce vertical thrust. Overall height 2.70 m.' },
+  cruise: { dosya: '../gorseller/limulus_yan_gorunus_cruise.svg',
+    tr: 'Yan görünüş, cruise. Modüller 85° eğimli, ön çift tractor arka çift pusher görevinde. Eğimlenen modüller nedeniyle yükseklik 3,51 m çıkıyor, soluk çizgiler hover konumunu gösteriyor.',
+    en: 'Side view, cruise. The modules are tilted to 85°, the front pair acting as tractor and the rear pair as pusher. The tilted modules raise the height to 3.51 m, and the faint outline shows the hover position.' }
+};
+var YAN_SEC = 'hover';
+function yanCiz() {
+  var y = YAN[YAN_SEC];
+  document.getElementById('yanGorunus').src = y.dosya;
+  document.getElementById('yanBag').href = y.dosya;
+  document.getElementById('yanAciklama').textContent = T(y.tr, y.en);
+}
+document.querySelectorAll('.cizim-sec button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.cizim-sec button').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on'); YAN_SEC = b.getAttribute('data-yan'); yanCiz();
+  });
+});
+document.addEventListener('langchange', function () { yanCiz(); if (Object.keys(IKIZ).length) ciz(); });
+yanCiz();
 veri('ikiz.json').then(function (d) { IKIZ = d; ciz(); })
   .catch(function (e) { document.getElementById('chips').innerHTML = '<div class="stop-box">' + e.message + '</div>'; });
 </script>
