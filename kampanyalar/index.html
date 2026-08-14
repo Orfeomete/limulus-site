@@ -6,7 +6,7 @@
 <title>Kampanyalar ve Koşu Kayıtları — LIMULUS-eVTOL</title>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/limulus.css?v=20260814d">
+<link rel="stylesheet" href="../assets/limulus.css?v=20260814f">
 <script>document.documentElement.classList.add("js")</script>
 
 <script src="../vendor/chart.umd.js"></script>
@@ -59,6 +59,12 @@
   </section>
 
   <section>
+    <div class="stop-box" style="margin-top:0"
+         data-tr="⛔ <strong>Merkez olumsuz sonuç, kapsamıyla birlikte.</strong> Yüz kırk dört koşunun <strong>altmışı</strong> belirlenimci değerlendirmeden geçirildi, kalan seksen dördü için böyle bir ölçüm yoktur. Değerlendirilen altmış koşunun <strong>altmışında</strong> azami irtifa 150,0 m, yani hiçbiri tırmanmadı. Geniş keşif kampanyasında <strong>yirmi koşunun yirmisi</strong> müfredat kapısını geçemedi. Bölümlerin bitiş nedeni 168 kez yere çarpma, 12 kez süre dolması. Bazı koşuların hayatta kalma payı yüksektir fakat bu, görevin yapıldığı anlamına gelmez, düz uçuşla süreyi doldurmak da payı yükseltir. Bu ayrım karar 39'un kuralıdır, <strong>bir basamağa yükselmek o basamağı tamamlamak değildir</strong>."
+         data-en="⛔ <strong>The central negative result, with its scope.</strong> <strong>Sixty</strong> of the one hundred and forty-four runs were put through the deterministic evaluation, and no such measurement exists for the remaining eighty-four. In <strong>all sixty</strong> evaluated runs the maximum altitude is 150.0 m, that is, none of them climbed. In the wide-exploration campaign <strong>twenty runs out of twenty</strong> failed the curriculum gate. Episodes ended in ground impact 168 times and timed out 12 times. Some runs have a high survival fraction, but that does not mean the task was performed, since flying level and running out the clock also raises that fraction. This distinction is the rule of decision 39, <strong>reaching a level is not completing it</strong>.">
+      ⛔ <strong>Merkez olumsuz sonuç, kapsamıyla birlikte.</strong> Yüz kırk dört koşunun <strong>altmışı</strong> belirlenimci değerlendirmeden geçirildi, kalan seksen dördü için böyle bir ölçüm yoktur. Değerlendirilen altmış koşunun <strong>altmışında</strong> azami irtifa 150,0 m, yani hiçbiri tırmanmadı. Geniş keşif kampanyasında <strong>yirmi koşunun yirmisi</strong> müfredat kapısını geçemedi. Bölümlerin bitiş nedeni 168 kez yere çarpma, 12 kez süre dolması. Bazı koşuların hayatta kalma payı yüksektir fakat bu, görevin yapıldığı anlamına gelmez, düz uçuşla süreyi doldurmak da payı yükseltir. Bu ayrım karar 39'un kuralıdır, <strong>bir basamağa yükselmek o basamağı tamamlamak değildir</strong>.
+    </div>
+
     <h2 data-tr="Seviye 2'ye varış adımı, kampanya kampanya" data-en="Arrival step at level 2, campaign by campaign">Seviye 2'ye varış adımı, kampanya kampanya</h2>
     <div class="card" style="height:420px"><canvas id="varisChart"></canvas></div>
     <p style="margin-top:0.8rem;font-size:0.8rem;color:var(--text-muted)"
@@ -100,9 +106,9 @@
   <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
 </footer>
 
-<script src="../assets/limulus.js?v=20260814d"></script>
+<script src="../assets/limulus.js?v=20260814f"></script>
 <script>
-var KAMP = [], EGRI = {}, C1 = null, C2 = null, C3 = null;
+var KAMP = [], EGRI = {}, OZET = {}, C1 = null, C2 = null, C3 = null;
 var RENK = { limulus: '#2563eb', senkron: '#0891b2', ikili: '#7c3aed', liftcruise: '#db2777' };
 var GH = 'https://github.com/Orfeomete/limulus-evtol/tree/main/9-DIJITAL-IKIZ/ogrenme/';
 function T(tr, en) { return window.LANG === 'en' ? en : tr; }
@@ -117,7 +123,8 @@ function chips() {
     '<div class="chip"><div class="v">' + KAMP.length + '</div><div class="k">' + T('koşu dizini', 'run directories') + '</div></div>' +
     '<div class="chip"><div class="v">' + toplam + '</div><div class="k">' + T('eğitim koşusu', 'training runs') + '</div></div>' +
     '<div class="chip"><div class="v">' + ulasan + '/' + toplam + '</div><div class="k">' + T('koşu seviye 2 görevine ulaştı', 'runs reached the level 2 task') + '</div></div>' +
-    '<div class="chip"><div class="v">0/' + toplam + '</div><div class="k">' + T('koşu görevi tamamladı, merkez olumsuz sonuç', 'runs completed the task, the central negative result') + '</div></div>';
+    '<div class="chip"><div class="v">' + OZET.seviye4 + '/' + toplam + '</div><div class="k">' + T('koşu seviye 4 görevine ulaştı, ulaşmak tamamlamak değildir', 'runs reached the level 4 task, reaching is not completing') + '</div></div>' +
+    '<div class="chip"><div class="v">' + OZET.tirmanan + '/' + OZET.degerlendirilen + '</div><div class="k">' + T('belirlenimci değerlendirmede tırmanan koşu, azami irtifa hepsinde 150,0 m', 'evaluated runs that climbed, maximum altitude 150.0 m in every one') + '</div></div>';
 }
 
 function kiyas() {
@@ -249,8 +256,8 @@ function hepsiCiz() { chips(); kiyas(); varisGrafik(); kartlar(); secDoldur(); }
 document.getElementById('kampSec').addEventListener('change', function (e) { egriGrafik(e.target.value); });
 document.addEventListener('langchange', function () { if (KAMP.length) hepsiCiz(); });
 
-Promise.all([veri('kampanyalar.json'), veri('egriler.json')]).then(function (r) {
-  KAMP = r[0]; EGRI = r[1]; hepsiCiz();
+Promise.all([veri('kampanyalar.json'), veri('egriler.json'), veri('ozet.json')]).then(function (r) {
+  KAMP = r[0]; EGRI = r[1]; OZET = r[2]; hepsiCiz();
 }).catch(function (e) { document.getElementById('chips').innerHTML = '<div class="stop-box">' + e.message + '</div>'; });
 </script>
 </body>
