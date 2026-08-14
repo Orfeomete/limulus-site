@@ -6,7 +6,7 @@
 <title>Kampanyalar ve Koşu Kayıtları — LIMULUS-eVTOL</title>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/limulus.css?v=20260814f">
+<link rel="stylesheet" href="../assets/limulus.css?v=20260814g">
 <script>document.documentElement.classList.add("js")</script>
 
 <script src="../vendor/chart.umd.js"></script>
@@ -106,7 +106,7 @@
   <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
 </footer>
 
-<script src="../assets/limulus.js?v=20260814f"></script>
+<script src="../assets/limulus.js?v=20260814g"></script>
 <script>
 var KAMP = [], EGRI = {}, OZET = {}, C1 = null, C2 = null, C3 = null;
 var RENK = { limulus: '#2563eb', senkron: '#0891b2', ikili: '#7c3aed', liftcruise: '#db2777' };
@@ -156,8 +156,8 @@ function kiyas() {
     }
   });
 
-  var esik = 2 * b.varis_std;
-  var fark = Math.abs(a.varis_ort - b.varis_ort);
+  var K = OZET.karsilastirma;          // karar 12 kurali veri katmaninda uygulandi
+  var esik = K.esik, fark = K.fark;
   document.getElementById('kiyasTablo').innerHTML =
     '<thead><tr><th>' + T('Ölçüt', 'Metric') + '</th><th>' + T('Donmuş, −1,5', 'Frozen, −1.5') + '</th><th>' + T('Geniş keşif, −0,5', 'Wide expl., −0.5') + '</th></tr></thead><tbody>' +
     '<tr><td>' + T('Koşu sayısı', 'Number of runs') + '</td><td class="mono">' + a.kosu + '</td><td class="mono">' + b.kosu + '</td></tr>' +
@@ -165,7 +165,7 @@ function kiyas() {
     '<tr class="hl"><td>' + T('Varış adımı, ortanca', 'Arrival step, median') + '</td><td class="mono">' + binlik(a.varis_ortanca) + '</td><td class="mono">' + binlik(b.varis_ortanca) + '</td></tr>' +
     '<tr><td>' + T('Varış adımı, ortalama', 'Arrival step, mean') + '</td><td class="mono">' + binlik(a.varis_ort) + '</td><td class="mono">' + binlik(b.varis_ort) + '</td></tr>' +
     '<tr><td>' + T('Sapma', 'Deviation') + '</td><td class="mono">± ' + binlik(a.varis_std) + '</td><td class="mono">± ' + binlik(b.varis_std) + '</td></tr>' +
-    '<tr><td>' + T('Ortalamalar farkı', 'Difference of means') + '</td><td class="mono" colspan="2">' + binlik(fark) + '  ·  ' + T('iki sapma eşiği', 'two-deviation threshold') + ' ' + binlik(esik) + '  →  <strong>' + (fark < esik ? T('FARK YOK', 'NO DIFFERENCE') : T('FARK VAR', 'DIFFERENT')) + '</strong></td></tr>' +
+    '<tr><td>' + T('Ortalamalar farkı', 'Difference of means') + '</td><td class="mono" colspan="2">' + binlik(fark) + '  ·  ' + T('daha oynak grubun iki sapması', "twice the more variable group's deviation") + ' ' + binlik(esik) + '  →  <strong>' + T(K.hukum, K.hukum === 'FARK YOK' ? 'NO DIFFERENCE' : 'DIFFERENT') + '</strong></td></tr>' +
     '</tbody>';
 }
 
