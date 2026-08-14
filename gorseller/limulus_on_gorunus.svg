@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620">
+<rect width="1180" height="620" fill="#FFFFFF"/>
+<rect x="6" y="6" width="1168" height="608" fill="none" stroke="#D8D4CC" stroke-width="1"/>
+<text x="590.0" y="27" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="650" fill="#1A1A1A" text-anchor="middle">Limulus eVTOL — Ön Görünüş</text>
+<text x="590.0" y="44" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#5A5A5A" text-anchor="middle">Yayvan karapas merkez gövde, 12,0 m açıklıklı kanat ve dört RDP modülünün lateral yerleşimi</text>
+<line x1="24.20" y1="470.00" x2="1155.80" y2="470.00" stroke="#8A8A8A" stroke-width="1.1" stroke-dasharray="9,5" stroke-opacity="1.0" stroke-linecap="round"/>
+<path d="M 98.00 371.93 L 1082.00 371.93 L 1082.00 363.73 L 98.00 363.73 Z" fill="#DCD5C6" stroke="#5A5248" stroke-width="1.5" opacity="1.0" stroke-linejoin="round"/>
+<line x1="483.40" y1="431.67" x2="483.40" y2="453.60" stroke="#5A5248" stroke-width="2.1" stroke-opacity="1.0" stroke-linecap="round"/>
+<ellipse cx="483.40" cy="453.60" rx="16.40" ry="16.40" fill="#2A2A2A" stroke="#2A2A2A" stroke-width="1.0" opacity="1.0"/>
+<line x1="696.60" y1="431.67" x2="696.60" y2="453.60" stroke="#5A5248" stroke-width="2.1" stroke-opacity="1.0" stroke-linecap="round"/>
+<ellipse cx="696.60" cy="453.60" rx="16.40" ry="16.40" fill="#2A2A2A" stroke="#2A2A2A" stroke-width="1.0" opacity="1.0"/>
+<path d="M 458.8 385.2 C 477.2 332.4 534.9 306.9 590.0 306.0 C 645.1 306.9 702.8 332.4 721.2 385.2 C 671.3 401.9 508.7 401.9 458.8 385.2 Z" fill="#E8E0D2" stroke="#5A5248" stroke-width="2.0" opacity="1.0" stroke-linejoin="round"/>
+<path d="M 524.4 341.8 C 537.5 304.1 642.5 304.1 655.6 341.8 Z" fill="#2E4A66" stroke="#5A5248" stroke-width="1.3" opacity="1.0" stroke-linejoin="round"/>
+<ellipse cx="495.54" cy="360.69" rx="19.68" ry="10.66" fill="#F5EFE0" stroke="#5A5248" stroke-width="1.0" opacity="1.0"/>
+<ellipse cx="684.46" cy="360.69" rx="19.68" ry="10.66" fill="#F5EFE0" stroke="#5A5248" stroke-width="1.0" opacity="1.0"/>
+<ellipse cx="303.00" cy="324.04" rx="114.80" ry="114.80" fill="none" stroke="#B8B8B8" stroke-width="1.1" stroke-dasharray="6,4" opacity="0.55"/>
+<rect x="180.00" y="291.24" width="246.00" height="65.60" rx="4" fill="#F0F0F0" stroke="#C1502E" stroke-width="1.9" opacity="1.0"/>
+<ellipse cx="303.00" cy="324.04" rx="114.80" ry="114.80" fill="none" stroke="#4A4038" stroke-width="1.6" opacity="1.0"/>
+<line x1="188.20" y1="324.04" x2="417.80" y2="324.04" stroke="#4A4038" stroke-width="1.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="220.34" y1="329.78" x2="220.34" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="259.38" y1="329.78" x2="259.38" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="346.62" y1="329.78" x2="346.62" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="385.66" y1="329.78" x2="385.66" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<ellipse cx="303.00" cy="324.04" rx="7.38" ry="7.38" fill="#FFFFFF" stroke="#C1502E" stroke-width="1.5" opacity="1.0"/>
+<path d="M 292.34 356.84 L 313.66 356.84 L 310.38 368.24 L 295.62 368.24 Z" fill="#DCD5C6" stroke="#5A5248" stroke-width="1.3" opacity="1.0" stroke-linejoin="round"/>
+<ellipse cx="877.00" cy="324.04" rx="114.80" ry="114.80" fill="none" stroke="#B8B8B8" stroke-width="1.1" stroke-dasharray="6,4" opacity="0.55"/>
+<rect x="754.00" y="291.24" width="246.00" height="65.60" rx="4" fill="#F0F0F0" stroke="#C1502E" stroke-width="1.9" opacity="1.0"/>
+<ellipse cx="877.00" cy="324.04" rx="114.80" ry="114.80" fill="none" stroke="#4A4038" stroke-width="1.6" opacity="1.0"/>
+<line x1="762.20" y1="324.04" x2="991.80" y2="324.04" stroke="#4A4038" stroke-width="1.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="794.34" y1="329.78" x2="794.34" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="833.38" y1="329.78" x2="833.38" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="920.62" y1="329.78" x2="920.62" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="959.66" y1="329.78" x2="959.66" y2="318.30" stroke="#4A4038" stroke-width="0.9" stroke-opacity="1.0" stroke-linecap="round"/>
+<ellipse cx="877.00" cy="324.04" rx="7.38" ry="7.38" fill="#FFFFFF" stroke="#C1502E" stroke-width="1.5" opacity="1.0"/>
+<path d="M 866.34 356.84 L 887.66 356.84 L 884.38 368.24 L 869.62 368.24 Z" fill="#DCD5C6" stroke="#5A5248" stroke-width="1.3" opacity="1.0" stroke-linejoin="round"/>
+<line x1="590.00" y1="494.60" x2="590.00" y2="164.14" stroke="#8A8A8A" stroke-width="0.8" stroke-dasharray="10,3,2,3" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="98.0" y1="520.84" x2="1082.0" y2="520.84" stroke="#3A3A3A" stroke-width="0.9"/>
+<path d="M 98.0 520.84 l 5 -2.1 M 98.0 520.84 l 5 2.1" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<path d="M 1082.0 520.84 l -5 -2.1 M 1082.0 520.84 l -5 2.1" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<line x1="98.0" y1="520.84" x2="98.0" y2="524.84" stroke="#3A3A3A" stroke-width="0.6" stroke-dasharray="3,2" stroke-opacity="0.65"/>
+<line x1="1082.0" y1="520.84" x2="1082.0" y2="524.84" stroke="#3A3A3A" stroke-width="0.6" stroke-dasharray="3,2" stroke-opacity="0.65"/>
+<text x="590.00" y="531.84" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#3A3A3A" text-anchor="middle" opacity="1.0">Açıklık = 12.00 m</text>
+<line x1="303.0" y1="184.64000000000004" x2="877.0" y2="184.64000000000004" stroke="#3A3A3A" stroke-width="0.9"/>
+<path d="M 303.0 184.64000000000004 l 5 -2.1 M 303.0 184.64000000000004 l 5 2.1" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<path d="M 877.0 184.64000000000004 l -5 -2.1 M 877.0 184.64000000000004 l -5 2.1" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<line x1="303.0" y1="184.64000000000004" x2="303.0" y2="180.64000000000004" stroke="#3A3A3A" stroke-width="0.6" stroke-dasharray="3,2" stroke-opacity="0.65"/>
+<line x1="877.0" y1="184.64000000000004" x2="877.0" y2="180.64000000000004" stroke="#3A3A3A" stroke-width="0.6" stroke-dasharray="3,2" stroke-opacity="0.65"/>
+<text x="590.00" y="180.64" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#3A3A3A" text-anchor="middle" opacity="1.0">2y_modül = 7.00 m</text>
+<line x1="458.79999999999995" y1="491.32" x2="721.2" y2="491.32" stroke="#3A3A3A" stroke-width="0.9"/>
+<path d="M 458.79999999999995 491.32 l 5 -2.1 M 458.79999999999995 491.32 l 5 2.1" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<path d="M 721.2 491.32 l -5 -2.1 M 721.2 491.32 l -5 2.1" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<line x1="458.79999999999995" y1="491.32" x2="458.79999999999995" y2="495.32" stroke="#3A3A3A" stroke-width="0.6" stroke-dasharray="3,2" stroke-opacity="0.65"/>
+<line x1="721.2" y1="491.32" x2="721.2" y2="495.32" stroke="#3A3A3A" stroke-width="0.6" stroke-dasharray="3,2" stroke-opacity="0.65"/>
+<text x="590.00" y="502.32" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#3A3A3A" text-anchor="middle" opacity="1.0">B_gövde = 3.20 m</text>
+<line x1="52.89999999999998" y1="470" x2="52.89999999999998" y2="248.6" stroke="#3A3A3A" stroke-width="0.9"/>
+<path d="M 52.89999999999998 470 l -2.1 5 M 52.89999999999998 470 l 2.1 5" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<path d="M 52.89999999999998 248.6 l -2.1 -5 M 52.89999999999998 248.6 l 2.1 -5" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<text x="59.90" y="362.30" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#3A3A3A" text-anchor="start" opacity="1.0">H = 2.70 m</text>
+<line x1="747.44" y1="400.3" x2="747.44" y2="306.0" stroke="#3A3A3A" stroke-width="0.9"/>
+<path d="M 747.44 400.3 l -2.1 5 M 747.44 400.3 l 2.1 5" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<path d="M 747.44 306.0 l -2.1 -5 M 747.44 306.0 l 2.1 -5" stroke="#3A3A3A" stroke-width="0.9" fill="none"/>
+<text x="754.44" y="356.15" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#3A3A3A" text-anchor="start" opacity="1.0">h = 1.15 m</text>
+<line x1="590" y1="306.0" x2="590" y2="148" stroke="#5A5A5A" stroke-width="0.7" stroke-opacity="0.8"/>
+<circle cx="590" cy="306.0" r="1.8" fill="#5A5A5A"/>
+<text x="590.00" y="142.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#5A5A5A" text-anchor="middle" opacity="1.0">Karapas merkez gövde — B/H ≈ 2.8</text>
+<line x1="303.0" y1="324.03999999999996" x2="92" y2="176" stroke="#C1502E" stroke-width="0.7" stroke-opacity="0.8"/>
+<circle cx="303.0" cy="324.03999999999996" r="1.8" fill="#C1502E"/>
+<text x="96.00" y="173.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#C1502E" text-anchor="start" opacity="1.0">RDP-1 (ön-sol)</text>
+<line x1="877.0" y1="324.03999999999996" x2="1084" y2="176" stroke="#C1502E" stroke-width="0.7" stroke-opacity="0.8"/>
+<circle cx="877.0" cy="324.03999999999996" r="1.8" fill="#C1502E"/>
+<text x="1080.00" y="173.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#C1502E" text-anchor="end" opacity="1.0">RDP-2 (ön-sağ)</text>
+<line x1="983.6000000000001" y1="368.238" x2="1084" y2="300" stroke="#5A5A5A" stroke-width="0.7" stroke-opacity="0.8"/>
+<circle cx="983.6000000000001" cy="368.238" r="1.8" fill="#5A5A5A"/>
+<text x="1080.00" y="297.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#5A5A5A" text-anchor="end" opacity="1.0">Kanat  S = 13,0 m²,  AR = 11</text>
+<text x="150.00" y="302.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B8B8B8" text-anchor="start" opacity="1.0">Ghost: arka modül çifti</text>
+<text x="150.00" y="316.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B8B8B8" text-anchor="start" opacity="1.0">(RDP-3 / RDP-4)</text>
+<line x1="44" y1="580" x2="126.0" y2="580" stroke="#3A3A3A" stroke-width="1.6"/>
+<line x1="44" y1="576" x2="44" y2="584" stroke="#3A3A3A" stroke-width="1.6"/>
+<line x1="126.0" y1="576" x2="126.0" y2="584" stroke="#3A3A3A" stroke-width="1.6"/>
+<line x1="44" y1="580" x2="85.0" y2="580" stroke="#3A3A3A" stroke-width="4"/>
+<text x="85.00" y="594.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#3A3A3A" text-anchor="middle" opacity="1.0">1 m</text>
+<text x="1156.00" y="592.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#5A5A5A" text-anchor="end" opacity="1.0">Limulus eVTOL · Rev. 2026-08 · Ölçek 1:100</text>
+</svg>
