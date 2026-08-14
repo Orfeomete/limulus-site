@@ -73,6 +73,19 @@ table.cfg tbody tr:hover td { background: rgba(37,99,235,0.03); }
 .page-head h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; }
 .badge-line { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; }
 .precomp-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(8,145,178,0.08); border: 1px solid rgba(8,145,178,0.3); padding: 0.4rem 1rem; border-radius: 16px; font-size: 0.8rem; color: var(--accent2); }
+/* kaynakca depo kartlari, cdsa.app ile ayni */
+.gh-icon { color: #6b7280; flex-shrink: 0; }
+.repo-card { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; text-decoration: none; transition: border-color 0.2s; }
+.repo-card:hover { border-color: rgba(37,99,235,0.4); }
+.repo-name { font-size: 12px; font-weight: 600; color: var(--text); }
+.repo-path { font-size: 10px; color: var(--text-muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.kaynak-liste { font-size: 0.82rem; color: #4b5563; line-height: 2.1; }
+.kaynak-liste p { margin-bottom: 0.15rem; }
+.kaynak-liste em { color: var(--text-muted); }
+.kaynak-baslik { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+section[id] { scroll-margin-top: 100px; }
+
 /* sayfa ici bolum dizini */
 .sayfa-ic { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); padding: 0.4rem 1rem; border-radius: 16px; font-size: 0.8rem; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
 .sayfa-ic:hover { border-color: rgba(37,99,235,0.45); color: var(--accent); }
