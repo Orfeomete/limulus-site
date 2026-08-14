@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dijital İkiz ve Tasarım — LIMULUS-eVTOL</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/limulus.css">
+<script>document.documentElement.classList.add("js")</script>
+
+</head>
+<body data-kok="/">
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
+  <ul class="nav-links">
+    <li><a href="/ikiz/" class="on" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
+    <li><a href="/kararlar/" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
+    <li><a href="/kampanyalar/" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
+    <li><a href="/arsiv/" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<header class="page-head">
+  <div class="section-label" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</div>
+  <h1 data-tr="Bir simülatör, dört varyant" data-en="One simulator, four variants">Bir simülatör, dört varyant</h1>
+  <div class="badge-line">
+    <span class="precomp-badge" data-tr="Bütün sayılar 2-CIZIM-MOTORU/geometri.py çıktısından" data-en="All numbers from the output of 2-CIZIM-MOTORU/geometri.py">Bütün sayılar 2-CIZIM-MOTORU/geometri.py çıktısından</span>
+    <span class="meta-tag">Rev. 2026-08</span>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:1rem">
+    <p class="lead"
+       data-tr="Senkron eğim, ikili eğim ve lift-cruise ayrı simülatörler değildir. Aynı altı serbestlik dereceli modelin, eylem uzayına kısıt konarak elde edilen hâlleridir. Bu, karşılaştırmayı bir yarışma olmaktan çıkarıp bir sınamaya çevirir, çünkü kısıtlının olurlu kümesi kısıtsızın içindedir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bunun bir çözücü kusuru olduğu gösterilebilir."
+       data-en="Synchronous tilt, paired tilt and lift-cruise are not separate simulators. They are instances of the same six-degree-of-freedom model obtained by placing constraints on the action space. This turns the comparison from a contest into a test, because the constrained feasible set lies inside the unconstrained one, and when a constrained variant outperforms the unconstrained one that can be shown to be a solver defect.">
+      Senkron eğim, ikili eğim ve lift-cruise ayrı simülatörler değildir. Aynı altı serbestlik dereceli modelin, eylem uzayına kısıt konarak elde edilen hâlleridir. Bu, karşılaştırmayı bir yarışma olmaktan çıkarıp bir sınamaya çevirir, çünkü kısıtlının olurlu kümesi kısıtsızın içindedir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bunun bir çözücü kusuru olduğu gösterilebilir.
+    </p>
+
+    <div class="sections-grid" style="margin-top:2.5rem">
+      <div class="section-card"><div class="section-num">4</div>
+        <h3>LIMULUS</h3>
+        <p data-tr="Dört bağımsız eğim ekseni. Kısıtsız hâl, diğer üçünü kapsar." data-en="Four independent tilt axes. The unconstrained instance, it contains the other three.">Dört bağımsız eğim ekseni. Kısıtsız hâl, diğer üçünü kapsar.</p></div>
+      <div class="section-card"><div class="section-num">1</div>
+        <h3 data-tr="Senkron" data-en="Synchronous">Senkron</h3>
+        <p data-tr="Dört modül eğimlenir fakat tek kanaldan, hepsi aynı açıda." data-en="Four modules tilt, but through one channel, all at the same angle.">Dört modül eğimlenir fakat tek kanaldan, hepsi aynı açıda.</p></div>
+      <div class="section-card"><div class="section-num">2</div>
+        <h3 data-tr="İkili" data-en="Paired">İkili</h3>
+        <p data-tr="Ön çift ve arka çift ayrı eğimlenir. Yanal simetrik kalır." data-en="Front pair and rear pair tilt separately. It stays laterally symmetric.">Ön çift ve arka çift ayrı eğimlenir. Yanal simetrik kalır.</p></div>
+      <div class="section-card"><div class="section-num">0</div>
+        <h3>Lift-cruise</h3>
+        <p data-tr="Eğim yok. Ayrı bir cruise itki birimi taşır, bayrak arkasında." data-en="No tilt. It carries a separate cruise propulsion unit, behind a flag.">Eğim yok. Ayrı bir cruise itki birimi taşır, bayrak arkasında.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</h2>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <section>
+    <h2 data-tr="Geometri" data-en="Geometry">Geometri</h2>
+    <div class="card" style="overflow-x:auto"><table class="cfg" id="geoTablo"></table></div>
+  </section>
+
+  <section>
+    <h2 data-tr="Başarım ve tahrik" data-en="Performance and propulsion">Başarım ve tahrik</h2>
+    <div class="card" style="overflow-x:auto"><table class="cfg" id="perfTablo"></table></div>
+    <div class="note-box"
+         data-tr="<strong>Bu bir uçan araç değil, bir modeldir.</strong> Arşivde uçuş verisi, rüzgâr tüneli verisi, hesaplamalı akışkanlar dinamiği ya da sonlu eleman sonucu yoktur. Dinamik model, türediği kavramsal tasarım çalışmasının dokuz bağımsız büyüklüğünü yeniden üretmektedir, bu kaynağıyla tutarlılığı gösterir, mutlak doğruluğu değil. Menzil sayısının birinci belirleyicisi hâlâ HAD'dir ve yapılmamıştır."
+         data-en="<strong>This is a model, not a flying vehicle.</strong> The archive contains no flight data, no wind tunnel data, and no computational fluid dynamics or finite element results. The dynamic model reproduces nine independent quantities of the conceptual design study it derives from, which shows consistency with its source and not absolute correctness. The first determinant of the range figure is still CFD, and that has not been done.">
+      <strong>Bu bir uçan araç değil, bir modeldir.</strong> Arşivde uçuş verisi, rüzgâr tüneli verisi, hesaplamalı akışkanlar dinamiği ya da sonlu eleman sonucu yoktur. Dinamik model, türediği kavramsal tasarım çalışmasının dokuz bağımsız büyüklüğünü yeniden üretmektedir, bu kaynağıyla tutarlılığı gösterir, mutlak doğruluğu değil. Menzil sayısının birinci belirleyicisi hâlâ HAD'dir ve yapılmamıştır.
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Model katmanları" data-en="Model layers">Model katmanları</h2>
+    <div class="card" style="overflow-x:auto">
+      <table class="cfg">
+        <thead><tr><th data-tr="Dosya" data-en="File">Dosya</th><th style="text-align:left" data-tr="Ne yapar" data-en="What it does">Ne yapar</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">arac.py</td><td style="text-align:left" data-tr="Altı serbestlik dereceli gövde dinamiği, katmanları birleştirir" data-en="Six-degree-of-freedom body dynamics, binds the layers together">Altı serbestlik dereceli gövde dinamiği, katmanları birleştirir</td></tr>
+          <tr><td class="mono">rotor.py</td><td style="text-align:left" data-tr="Pal elemanı biçiminden itki ve tork, indükleme oranı, solidite" data-en="Thrust and torque from a blade-element form, induced ratio, solidity">Pal elemanı biçiminden itki ve tork, indükleme oranı, solidite</td></tr>
+          <tr><td class="mono">aerodinamik.py</td><td style="text-align:left" data-tr="Kanat ve gövde kuvvetleri, hücum açısı, sürükleme payları" data-en="Wing and body forces, angle of attack, drag shares">Kanat ve gövde kuvvetleri, hücum açısı, sürükleme payları</td></tr>
+          <tr><td class="mono">aktuator.py</td><td style="text-align:left" data-tr="Eğim aktüatörü hız ve açı sınırları, gecikme" data-en="Tilt actuator rate and angle limits, lag">Eğim aktüatörü hız ve açı sınırları, gecikme</td></tr>
+          <tr><td class="mono">sensor.py</td><td style="text-align:left" data-tr="Gürültü ve gecikme modeli, bayrak arkasında" data-en="Noise and lag model, behind a flag">Gürültü ve gecikme modeli, bayrak arkasında</td></tr>
+          <tr><td class="mono">trim.py</td><td style="text-align:left" data-tr="Denge çözücüsü, asimetrik hâller dahil" data-en="Trim solver, including asymmetric cases">Denge çözücüsü, asimetrik hâller dahil</td></tr>
+          <tr><td class="mono">ortam.py</td><td style="text-align:left" data-tr="Gymnasium ortamı, altı basamaklı müfredat, ödül tanımı" data-en="Gymnasium environment, six-level curriculum, reward definition">Gymnasium ortamı, altı basamaklı müfredat, ödül tanımı</td></tr>
+          <tr><td class="mono">egitim_v2.py</td><td style="text-align:left" data-tr="Bu çalışma için yazılan PPO gerçeklemesi, hazır kütüphaneden alınmadı" data-en="The PPO implementation written for this study, not taken from a library">Bu çalışma için yazılan PPO gerçeklemesi, hazır kütüphaneden alınmadı</td></tr>
+          <tr><td class="mono">temel_kontrolcu.py</td><td style="text-align:left" data-tr="Klasik kaskad referans kontrolcü, öğrenmenin karşılaştırma tabanı" data-en="Classical cascade reference controller, the comparison baseline for learning">Klasik kaskad referans kontrolcü, öğrenmenin karşılaştırma tabanı</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="/" data-tr="← Ana Sayfa" data-en="← Home">← Ana Sayfa</a> ·
+  <a href="https://github.com/Orfeomete/limulus-evtol/tree/main/9-DIJITAL-IKIZ/dinamik" target="_blank" rel="noopener" data-tr="Dinamik model" data-en="Dynamic model">Dinamik model</a> ·
+  <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
+</footer>
+
+<script src="/assets/limulus.js"></script>
+<script>
+var IKIZ = {};
+function T(tr, en) { return window.LANG === 'en' ? en : tr; }
+function v(k, birim) {
+  var x = IKIZ[k]; if (x === undefined) return '—';
+  return String(x).replace('.', ',') + (birim ? ' ' + birim : '');
+}
+var GEO = [
+  ['L_TOTAL', 'Toplam uzunluk', 'Overall length', 'm'], ['SPAN', 'Kanat açıklığı', 'Wing span', 'm'],
+  ['H_TOTAL', 'Toplam yükseklik', 'Overall height', 'm'], ['S_KANAT', 'Kanat alanı', 'Wing area', 'm²'],
+  ['AR', 'En boy oranı', 'Aspect ratio', ''], ['N_MODUL', 'Modül sayısı', 'Number of modules', ''],
+  ['L_MODUL', 'Modül uzunluğu', 'Module length', 'm'], ['M_MODUL', 'Modül kütlesi', 'Module mass', 'kg'],
+  ['D_ROTOR', 'Rotor çapı', 'Rotor diameter', 'm'], ['DX_ROTOR', 'Rotor eksenleri arası', 'Rotor axis spacing', 'm'],
+  ['THETA_CRUISE', 'Cruise eğim açısı', 'Cruise tilt angle', '°'], ['THETA_MAX', 'Azami eğim açısı', 'Maximum tilt angle', '°'],
+  ['CG_MAC_YUZDE', 'Ağırlık merkezi', 'Centre of gravity', '% MAC'], ['NP_MAC_YUZDE', 'Nötr nokta', 'Neutral point', '% MAC']
+];
+var PERF = [
+  ['MTOW', 'Azami kalkış kütlesi', 'Maximum take-off mass', 'kg'], ['PAYLOAD', 'Faydalı yük', 'Payload', 'kg'],
+  ['PAX', 'Yolcu', 'Passengers', ''], ['V_CRUISE_KMH', 'Seyir hızı', 'Cruise speed', 'km/h'],
+  ['MENZIL', 'Menzil', 'Range', 'km'], ['MENZIL_TLR', 'Menzil hedefi', 'Range target', 'km'],
+  ['LD', 'Taşıma sürükleme oranı', 'Lift-to-drag ratio', ''], ['N_ROTOR', 'Rotor sayısı', 'Number of rotors', ''],
+  ['N_MOTOR', 'Motor sayısı', 'Number of motors', ''], ['P_HOVER', 'Havada durma gücü', 'Hover power', 'kW'],
+  ['P_KURULU', 'Kurulu güç', 'Installed power', 'kW'], ['DL', 'Disk yüklemesi', 'Disc loading', 'N/m²'],
+  ['RPM', 'Rotor devri', 'Rotor speed', 'rpm'], ['N_PAL', 'Pal sayısı', 'Number of blades', ''],
+  ['SIGMA', 'Solidite', 'Solidity', ''], ['CTS_TASARIM', 'Tasarım pal yüklemesi', 'Design blade loading', ''],
+  ['M_BATT', 'Batarya kütlesi', 'Battery mass', 'kg'], ['E_BATT', 'Batarya enerjisi', 'Battery energy', 'kWh']
+];
+function tablo(id, satirlar) {
+  document.getElementById(id).innerHTML =
+    '<thead><tr><th>' + T('Büyüklük', 'Quantity') + '</th><th>' + T('Değer', 'Value') + '</th><th class="mono" style="text-align:right">' + T('anahtar', 'key') + '</th></tr></thead><tbody>' +
+    satirlar.map(function (r) {
+      return '<tr><td>' + T(r[1], r[2]) + '</td><td class="mono"><strong>' + v(r[0], r[3]) + '</strong></td><td class="mono" style="color:var(--text-muted);font-size:0.8em">' + r[0] + '</td></tr>';
+    }).join('') + '</tbody>';
+}
+function ciz() {
+  document.getElementById('chips').innerHTML =
+    '<div class="chip"><div class="v">' + v('MTOW') + ' kg</div><div class="k">' + T('azami kalkış kütlesi', 'maximum take-off mass') + '</div></div>' +
+    '<div class="chip"><div class="v">' + v('PAX') + '</div><div class="k">' + T('yolcu, ' + v('PAYLOAD') + ' kg faydalı yük', 'passengers, ' + v('PAYLOAD') + ' kg payload') + '</div></div>' +
+    '<div class="chip"><div class="v">' + v('V_CRUISE_KMH') + '</div><div class="k">' + T('km/h seyir hızı', 'km/h cruise speed') + '</div></div>' +
+    '<div class="chip"><div class="v">' + v('MENZIL') + ' km</div><div class="k">' + T('menzil, hedef ' + v('MENZIL_TLR') + ' km', 'range, target ' + v('MENZIL_TLR') + ' km') + '</div></div>' +
+    '<div class="chip"><div class="v">' + v('D_ROTOR') + ' m</div><div class="k">' + T(v('N_ROTOR') + ' rotor, ' + v('N_MOTOR') + ' motor', v('N_ROTOR') + ' rotors, ' + v('N_MOTOR') + ' motors') + '</div></div>';
+  tablo('geoTablo', GEO); tablo('perfTablo', PERF);
+}
+document.addEventListener('langchange', function () { if (Object.keys(IKIZ).length) ciz(); });
+veri('ikiz.json').then(function (d) { IKIZ = d; ciz(); })
+  .catch(function (e) { document.getElementById('chips').innerHTML = '<div class="stop-box">' + e.message + '</div>'; });
+</script>
+</body>
+</html>
