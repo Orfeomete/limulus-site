@@ -1,0 +1,1866 @@
+[
+ {
+  "dizin": "kosular",
+  "tr": "Pilot kampanya, düzeltme öncesi ortam",
+  "en": "Pilot campaign, pre-correction environment",
+  "onkayit": "12",
+  "kosu": 10,
+  "butce": 400000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 0,
+  "toplam": 10,
+  "varis_ortanca": null,
+  "varis_ort": null,
+  "varis_std": null,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.5043,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "ikili_t1",
+    "varyant": "ikili",
+    "tohum": 1,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.0391,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "ikili_t2",
+    "varyant": "ikili",
+    "tohum": 2,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.187,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.3226,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.2929,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.2901,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.2797,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": 0.1723,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": -0.2866,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   },
+   {
+    "ad": "senkron_t1",
+    "varyant": "senkron",
+    "tohum": 1,
+    "butce": 400000,
+    "adim": 401408,
+    "son_odul": -0.0933,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 196
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_v2",
+  "tr": "İlk düzeltilmiş kampanya",
+  "en": "First corrected campaign",
+  "onkayit": "12",
+  "kosu": 20,
+  "butce": 1000000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 20,
+  "toplam": 20,
+  "varis_ortanca": 192512,
+  "varis_ort": 225075,
+  "varis_std": 82042,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.0095,
+    "enyuksek_seviye": 2,
+    "varis2": 354304,
+    "kayit": 489
+   },
+   {
+    "ad": "ikili_t1",
+    "varyant": "ikili",
+    "tohum": 1,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0179,
+    "enyuksek_seviye": 2,
+    "varis2": 256000,
+    "kayit": 489
+   },
+   {
+    "ad": "ikili_t2",
+    "varyant": "ikili",
+    "tohum": 2,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0132,
+    "enyuksek_seviye": 2,
+    "varis2": 186368,
+    "kayit": 489
+   },
+   {
+    "ad": "ikili_t3",
+    "varyant": "ikili",
+    "tohum": 3,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0023,
+    "enyuksek_seviye": 2,
+    "varis2": 161792,
+    "kayit": 489
+   },
+   {
+    "ad": "ikili_t4",
+    "varyant": "ikili",
+    "tohum": 4,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0155,
+    "enyuksek_seviye": 2,
+    "varis2": 159744,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.197,
+    "enyuksek_seviye": 2,
+    "varis2": 161792,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.5411,
+    "enyuksek_seviye": 2,
+    "varis2": 174080,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t2",
+    "varyant": "liftcruise",
+    "tohum": 2,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.2015,
+    "enyuksek_seviye": 2,
+    "varis2": 217088,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t3",
+    "varyant": "liftcruise",
+    "tohum": 3,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.1971,
+    "enyuksek_seviye": 2,
+    "varis2": 184320,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t4",
+    "varyant": "liftcruise",
+    "tohum": 4,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.6235,
+    "enyuksek_seviye": 2,
+    "varis2": 198656,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0018,
+    "enyuksek_seviye": 2,
+    "varis2": 346112,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0103,
+    "enyuksek_seviye": 2,
+    "varis2": 180224,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.542,
+    "enyuksek_seviye": 2,
+    "varis2": 450560,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t3",
+    "varyant": "limulus",
+    "tohum": 3,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.1246,
+    "enyuksek_seviye": 2,
+    "varis2": 120832,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t4",
+    "varyant": "limulus",
+    "tohum": 4,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.1596,
+    "enyuksek_seviye": 2,
+    "varis2": 313344,
+    "kayit": 489
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.1476,
+    "enyuksek_seviye": 2,
+    "varis2": 202752,
+    "kayit": 489
+   },
+   {
+    "ad": "senkron_t1",
+    "varyant": "senkron",
+    "tohum": 1,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0161,
+    "enyuksek_seviye": 2,
+    "varis2": 184320,
+    "kayit": 489
+   },
+   {
+    "ad": "senkron_t2",
+    "varyant": "senkron",
+    "tohum": 2,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.1964,
+    "enyuksek_seviye": 4,
+    "varis2": 137216,
+    "kayit": 489
+   },
+   {
+    "ad": "senkron_t3",
+    "varyant": "senkron",
+    "tohum": 3,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0186,
+    "enyuksek_seviye": 2,
+    "varis2": 245760,
+    "kayit": 489
+   },
+   {
+    "ad": "senkron_t4",
+    "varyant": "senkron",
+    "tohum": 4,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0244,
+    "enyuksek_seviye": 2,
+    "varis2": 266240,
+    "kayit": 489
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_uzun",
+  "tr": "Uzun bütçe, log_std0 = −1,5",
+  "en": "Long budget, log_std0 = −1.5",
+  "onkayit": "36 · 38",
+  "kosu": 20,
+  "butce": 3000000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 20,
+  "toplam": 20,
+  "varis_ortanca": 197632,
+  "varis_ort": 216371,
+  "varis_std": 56756,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0305,
+    "enyuksek_seviye": 2,
+    "varis2": 354304,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t1",
+    "varyant": "ikili",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0192,
+    "enyuksek_seviye": 2,
+    "varis2": 256000,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t2",
+    "varyant": "ikili",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0232,
+    "enyuksek_seviye": 2,
+    "varis2": 192512,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t3",
+    "varyant": "ikili",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.024,
+    "enyuksek_seviye": 2,
+    "varis2": 167936,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t4",
+    "varyant": "ikili",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0233,
+    "enyuksek_seviye": 2,
+    "varis2": 149504,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0716,
+    "enyuksek_seviye": 2,
+    "varis2": 161792,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0709,
+    "enyuksek_seviye": 2,
+    "varis2": 174080,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t2",
+    "varyant": "liftcruise",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0685,
+    "enyuksek_seviye": 2,
+    "varis2": 155648,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t3",
+    "varyant": "liftcruise",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0726,
+    "enyuksek_seviye": 2,
+    "varis2": 182272,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t4",
+    "varyant": "liftcruise",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.074,
+    "enyuksek_seviye": 2,
+    "varis2": 221184,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0203,
+    "enyuksek_seviye": 2,
+    "varis2": 346112,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.026,
+    "enyuksek_seviye": 2,
+    "varis2": 180224,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0198,
+    "enyuksek_seviye": 2,
+    "varis2": 229376,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t3",
+    "varyant": "limulus",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0208,
+    "enyuksek_seviye": 2,
+    "varis2": 262144,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t4",
+    "varyant": "limulus",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0227,
+    "enyuksek_seviye": 2,
+    "varis2": 253952,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": -0.0939,
+    "enyuksek_seviye": 2,
+    "varis2": 202752,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t1",
+    "varyant": "senkron",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0164,
+    "enyuksek_seviye": 2,
+    "varis2": 184320,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t2",
+    "varyant": "senkron",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0563,
+    "enyuksek_seviye": 4,
+    "varis2": 178176,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t3",
+    "varyant": "senkron",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0146,
+    "enyuksek_seviye": 2,
+    "varis2": 210944,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t4",
+    "varyant": "senkron",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0246,
+    "enyuksek_seviye": 2,
+    "varis2": 264192,
+    "kayit": 1465
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_genis_kesif",
+  "tr": "Geniş keşif, log_std0 = −0,5",
+  "en": "Wide exploration, log_std0 = −0.5",
+  "onkayit": "53",
+  "kosu": 20,
+  "butce": 3000000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 20,
+  "toplam": 20,
+  "varis_ortanca": 156672,
+  "varis_ort": 161382,
+  "varis_std": 40411,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0291,
+    "enyuksek_seviye": 2,
+    "varis2": 116736,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t1",
+    "varyant": "ikili",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.1533,
+    "enyuksek_seviye": 2,
+    "varis2": 143360,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t2",
+    "varyant": "ikili",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0198,
+    "enyuksek_seviye": 2,
+    "varis2": 157696,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t3",
+    "varyant": "ikili",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.1187,
+    "enyuksek_seviye": 2,
+    "varis2": 135168,
+    "kayit": 1465
+   },
+   {
+    "ad": "ikili_t4",
+    "varyant": "ikili",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0312,
+    "enyuksek_seviye": 2,
+    "varis2": 169984,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0728,
+    "enyuksek_seviye": 2,
+    "varis2": 157696,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0727,
+    "enyuksek_seviye": 2,
+    "varis2": 139264,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t2",
+    "varyant": "liftcruise",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0715,
+    "enyuksek_seviye": 2,
+    "varis2": 122880,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t3",
+    "varyant": "liftcruise",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.07,
+    "enyuksek_seviye": 2,
+    "varis2": 102400,
+    "kayit": 1465
+   },
+   {
+    "ad": "liftcruise_t4",
+    "varyant": "liftcruise",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0729,
+    "enyuksek_seviye": 2,
+    "varis2": 155648,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.03,
+    "enyuksek_seviye": 2,
+    "varis2": 198656,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0229,
+    "enyuksek_seviye": 2,
+    "varis2": 194560,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0228,
+    "enyuksek_seviye": 2,
+    "varis2": 192512,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t3",
+    "varyant": "limulus",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0213,
+    "enyuksek_seviye": 2,
+    "varis2": 163840,
+    "kayit": 1465
+   },
+   {
+    "ad": "limulus_t4",
+    "varyant": "limulus",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": -0.0962,
+    "enyuksek_seviye": 2,
+    "varis2": 296960,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.022,
+    "enyuksek_seviye": 2,
+    "varis2": 188416,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t1",
+    "varyant": "senkron",
+    "tohum": 1,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0148,
+    "enyuksek_seviye": 2,
+    "varis2": 126976,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t2",
+    "varyant": "senkron",
+    "tohum": 2,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0506,
+    "enyuksek_seviye": 4,
+    "varis2": 151552,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t3",
+    "varyant": "senkron",
+    "tohum": 3,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0208,
+    "enyuksek_seviye": 2,
+    "varis2": 147456,
+    "kayit": 1465
+   },
+   {
+    "ad": "senkron_t4",
+    "varyant": "senkron",
+    "tohum": 4,
+    "butce": 3000000,
+    "adim": 3000320,
+    "son_odul": 0.0202,
+    "enyuksek_seviye": 2,
+    "varis2": 165888,
+    "kayit": 1465
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_esik_sonda",
+  "tr": "Müfredat eşiği sondası, tek tohum",
+  "en": "Curriculum threshold probe, one seed",
+  "onkayit": "39",
+  "kosu": 4,
+  "butce": 300000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 2,
+  "toplam": 4,
+  "varis_ortanca": 182272,
+  "varis_ort": 182272,
+  "varis_std": 20480,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.106,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": -0.1895,
+    "enyuksek_seviye": 2,
+    "varis2": 161792,
+    "kayit": 147
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.3166,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.2843,
+    "enyuksek_seviye": 2,
+    "varis2": 202752,
+    "kayit": 147
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_esik_sonda600",
+  "tr": "İrtifa ölçeği düzeltmesi, tek tohum",
+  "en": "Altitude-scale correction, one seed",
+  "onkayit": "39",
+  "kosu": 4,
+  "butce": 600000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 4,
+  "toplam": 4,
+  "varis_ortanca": 274432,
+  "varis_ort": 266240,
+  "varis_std": 85256,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.178,
+    "enyuksek_seviye": 2,
+    "varis2": 354304,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.2313,
+    "enyuksek_seviye": 2,
+    "varis2": 161792,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0425,
+    "enyuksek_seviye": 2,
+    "varis2": 346112,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0711,
+    "enyuksek_seviye": 2,
+    "varis2": 202752,
+    "kayit": 293
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_esik_gamma999",
+  "tr": "İki ödül düzeltmesi, tek tohum",
+  "en": "Both reward corrections, one seed",
+  "onkayit": "41",
+  "kosu": 4,
+  "butce": 600000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 4,
+  "toplam": 4,
+  "varis_ortanca": 256000,
+  "varis_ort": 289792,
+  "varis_std": 90639,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0554,
+    "enyuksek_seviye": 2,
+    "varis2": 262144,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.2013,
+    "enyuksek_seviye": 2,
+    "varis2": 249856,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0264,
+    "enyuksek_seviye": 2,
+    "varis2": 442368,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1588,
+    "enyuksek_seviye": 2,
+    "varis2": 204800,
+    "kayit": 293
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_esik_sonda600_s5",
+  "tr": "İrtifa ölçeği düzeltmesi, beş tohum",
+  "en": "Altitude-scale correction, five seeds",
+  "onkayit": "52",
+  "kosu": 20,
+  "butce": 600000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 20,
+  "toplam": 20,
+  "varis_ortanca": 198656,
+  "varis_ort": 225689,
+  "varis_std": 83184,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.2487,
+    "enyuksek_seviye": 2,
+    "varis2": 190464,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t1",
+    "varyant": "ikili",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0629,
+    "enyuksek_seviye": 2,
+    "varis2": 190464,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t2",
+    "varyant": "ikili",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.058,
+    "enyuksek_seviye": 2,
+    "varis2": 182272,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t3",
+    "varyant": "ikili",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.5515,
+    "enyuksek_seviye": 2,
+    "varis2": 129024,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t4",
+    "varyant": "ikili",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1007,
+    "enyuksek_seviye": 2,
+    "varis2": 210944,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1385,
+    "enyuksek_seviye": 2,
+    "varis2": 174080,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1333,
+    "enyuksek_seviye": 2,
+    "varis2": 184320,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t2",
+    "varyant": "liftcruise",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.145,
+    "enyuksek_seviye": 2,
+    "varis2": 196608,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t3",
+    "varyant": "liftcruise",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1676,
+    "enyuksek_seviye": 2,
+    "varis2": 264192,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t4",
+    "varyant": "liftcruise",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1341,
+    "enyuksek_seviye": 2,
+    "varis2": 251904,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0405,
+    "enyuksek_seviye": 2,
+    "varis2": 403456,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0428,
+    "enyuksek_seviye": 2,
+    "varis2": 366592,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0357,
+    "enyuksek_seviye": 2,
+    "varis2": 278528,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t3",
+    "varyant": "limulus",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0178,
+    "enyuksek_seviye": 2,
+    "varis2": 425984,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t4",
+    "varyant": "limulus",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.7445,
+    "enyuksek_seviye": 2,
+    "varis2": 169984,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.029,
+    "enyuksek_seviye": 2,
+    "varis2": 221184,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t1",
+    "varyant": "senkron",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0465,
+    "enyuksek_seviye": 2,
+    "varis2": 210944,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t2",
+    "varyant": "senkron",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0696,
+    "enyuksek_seviye": 2,
+    "varis2": 151552,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t3",
+    "varyant": "senkron",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0619,
+    "enyuksek_seviye": 2,
+    "varis2": 110592,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t4",
+    "varyant": "senkron",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0086,
+    "enyuksek_seviye": 2,
+    "varis2": 200704,
+    "kayit": 293
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_esik_gamma999_s5",
+  "tr": "İki ödül düzeltmesi, beş tohum",
+  "en": "Both reward corrections, five seeds",
+  "onkayit": "52",
+  "kosu": 20,
+  "butce": 600000,
+  "varyantlar": [
+   "ikili",
+   "liftcruise",
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 20,
+  "toplam": 20,
+  "varis_ortanca": 231424,
+  "varis_ort": 261632,
+  "varis_std": 94886,
+  "kosular": [
+   {
+    "ad": "ikili_t0",
+    "varyant": "ikili",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.3651,
+    "enyuksek_seviye": 2,
+    "varis2": 198656,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t1",
+    "varyant": "ikili",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0832,
+    "enyuksek_seviye": 2,
+    "varis2": 344064,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t2",
+    "varyant": "ikili",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.0036,
+    "enyuksek_seviye": 2,
+    "varis2": 124928,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t3",
+    "varyant": "ikili",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1732,
+    "enyuksek_seviye": 2,
+    "varis2": 292864,
+    "kayit": 293
+   },
+   {
+    "ad": "ikili_t4",
+    "varyant": "ikili",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1134,
+    "enyuksek_seviye": 2,
+    "varis2": 227328,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1903,
+    "enyuksek_seviye": 2,
+    "varis2": 212992,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.1776,
+    "enyuksek_seviye": 2,
+    "varis2": 188416,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t2",
+    "varyant": "liftcruise",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.218,
+    "enyuksek_seviye": 2,
+    "varis2": 174080,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t3",
+    "varyant": "liftcruise",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.174,
+    "enyuksek_seviye": 2,
+    "varis2": 188416,
+    "kayit": 293
+   },
+   {
+    "ad": "liftcruise_t4",
+    "varyant": "liftcruise",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.3325,
+    "enyuksek_seviye": 2,
+    "varis2": 305152,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.1644,
+    "enyuksek_seviye": 2,
+    "varis2": 268288,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.5592,
+    "enyuksek_seviye": 2,
+    "varis2": 544768,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0191,
+    "enyuksek_seviye": 2,
+    "varis2": 223232,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t3",
+    "varyant": "limulus",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1085,
+    "enyuksek_seviye": 2,
+    "varis2": 235520,
+    "kayit": 293
+   },
+   {
+    "ad": "limulus_t4",
+    "varyant": "limulus",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": -0.0201,
+    "enyuksek_seviye": 2,
+    "varis2": 382976,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0754,
+    "enyuksek_seviye": 2,
+    "varis2": 225280,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t1",
+    "varyant": "senkron",
+    "tohum": 1,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.1244,
+    "enyuksek_seviye": 2,
+    "varis2": 161792,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t2",
+    "varyant": "senkron",
+    "tohum": 2,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.3041,
+    "enyuksek_seviye": 2,
+    "varis2": 385024,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t3",
+    "varyant": "senkron",
+    "tohum": 3,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.0664,
+    "enyuksek_seviye": 2,
+    "varis2": 243712,
+    "kayit": 293
+   },
+   {
+    "ad": "senkron_t4",
+    "varyant": "senkron",
+    "tohum": 4,
+    "butce": 600000,
+    "adim": 600064,
+    "son_odul": 0.2541,
+    "enyuksek_seviye": 2,
+    "varis2": 305152,
+    "kayit": 293
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_t3_v0",
+  "tr": "Düzeltme öncesi ortam, bayrak arkasında",
+  "en": "Pre-correction environment behind a flag",
+  "onkayit": "52",
+  "kosu": 2,
+  "butce": 300000,
+  "varyantlar": [
+   "limulus"
+  ],
+  "seviye2_ulasan": 0,
+  "toplam": 2,
+  "varis_ortanca": null,
+  "varis_ort": null,
+  "varis_std": null,
+  "kosular": [
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.0951,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.084,
+    "enyuksek_seviye": 0,
+    "varis2": null,
+    "kayit": 147
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_k47",
+  "tr": "Keşif ve müfredat ablasyonu, dört hücre",
+  "en": "Exploration and curriculum ablation, four cells",
+  "onkayit": "47",
+  "kosu": 8,
+  "butce": 300000,
+  "varyantlar": [
+   "limulus"
+  ],
+  "seviye2_ulasan": 4,
+  "toplam": 8,
+  "varis_ortanca": 196608,
+  "varis_ort": 196608,
+  "varis_std": 2048,
+  "kosular": [
+   {
+    "ad": "A/limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.4996,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "A/limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.3235,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "B/limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": -0.2874,
+    "enyuksek_seviye": 2,
+    "varis2": 198656,
+    "kayit": 147
+   },
+   {
+    "ad": "B/limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": -0.0619,
+    "enyuksek_seviye": 2,
+    "varis2": 194560,
+    "kayit": 147
+   },
+   {
+    "ad": "C/limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.4996,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "C/limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.3235,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "D/limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": -0.035,
+    "enyuksek_seviye": 2,
+    "varis2": 198656,
+    "kayit": 147
+   },
+   {
+    "ad": "D/limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.2134,
+    "enyuksek_seviye": 2,
+    "varis2": 194560,
+    "kayit": 147
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_lc",
+  "tr": "Lift-cruise itki birimi sondası",
+  "en": "Lift-cruise propulsion unit probe",
+  "onkayit": "22",
+  "kosu": 5,
+  "butce": 1000000,
+  "varyantlar": [
+   "liftcruise"
+  ],
+  "seviye2_ulasan": 5,
+  "toplam": 5,
+  "varis_ortanca": 221184,
+  "varis_ort": 209715,
+  "varis_std": 35533,
+  "kosular": [
+   {
+    "ad": "liftcruise_t0",
+    "varyant": "liftcruise",
+    "tohum": 0,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.1973,
+    "enyuksek_seviye": 2,
+    "varis2": 256000,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t1",
+    "varyant": "liftcruise",
+    "tohum": 1,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.1974,
+    "enyuksek_seviye": 2,
+    "varis2": 231424,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t2",
+    "varyant": "liftcruise",
+    "tohum": 2,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.196,
+    "enyuksek_seviye": 2,
+    "varis2": 155648,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t3",
+    "varyant": "liftcruise",
+    "tohum": 3,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.1968,
+    "enyuksek_seviye": 2,
+    "varis2": 184320,
+    "kayit": 489
+   },
+   {
+    "ad": "liftcruise_t4",
+    "varyant": "liftcruise",
+    "tohum": 4,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": -0.2894,
+    "enyuksek_seviye": 2,
+    "varis2": 221184,
+    "kayit": 489
+   }
+  ]
+ },
+ {
+  "dizin": "kosular_tk",
+  "tr": "Tilt kanalsız eğitim sondası",
+  "en": "Tilt-channel-free training probe",
+  "onkayit": "34",
+  "kosu": 5,
+  "butce": 1000000,
+  "varyantlar": [
+   "limulus"
+  ],
+  "seviye2_ulasan": 5,
+  "toplam": 5,
+  "varis_ortanca": 206848,
+  "varis_ort": 199475,
+  "varis_std": 24935,
+  "kosular": [
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0147,
+    "enyuksek_seviye": 2,
+    "varis2": 221184,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t1",
+    "varyant": "limulus",
+    "tohum": 1,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0143,
+    "enyuksek_seviye": 2,
+    "varis2": 206848,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t2",
+    "varyant": "limulus",
+    "tohum": 2,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0145,
+    "enyuksek_seviye": 2,
+    "varis2": 225280,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t3",
+    "varyant": "limulus",
+    "tohum": 3,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.0083,
+    "enyuksek_seviye": 2,
+    "varis2": 186368,
+    "kayit": 489
+   },
+   {
+    "ad": "limulus_t4",
+    "varyant": "limulus",
+    "tohum": 4,
+    "butce": 1000000,
+    "adim": 1001472,
+    "son_odul": 0.017,
+    "enyuksek_seviye": 2,
+    "varis2": 157696,
+    "kayit": 489
+   }
+  ]
+ },
+ {
+  "dizin": "sonda/kosular_sonda",
+  "tr": "Erken yapılandırma sondası",
+  "en": "Early configuration probe",
+  "onkayit": "12",
+  "kosu": 2,
+  "butce": 300000,
+  "varyantlar": [
+   "limulus",
+   "senkron"
+  ],
+  "seviye2_ulasan": 1,
+  "toplam": 2,
+  "varis_ortanca": 202752,
+  "varis_ort": 202752,
+  "varis_std": null,
+  "kosular": [
+   {
+    "ad": "limulus_t0",
+    "varyant": "limulus",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.3166,
+    "enyuksek_seviye": 1,
+    "varis2": null,
+    "kayit": 147
+   },
+   {
+    "ad": "senkron_t0",
+    "varyant": "senkron",
+    "tohum": 0,
+    "butce": 300000,
+    "adim": 301056,
+    "son_odul": 0.0586,
+    "enyuksek_seviye": 2,
+    "varis2": 202752,
+    "kayit": 147
+   }
+  ]
+ }
+]
