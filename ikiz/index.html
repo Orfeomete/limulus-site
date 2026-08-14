@@ -6,7 +6,7 @@
 <title>Dijital İkiz ve Tasarım — LIMULUS-eVTOL</title>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/limulus.css?v=20260814c">
+<link rel="stylesheet" href="../assets/limulus.css?v=20260814d">
 <script>document.documentElement.classList.add("js")</script>
 
 </head>
@@ -29,6 +29,14 @@
   <div class="badge-line">
     <span class="precomp-badge" data-tr="Bütün sayılar 2-CIZIM-MOTORU/geometri.py çıktısından" data-en="All numbers from the output of 2-CIZIM-MOTORU/geometri.py">Bütün sayılar 2-CIZIM-MOTORU/geometri.py çıktısından</span>
     <span class="meta-tag">Rev. 2026-08</span>
+  </div>
+  <div class="badge-line" style="margin-top:1rem">
+    <a class="sayfa-ic" href="#gorunusler" data-tr="Görünüşler" data-en="Views">Görünüşler</a>
+    <a class="sayfa-ic vurgu" href="#modulerlik" data-tr="Modülerlik kanıtı · Platform B" data-en="Modularity · Platform B">Modülerlik kanıtı · Platform B</a>
+    <a class="sayfa-ic" href="#tasarim" data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</a>
+    <a class="sayfa-ic" href="#geometri" data-tr="Geometri" data-en="Geometry">Geometri</a>
+    <a class="sayfa-ic" href="#basarim" data-tr="Başarım" data-en="Performance">Başarım</a>
+    <a class="sayfa-ic" href="#katmanlar" data-tr="Model katmanları" data-en="Model layers">Model katmanları</a>
   </div>
 </header>
 
@@ -57,7 +65,7 @@
   </section>
 
   <section>
-    <h2 data-tr="Görünüşler" data-en="Views">Görünüşler</h2>
+    <h2 id="gorunusler" data-tr="Görünüşler" data-en="Views">Görünüşler</h2>
     <p class="lead" style="margin-bottom:1.5rem"
        data-tr="Dört mühendislik çizimi de <span class='mono'>2-CIZIM-MOTORU</span> tarafından <span class='mono'>geometri.py</span>'deki tek sözlükten üretilir. Bir boyut değişirse yalnız orası düzenlenir ve çizimler yeniden koşturulunca hepsi birden güncellenir, yani çizimde okuduğun sayı ile aşağıdaki tabloda okuduğun sayı ayrışamaz."
        data-en="All four engineering drawings are produced by <span class='mono'>2-CIZIM-MOTORU</span> from the single dictionary in <span class='mono'>geometri.py</span>. If a dimension changes only that file is edited, and rerunning the drawings updates all of them at once, so a number read off a drawing cannot drift from the number in the table below.">
@@ -100,7 +108,7 @@
   </section>
 
   <section>
-    <h2 data-tr="Modülerlik kanıtı, Platform B" data-en="Modularity demonstration, Platform B">Modülerlik kanıtı, Platform B</h2>
+    <h2 id="modulerlik" data-tr="Modülerlik kanıtı, Platform B" data-en="Modularity demonstration, Platform B">Modülerlik kanıtı, Platform B</h2>
     <p class="lead" style="margin-bottom:1.5rem"
        data-tr="Rotor tahrik modülünün bir platforma değil, bir arayüze bağlı olduğu iddiası ancak ikinci bir platform gösterilerek sınanabilir. Aşağıdaki yüksek hızlı zeplin bu iş için çizildi. Taşıdığı dört modül LIMULUS'unkiyle <strong>özdeştir</strong>, ø2,80 m, 148 kg, modül başına 2 × 134 kW, ve platforma özgü olan tek parça arayüz bracket'idir."
        data-en="The claim that the rotor drive module belongs to an interface rather than to a platform can only be tested by showing a second platform. The high-speed airship below was drawn for that purpose. The four modules it carries are <strong>identical</strong> to those of LIMULUS, ø2.80 m, 148 kg, 2 × 134 kW per module, and the only platform-specific part is the interface bracket.">
@@ -131,17 +139,17 @@
   </section>
 
   <section>
-    <h2 data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</h2>
+    <h2 id="tasarim" data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</h2>
     <div class="chips" id="chips"></div>
   </section>
 
   <section>
-    <h2 data-tr="Geometri" data-en="Geometry">Geometri</h2>
+    <h2 id="geometri" data-tr="Geometri" data-en="Geometry">Geometri</h2>
     <div class="card" style="overflow-x:auto"><table class="cfg" id="geoTablo"></table></div>
   </section>
 
   <section>
-    <h2 data-tr="Başarım ve tahrik" data-en="Performance and propulsion">Başarım ve tahrik</h2>
+    <h2 id="basarim" data-tr="Başarım ve tahrik" data-en="Performance and propulsion">Başarım ve tahrik</h2>
     <div class="card" style="overflow-x:auto"><table class="cfg" id="perfTablo"></table></div>
     <div class="note-box"
          data-tr="<strong>Bu bir uçan araç değil, bir modeldir.</strong> Arşivde uçuş verisi, rüzgâr tüneli verisi, hesaplamalı akışkanlar dinamiği ya da sonlu eleman sonucu yoktur. Dinamik model, türediği kavramsal tasarım çalışmasının dokuz bağımsız büyüklüğünü yeniden üretmektedir, bu kaynağıyla tutarlılığı gösterir, mutlak doğruluğu değil. Menzil sayısının birinci belirleyicisi hâlâ HAD'dir ve yapılmamıştır."
@@ -151,7 +159,7 @@
   </section>
 
   <section>
-    <h2 data-tr="Model katmanları" data-en="Model layers">Model katmanları</h2>
+    <h2 id="katmanlar" data-tr="Model katmanları" data-en="Model layers">Model katmanları</h2>
     <div class="card" style="overflow-x:auto">
       <table class="cfg">
         <thead><tr><th data-tr="Dosya" data-en="File">Dosya</th><th style="text-align:left" data-tr="Ne yapar" data-en="What it does">Ne yapar</th></tr></thead>
@@ -177,7 +185,7 @@
   <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
 </footer>
 
-<script src="../assets/limulus.js?v=20260814c"></script>
+<script src="../assets/limulus.js?v=20260814d"></script>
 <script>
 var IKIZ = {};
 function T(tr, en) { return window.LANG === 'en' ? en : tr; }
