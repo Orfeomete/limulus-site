@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIMULUS-eVTOL — Dijital İkiz ve Ön Kayıtlı Kampanyalar</title>
+<meta name="description" content="Dört bağımsız eğimlenen rotor modüllü modüler bir eVTOL tasarımının dijital ikizi, ön kayıtlı pekiştirmeli öğrenme kampanyaları ve eksiksiz koşu kayıtları.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/limulus.css">
+<script>document.documentElement.classList.add("js")</script>
+
+</head>
+<body data-kok="/">
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
+  <ul class="nav-links">
+    <li><a href="#ozet" data-tr="Özet" data-en="Overview">Özet</a></li>
+    <li><a href="/ikiz/" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
+    <li><a href="/kararlar/" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
+    <li><a href="/kampanyalar/" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
+    <li><a href="#makaleler" data-tr="Makaleler" data-en="Manuscripts">Makaleler</a></li>
+    <li><a href="/arsiv/" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-tr="ÖN KAYITLI ARAŞTIRMA PROGRAMI" data-en="PREREGISTERED RESEARCH PROGRAMME">ÖN KAYITLI ARAŞTIRMA PROGRAMI</div>
+    <h1 data-tr="Dört Bağımsız Eğimlenen Rotor Modüllü <span>Modüler eVTOL</span> Tasarımının Dijital İkizi"
+        data-en="Digital Twin of a <span>Modular eVTOL</span> Design with Four Independently Tilting Rotor Modules">
+      Dört Bağımsız Eğimlenen Rotor Modüllü <span>Modüler eVTOL</span> Tasarımının Dijital İkizi
+    </h1>
+    <p class="hero-sub"
+       data-tr="Karar kuralları ölçümden önce dondurulan bir tasarım ve öğrenme programı. Elli üç karar belgesi, on dört koşu dizininde yüz kırk dört eğitim koşusu, ve raporlanan her sayıyı yeniden üreten betikler."
+       data-en="A design and learning programme whose decision rules were frozen before measurement. Fifty-three decision documents, one hundred and forty-four training runs in fourteen run directories, and the scripts that regenerate every reported number.">
+      Karar kuralları ölçümden önce dondurulan bir tasarım ve öğrenme programı. Elli üç karar belgesi, on dört koşu dizininde yüz kırk dört eğitim koşusu, ve raporlanan her sayıyı yeniden üreten betikler.
+    </p>
+    <div class="hero-meta">
+      <span class="meta-tag" data-tr="eVTOL Tasarımı" data-en="eVTOL Design">eVTOL Tasarımı</span>
+      <span class="meta-tag" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</span>
+      <span class="meta-tag" data-tr="Pekiştirmeli Öğrenme" data-en="Reinforcement Learning">Pekiştirmeli Öğrenme</span>
+      <span class="meta-tag" data-tr="Ön Kayıt" data-en="Preregistration">Ön Kayıt</span>
+      <span class="meta-tag" data-tr="Yeniden Üretilebilirlik" data-en="Reproducibility">Yeniden Üretilebilirlik</span>
+    </div>
+  </div>
+</div>
+
+<section id="ozet" class="fade-in">
+  <div class="section-label" data-tr="Özet" data-en="Overview">Özet</div>
+  <h2 data-tr="Program ne yapıyor" data-en="What the programme does">Program ne yapıyor</h2>
+  <div class="abstract-box">
+    <p data-tr="LIMULUS, dört bağımsız eğimlenen rotor modülü taşıyan modüler bir eVTOL tasarımıdır. Program bu tasarımı savunmaya değil, <strong>sınamaya</strong> kuruludur. Senkron eğim, ikili eğim ve lift-cruise varyantları ayrı simülatörler değil, aynı simülatörün kısıtlanmış hâlleridir, dolayısıyla olurlu kümeleri iç içe geçmiştir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bunun bir çözücü kusuru olduğu kanıtlanabilir."
+       data-en="LIMULUS is a modular eVTOL design carrying four independently tilting rotor modules. The programme is built to <strong>test</strong> that design rather than defend it. The synchronous-tilt, paired-tilt and lift-cruise variants are not separate simulators but constrained instances of one simulator, so their feasible sets are nested, and when a constrained variant outperforms the unconstrained one that can be proven to be a solver defect.">
+      LIMULUS, dört bağımsız eğimlenen rotor modülü taşıyan modüler bir eVTOL tasarımıdır. Program bu tasarımı savunmaya değil, <strong>sınamaya</strong> kuruludur. Senkron eğim, ikili eğim ve lift-cruise varyantları ayrı simülatörler değil, aynı simülatörün kısıtlanmış hâlleridir, dolayısıyla olurlu kümeleri iç içe geçmiştir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bunun bir çözücü kusuru olduğu kanıtlanabilir.
+    </p>
+    <p style="margin-top:1.2rem"
+       data-tr="Her kampanyanın karar kuralları ölçüm görülmeden dondurulmuş ve tarihli bir belgeye yazılmıştır. Sonuçlar ayrı bir bölüm olarak eklenir, ön kayıt gövdesi hiç düzenlenmez. Bir sonuç sonradan yanlış çıktığında hatalı cümleler silinmez, üzerine tarihli bir düzeltme yazılır. Bu programda böyle bir düzeltme <strong>bir kez</strong> yapıldı ve bulguyu güçlendirdi."
+       data-en="The decision rules of every campaign were frozen before any measurement was seen and written into a dated document. Results are appended as a separate section and the preregistration body is never edited. When a result later turns out to be wrong the erroneous sentences are not deleted, a dated correction is written over them. In this programme that has happened <strong>once</strong>, and it strengthened the finding.">
+      Her kampanyanın karar kuralları ölçüm görülmeden dondurulmuş ve tarihli bir belgeye yazılmıştır. Sonuçlar ayrı bir bölüm olarak eklenir, ön kayıt gövdesi hiç düzenlenmez. Bir sonuç sonradan yanlış çıktığında hatalı cümleler silinmez, üzerine tarihli bir düzeltme yazılır. Bu programda böyle bir düzeltme <strong>bir kez</strong> yapıldı ve bulguyu güçlendirdi.
+    </p>
+    <div class="keywords">
+      <span class="keyword">eVTOL</span><span class="keyword" data-tr="eğimlenen rotor" data-en="tilt rotor">eğimlenen rotor</span>
+      <span class="keyword" data-tr="dijital ikiz" data-en="digital twin">dijital ikiz</span>
+      <span class="keyword">PPO</span>
+      <span class="keyword" data-tr="müfredat öğrenmesi" data-en="curriculum learning">müfredat öğrenmesi</span>
+      <span class="keyword" data-tr="ödül tanımı kusuru" data-en="reward misspecification">ödül tanımı kusuru</span>
+      <span class="keyword" data-tr="uçuş kontrolü" data-en="flight control">uçuş kontrolü</span>
+    </div>
+  </div>
+
+  <div class="chips" style="margin-top:2rem">
+    <div class="chip"><div class="v">53</div><div class="k" data-tr="karar belgesi, karar kuralları ölçümden önce donmuş" data-en="decision documents, rules frozen before measurement">karar belgesi, karar kuralları ölçümden önce donmuş</div></div>
+    <div class="chip"><div class="v">144</div><div class="k" data-tr="eğitim koşusu, on dört koşu dizininde" data-en="training runs, in fourteen run directories">eğitim koşusu, on dört koşu dizininde</div></div>
+    <div class="chip"><div class="v">465</div><div class="k" data-tr="arşivlenmiş dosya, 41 MB" data-en="archived files, 41 MB">arşivlenmiş dosya, 41 MB</div></div>
+    <div class="chip"><div class="v">4</div><div class="k" data-tr="makale, ikisi hakem sürecinde" data-en="manuscripts, two under review">makale, ikisi hakem sürecinde</div></div>
+  </div>
+</section>
+
+<div class="band-section">
+  <div class="band-inner">
+    <div class="section-label" data-tr="İçerik" data-en="Contents">İçerik</div>
+    <h2 data-tr="Programın dört yüzü" data-en="Four faces of the programme">Programın dört yüzü</h2>
+    <div class="sections-grid">
+      <a class="section-card fade-in" href="/ikiz/">
+        <div class="section-num">01</div>
+        <h3 data-tr="Dijital İkiz ve Tasarım" data-en="Digital Twin and Design">Dijital İkiz ve Tasarım</h3>
+        <p data-tr="Aracın geometrisi ve başarım noktası, altı serbestlik dereceli model, ve dört varyantın aynı simülatörden nasıl türetildiği. Her sayı tek kaynaktan, geometri.py."
+           data-en="Vehicle geometry and design point, the six-degree-of-freedom model, and how the four variants derive from one simulator. Every number from a single source, geometri.py.">Aracın geometrisi ve başarım noktası, altı serbestlik dereceli model, ve dört varyantın aynı simülatörden nasıl türetildiği. Her sayı tek kaynaktan, geometri.py.</p>
+      </a>
+      <a class="section-card fade-in" href="/kararlar/">
+        <div class="section-num">02</div>
+        <h3 data-tr="Kararlar ve Ön Kayıtlar" data-en="Decisions and Preregistrations">Kararlar ve Ön Kayıtlar</h3>
+        <p data-tr="Elli üç belge, altı kısım. Başarısız denemeler ve bulunan kusurlar da burada durur, tam da bir sonraki denemede aynı yola girilmesin diye."
+           data-en="Fifty-three documents in six parts. Failed attempts and discovered defects are kept here too, precisely so the same road is not taken twice.">Elli üç belge, altı kısım. Başarısız denemeler ve bulunan kusurlar da burada durur, tam da bir sonraki denemede aynı yola girilmesin diye.</p>
+      </a>
+      <a class="section-card fade-in" href="/kampanyalar/">
+        <div class="section-num">03</div>
+        <h3 data-tr="Kampanyalar ve Koşu Kayıtları" data-en="Campaigns and Run Records">Kampanyalar ve Koşu Kayıtları</h3>
+        <p data-tr="On dört koşu dizini, yüz kırk dört koşu. Öğrenme eğrileri ve seviye dağılımları doğrudan arşivlenmiş günlüklerden çizilir, ara bir özet dosyasından değil."
+           data-en="Fourteen run directories, one hundred and forty-four runs. Learning curves and level distributions are drawn straight from the archived logs, not from an intermediate summary file.">On dört koşu dizini, yüz kırk dört koşu. Öğrenme eğrileri ve seviye dağılımları doğrudan arşivlenmiş günlüklerden çizilir, ara bir özet dosyasından değil.</p>
+      </a>
+      <a class="section-card fade-in" href="/arsiv/">
+        <div class="section-num">04</div>
+        <h3 data-tr="Arşiv, Depo ve DOI" data-en="Archive, Repository and DOI">Arşiv, Depo ve DOI</h3>
+        <p data-tr="GitHub deposu, Zenodo DOI'si, yeniden üretim komutları ve lisanslar. Arşivlenen betikler değiştirilmedi, bu iddia edilmedi ölçüldü."
+           data-en="GitHub repository, Zenodo DOI, reproduction commands and licences. The archived scripts were not edited, and this was measured rather than asserted.">GitHub deposu, Zenodo DOI'si, yeniden üretim komutları ve lisanslar. Arşivlenen betikler değiştirilmedi, bu iddia edilmedi ölçüldü.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section id="makaleler" class="fade-in">
+  <div class="section-label" data-tr="Makaleler" data-en="Manuscripts">Makaleler</div>
+  <h2 data-tr="Dört makale, tek kanıt tabanı" data-en="Four manuscripts, one evidence base">Dört makale, tek kanıt tabanı</h2>
+  <p class="lead"
+     data-tr="Dördü de aynı dijital ikizden ve aynı koşulardan besleniyor. Hiçbiri bir diğerinin bölümlerini, tablolarını ya da figürlerini yinelemiyor."
+     data-en="All four draw on the same digital twin and the same runs. None reproduces another's sections, tables or figures.">Dördü de aynı dijital ikizden ve aynı koşulardan besleniyor. Hiçbiri bir diğerinin bölümlerini, tablolarını ya da figürlerini yinelemiyor.</p>
+
+  <div class="card" style="margin-top:2rem;overflow-x:auto">
+    <table class="cfg">
+      <thead><tr>
+        <th data-tr="Kod" data-en="Code">Kod</th>
+        <th data-tr="Başlık" data-en="Title">Başlık</th>
+        <th data-tr="Dergi" data-en="Journal">Dergi</th>
+        <th data-tr="Durum" data-en="Status">Durum</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>M1</strong></td>
+          <td style="text-align:left;max-width:420px;line-height:1.5"
+              data-tr="Rakip eVTOL Kontrol Mimarilerinin Tek Simülatörün Kısıtlanmış Hâlleri Olarak Karşılaştırılması. İç İçe Geçmişlik Garantili ve Ön Kayıtlı Bir Çerçeve"
+              data-en="Comparing Competing eVTOL Control Architectures as Constrained Variants of a Single Simulator. A Nestedness-Guaranteed and Preregistered Framework">Rakip eVTOL Kontrol Mimarilerinin Tek Simülatörün Kısıtlanmış Hâlleri Olarak Karşılaştırılması. İç İçe Geçmişlik Garantili ve Ön Kayıtlı Bir Çerçeve</td>
+          <td class="mono">Simulation Modelling<br>Practice and Theory</td>
+          <td><span class="pill tamam" data-tr="v8 · gönderime hazır" data-en="v8 · ready to submit">v8 · gönderime hazır</span></td>
+        </tr>
+        <tr>
+          <td><strong>M5</strong></td>
+          <td style="text-align:left;max-width:420px;line-height:1.5"
+              data-tr="Uçuş Kontrolü İçin Öğrenme Ortamı Tasarımında Beş Sessiz Kusur. Ölçülmüş Bir Vaka Çalışması"
+              data-en="Five Silent Defects in Learning Environment Design for Flight Control. A Measured Case Study">Uçuş Kontrolü İçin Öğrenme Ortamı Tasarımında Beş Sessiz Kusur. Ölçülmüş Bir Vaka Çalışması</td>
+          <td class="mono">Robotics and<br>Autonomous Systems</td>
+          <td><span class="pill tamam" data-tr="v6 · gönderime hazır" data-en="v6 · ready to submit">v6 · gönderime hazır</span></td>
+        </tr>
+        <tr>
+          <td><strong>M2</strong></td>
+          <td style="text-align:left;max-width:420px;line-height:1.5"
+              data-tr="Rim-Drive eVTOL Rotorlarının Ön Tasarımında Özgül Güç ve Kütle Tabanı"
+              data-en="Specific Power and Mass Basis in the Preliminary Design of Rim-Driven eVTOL Rotors">Rim-Drive eVTOL Rotorlarının Ön Tasarımında Özgül Güç ve Kütle Tabanı</td>
+          <td class="mono">Aerospace Science<br>and Technology</td>
+          <td><span class="pill uyari" data-tr="hakem sürecinde · 10.08.2026" data-en="under review · 10 Aug 2026">hakem sürecinde · 10.08.2026</span></td>
+        </tr>
+        <tr>
+          <td><strong>M6</strong></td>
+          <td style="text-align:left;max-width:420px;line-height:1.5"
+              data-tr="Dört Rotorlu Bir Tilt-Rotor eVTOL Kaç Bağımsız Tilt Eksenine İhtiyaç Duyar? Ön Kayıtlı Bir Olumsuz Sonuç"
+              data-en="How Many Independent Tilt Axes Does a Quad Tilt-Rotor eVTOL Need? A Preregistered Negative Result">Dört Rotorlu Bir Tilt-Rotor eVTOL Kaç Bağımsız Tilt Eksenine İhtiyaç Duyar? Ön Kayıtlı Bir Olumsuz Sonuç</td>
+          <td class="mono">Advances in<br>Engineering Software</td>
+          <td><span class="pill uyari" data-tr="hakem sürecinde · 11.08.2026" data-en="under review · 11 Aug 2026">hakem sürecinde · 11.08.2026</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-box"
+       data-tr="<strong>Tam metinler bilerek konulmadı.</strong> Dördü de ya hakem sürecinde ya da gönderim aşamasında. Bu programda geçerli olan kural şudur, her metnin tam hâli kendi süreci sonuçlandığında yayımlanır. Kanıt tabanı ise şimdiden açıktır, kodun ve koşuların tamamı arşivde ve DOI ile anılabilir."
+       data-en="<strong>Full texts are deliberately withheld.</strong> All four are either under review or at the point of submission. The rule in force here is that the full text of each is published when its own process concludes. The evidence base, however, is already open, the code and all runs are archived and citable by DOI.">
+    <strong>Tam metinler bilerek konulmadı.</strong> Dördü de ya hakem sürecinde ya da gönderim aşamasında. Bu programda geçerli olan kural şudur, her metnin tam hâli kendi süreci sonuçlandığında yayımlanır. Kanıt tabanı ise şimdiden açıktır, kodun ve koşuların tamamı arşivde ve DOI ile anılabilir.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="fade-in">
+  <div class="section-label" data-tr="Yazar" data-en="Author">Yazar</div>
+  <div class="card" style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;padding:2.5rem">
+    <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:Syne,sans-serif;font-size:1.8rem;font-weight:800;color:#fff;flex-shrink:0">MC</div>
+    <div style="flex:1 1 320px">
+      <div style="font-family:Syne,sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.3rem">Mete Cantekin</div>
+      <div style="color:var(--accent);font-size:0.9rem;margin-bottom:0.8rem">ORCID 0009-0001-6990-6340</div>
+      <div style="color:var(--text-muted);font-size:0.9rem;line-height:1.7"
+           data-tr="Nişantaşı Üniversitesi, Sivil Havacılık Yüksekokulu · İstanbul Beykent Üniversitesi, Lisansüstü Eğitim Enstitüsü"
+           data-en="Nisantasi University, School of Civil Aviation · Istanbul Beykent University, Graduate Education Institute">Nişantaşı Üniversitesi, Sivil Havacılık Yüksekokulu · İstanbul Beykent Üniversitesi, Lisansüstü Eğitim Enstitüsü</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span data-tr="LIMULUS-eVTOL · ön kayıtlı araştırma programı" data-en="LIMULUS-eVTOL · preregistered research programme">LIMULUS-eVTOL · ön kayıtlı araştırma programı</span><br>
+  <a href="https://github.com/Orfeomete/limulus-evtol" target="_blank" rel="noopener">GitHub</a> ·
+  <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI 10.5281/zenodo.21934971</a> ·
+  <a href="https://cdsa.app/" target="_blank" rel="noopener">CDSA</a><br>
+  <span style="font-size:0.78rem" data-tr="Kod MIT, koşu kayıtları ve ön kayıt belgeleri CC BY 4.0" data-en="Code MIT, run records and preregistration documents CC BY 4.0">Kod MIT, koşu kayıtları ve ön kayıt belgeleri CC BY 4.0</span>
+</footer>
+
+<script src="/assets/limulus.js"></script>
+</body>
+</html>
