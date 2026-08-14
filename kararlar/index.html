@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kararlar ve Ön Kayıtlar — LIMULUS-eVTOL</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/limulus.css">
+<script>document.documentElement.classList.add("js")</script>
+
+</head>
+<body data-kok="/">
+
+<nav>
+  <a class="nav-logo" href="/"><img src="/favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
+  <ul class="nav-links">
+    <li><a href="/ikiz/" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
+    <li><a href="/kararlar/" class="on" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
+    <li><a href="/kampanyalar/" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
+    <li><a href="/arsiv/" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</nav>
+
+<header class="page-head">
+  <div class="section-label" data-tr="Karar Belgeleri" data-en="Decision Documents">Karar Belgeleri</div>
+  <h1 data-tr="Elli üç karar, altı kısım" data-en="Fifty-three decisions, six parts">Elli üç karar, altı kısım</h1>
+  <div class="badge-line">
+    <span class="precomp-badge" id="sayac"></span>
+    <span class="meta-tag" data-tr="kaynak 4-KARARLAR/00-INDEKS.md" data-en="source 4-KARARLAR/00-INDEKS.md">kaynak 4-KARARLAR/00-INDEKS.md</span>
+  </div>
+</header>
+
+<main>
+  <section style="padding-top:1rem">
+    <p class="lead"
+       data-tr="Bu belgeler tezin parçası değildir, tezin arkasındaki muhakemeyi kayıt altına alır. Başarısız denemeler ve bulunan kusurlar da burada tutulur, tam da bir sonraki denemede aynı yola girilmesin diye. Aşağıdaki her satır, ilgili belgenin sorduğu soruyu ve vardığı sonucu verir."
+       data-en="These documents are not part of the thesis, they record the reasoning behind it. Failed attempts and discovered defects are kept here too, precisely so the same road is not taken twice. Each row below gives the question a document asks and the conclusion it reaches.">
+      Bu belgeler tezin parçası değildir, tezin arkasındaki muhakemeyi kayıt altına alır. Başarısız denemeler ve bulunan kusurlar da burada tutulur, tam da bir sonraki denemede aynı yola girilmesin diye. Aşağıdaki her satır, ilgili belgenin sorduğu soruyu ve vardığı sonucu verir.
+    </p>
+
+    <div class="note-box" style="margin-bottom:2rem"
+         data-tr="Karar belgeleri <strong>Türkçedir ve öyle bırakılmıştır</strong>, çünkü projenin kendi dili budur ve bir kaydı çevirmek onu düzenlemektir. Ön kayıtların İngilizce özetleri arşivde <span class='mono'>preregistration-en/</span> altındadır, dördü de birer özettir, çeviri değildir."
+         data-en="The decision documents are <strong>in Turkish and are left that way</strong>, because that is the project's own language and translating a record is editing it. English summaries of the preregistrations are in the archive under <span class='mono'>preregistration-en/</span>, and all four are summaries rather than translations.">
+      Karar belgeleri <strong>Türkçedir ve öyle bırakılmıştır</strong>, çünkü projenin kendi dili budur ve bir kaydı çevirmek onu düzenlemektir. Ön kayıtların İngilizce özetleri arşivde <span class="mono">preregistration-en/</span> altındadır, dördü de birer özettir, çeviri değildir.
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn on" data-f="hepsi" data-tr="Hepsi" data-en="All">Hepsi</button>
+      <button class="filter-btn" data-f="arsiv" data-tr="Arşivde tam metni var" data-en="Full text in archive">Arşivde tam metni var</button>
+      <button class="filter-btn" data-f="uyari" data-tr="Uyarı taşıyan" data-en="Carries a warning">Uyarı taşıyan</button>
+      <button class="filter-btn" data-f="duzeltme" data-tr="Düzeltilmiş" data-en="Corrected">Düzeltilmiş</button>
+      <input class="search" id="ara" data-tr-ph="Ara, örneğin tilt ya da ödül" data-en-ph="Search, e.g. tilt or reward" placeholder="Ara, örneğin tilt ya da ödül">
+    </div>
+
+    <div id="liste"></div>
+  </section>
+</main>
+
+<footer>
+  <a href="/" data-tr="← Ana Sayfa" data-en="← Home">← Ana Sayfa</a> ·
+  <a href="https://github.com/Orfeomete/limulus-evtol/tree/main/4-KARARLAR" target="_blank" rel="noopener" data-tr="Arşivdeki ön kayıtlar" data-en="Preregistrations in the archive">Arşivdeki ön kayıtlar</a> ·
+  <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
+</footer>
+
+<script src="/assets/limulus.js"></script>
+<script>
+var KARARLAR = [], FILTRE = 'hepsi', ARAMA = '';
+var GH = 'https://github.com/Orfeomete/limulus-evtol/blob/main/4-KARARLAR/';
+
+function md(s) {
+  return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\$([^$]+)\$/g, '<span class="mono">$1</span>')
+          .replace(/`([^`]+)`/g, '<span class="mono">$1</span>');
+}
+
+function ciz() {
+  var q = ARAMA.toLocaleLowerCase('tr');
+  var v = KARARLAR.filter(function (k) {
+    if (FILTRE === 'arsiv' && !k.arsivde) return false;
+    if (FILTRE === 'uyari' && k.sonuc.indexOf('⚠️') < 0) return false;
+    if (FILTRE === 'duzeltme' && k.sonuc.indexOf('⛔') < 0) return false;
+    if (q && (k.soru + ' ' + k.sonuc + ' ' + k.dosya).toLocaleLowerCase('tr').indexOf(q) < 0) return false;
+    return true;
+  });
+  var en = window.LANG === 'en';
+  document.getElementById('sayac').textContent =
+    en ? (v.length + ' of ' + KARARLAR.length + ' documents shown')
+       : (KARARLAR.length + ' belgenin ' + v.length + ' tanesi gösteriliyor');
+
+  var kisim = null, h = '';
+  v.forEach(function (k) {
+    if (k.kisim_no !== kisim) {
+      kisim = k.kisim_no;
+      h += '<h2 style="margin-top:2.2rem">' + kisim + ' <span style="font-weight:400;color:var(--text-muted);font-size:0.8em">' + k.kisim + '</span></h2>';
+    }
+    var pills = '';
+    if (k.arsivde) pills += '<a class="pill arsiv" href="' + GH + k.dosya + '" target="_blank" rel="noopener">' + (en ? 'full text ↗' : 'tam metin ↗') + '</a>';
+    if (k.sonuc.indexOf('⛔') >= 0) pills += '<span class="pill duzeltme">' + (en ? 'corrected' : 'düzeltildi') + '</span>';
+    if (k.sonuc.indexOf('⚠️') >= 0) pills += '<span class="pill uyari">' + (en ? 'warning' : 'uyarı') + '</span>';
+    if (k.sonuc.indexOf('🟡') >= 0) pills += '<span class="pill kismi">' + (en ? 'exploratory' : 'keşifsel') + '</span>';
+    if (k.sonuc.indexOf('✅') >= 0) pills += '<span class="pill tamam">' + (en ? 'closed' : 'kapandı') + '</span>';
+    pills += '<span class="pill mono">' + k.dosya + '</span>';
+    h += '<div class="kar">'
+       + '<div class="kar-top"><span class="kar-no">' + String(k.no).padStart(2, '0') + '</span>'
+       + '<span class="kar-soru">' + md(k.soru) + '</span></div>'
+       + '<div class="kar-sonuc">' + md(k.sonuc) + '</div>'
+       + '<div class="kar-alt">' + pills + '</div></div>';
+  });
+  if (!v.length) h = '<div class="card" style="text-align:center;color:var(--text-muted)">' + (en ? 'No document matches.' : 'Eşleşen belge yok.') + '</div>';
+  document.getElementById('liste').innerHTML = h;
+}
+
+document.querySelectorAll('.filter-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.filter-btn').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on'); FILTRE = b.getAttribute('data-f'); ciz();
+  });
+});
+document.getElementById('ara').addEventListener('input', function (e) { ARAMA = e.target.value; ciz(); });
+document.addEventListener('langchange', function () { if (KARARLAR.length) ciz(); });
+
+veri('kararlar.json').then(function (d) { KARARLAR = d; ciz(); })
+  .catch(function (e) { document.getElementById('liste').innerHTML = '<div class="stop-box">' + e.message + '</div>'; });
+</script>
+</body>
+</html>
