@@ -1,5 +1,5 @@
 {
- "kosu": 144,
+ "kosu": 149,
  "seviye_dagilimi": {
   "0": 12,
   "1": 7,
@@ -29,5 +29,7 @@
   "fark": 54989,
   "esik": 116463,
   "hukum": "FARK YOK"
- }
+ },
+ "taban_kosu": 144,
+ "ince_kosu": 5
 }
