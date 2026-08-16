@@ -8,7 +8,7 @@ LIMULUS-eVTOL araştırma programının sayfası. Statik site, GitHub Pages üze
 |---|---|
 | `/` | Program özeti, makale portföyü ve durumları |
 | `/ikiz/` | Dijital ikiz, geometri ve başarım noktası |
-| `/kararlar/` | Elli üç karar belgesi, süzülebilir ve aranabilir |
+| `/kararlar/` | Elli dört karar belgesi, süzülebilir ve aranabilir |
 | `/kampanyalar/` | On dört koşu dizini, yüz kırk dört koşu, grafikler |
 | `/arsiv/` | Depo, DOI, yeniden üretim komutları, lisanslar |
 
@@ -19,7 +19,7 @@ LIMULUS-eVTOL araştırma programının sayfası. Statik site, GitHub Pages üze
 | Dosya | Kaynak |
 |---|---|
 | `kararlar.json` | `LIMULUS-eVTOL/4-KARARLAR/00-INDEKS.md` tablolarından ayrıştırıldı |
-| `kampanyalar.json` | Arşivdeki 144 koşu günlüğünden sayıldı |
+| `kampanyalar.json` | Arşivdeki 149 koşu günlüğünden sayıldı |
 | `egriler.json` | Aynı günlüklerden, varyant başına ortalama, 60 noktaya seyreltilmiş |
 | `ikiz.json` | `2-CIZIM-MOTORU/geometri.py` çıktısından ayrıştırıldı |
 
