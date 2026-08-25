@@ -73,10 +73,10 @@
 <text x="914.44" y="265.21" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#3A3A3A" text-anchor="start" opacity="1.0">H = 3.51 m</text>
 <line x1="303.769316712731" y1="258.6304615739904" x2="196" y2="120" stroke="#C1502E" stroke-width="0.7" stroke-opacity="0.8"/>
 <circle cx="303.769316712731" cy="258.6304615739904" r="1.8" fill="#C1502E"/>
-<text x="196.00" y="114.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#C1502E" text-anchor="middle" opacity="1.0">Ön çift — TRACTOR</text>
+<text x="196.00" y="114.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#C1502E" text-anchor="middle" opacity="1.0">Ön çift, TRACTOR</text>
 <line x1="654.769316712731" y1="258.6304615739904" x2="686" y2="112" stroke="#C1502E" stroke-width="0.7" stroke-opacity="0.8"/>
 <circle cx="654.769316712731" cy="258.6304615739904" r="1.8" fill="#C1502E"/>
-<text x="686.00" y="106.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#C1502E" text-anchor="middle" opacity="1.0">Arka çift — PUSHER</text>
+<text x="686.00" y="106.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#C1502E" text-anchor="middle" opacity="1.0">Arka çift, PUSHER</text>
 <text x="1154.00" y="90.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#C1502E" text-anchor="end" opacity="1.0">4 × RDP modülü</text>
 <text x="1154.00" y="105.00" font-family="'DejaVu Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#5A5A5A" text-anchor="end" opacity="1.0">±3,50 m lateral · bağımsız tilt</text>
 <line x1="44" y1="560" x2="152.0" y2="560" stroke="#3A3A3A" stroke-width="1.6"/>
