@@ -4,9 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dijital İkiz ve Tasarım — LIMULUS-eVTOL</title>
+<meta name="description" content="Güncel tasarım adımı V74'ün görünüşleri ve sayıları ile arşivlenen çalışmanın dört varyantlı simülatörü.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LIMULUS-eVTOL">
+<meta property="og:title" content="Dijital İkiz ve Tasarım · LIMULUS-eVTOL">
+<meta property="og:description" content="Güncel tasarım adımı V74'ün görünüşleri ve sayıları ile arşivlenen çalışmanın dört varyantlı simülatörü.">
+<meta property="og:url" content="https://limulus.cdsa.app/ikiz/">
+<meta property="og:image" content="https://limulus.cdsa.app/assets/v74_uc_gorunus.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1250">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/limulus.css?v=20260814g">
+<link rel="stylesheet" href="../assets/limulus.css?v=20261014a">
 <script>document.documentElement.classList.add("js")</script>
 
 </head>
@@ -27,12 +37,12 @@
   <div class="section-label" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</div>
   <h1 data-tr="Bir simülatör, dört varyant" data-en="One simulator, four variants">Bir simülatör, dört varyant</h1>
   <div class="badge-line">
-    <span class="precomp-badge" data-tr="Bütün sayılar 2-CIZIM-MOTORU/geometri.py çıktısından" data-en="All numbers from the output of 2-CIZIM-MOTORU/geometri.py">Bütün sayılar 2-CIZIM-MOTORU/geometri.py çıktısından</span>
-    <span class="meta-tag">Rev. 2026-08</span>
+    <span class="precomp-badge" data-tr="V74 sayıları tez v62'den, arşivlenen tasarımın sayıları geometri.py çıktısından" data-en="V74 numbers from thesis v62, numbers of the archived design from the output of geometri.py">V74 sayıları tez v62'den, arşivlenen tasarımın sayıları geometri.py çıktısından</span>
+    <span class="meta-tag" data-tr="Arşivlenen tasarım Rev. 2026-08" data-en="Archived design Rev. 2026-08">Arşivlenen tasarım Rev. 2026-08</span>
   </div>
   <div class="badge-line" style="margin-top:1rem">
-    <a class="sayfa-ic" href="#gorunusler" data-tr="Görünüşler" data-en="Views">Görünüşler</a>
-    <a class="sayfa-ic vurgu" href="#modulerlik" data-tr="Modülerlik kanıtı · Platform B" data-en="Modularity · Platform B">Modülerlik kanıtı · Platform B</a>
+    <a class="sayfa-ic vurgu" href="#v74" data-tr="Güncel tasarım adımı V74" data-en="Current design step V74">Güncel tasarım adımı V74</a>
+    <a class="sayfa-ic" href="#modulerlik" data-tr="Modülerlik kanıtı · Platform B" data-en="Modularity · Platform B">Modülerlik kanıtı · Platform B</a>
     <a class="sayfa-ic" href="#tasarim" data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</a>
     <a class="sayfa-ic" href="#geometri" data-tr="Geometri" data-en="Geometry">Geometri</a>
     <a class="sayfa-ic" href="#basarim" data-tr="Başarım" data-en="Performance">Başarım</a>
@@ -41,69 +51,88 @@
 </header>
 
 <main>
-  <section style="padding-top:1rem">
+  <section id="v74" style="padding-top:1rem">
+    <h2 data-tr="Güncel tasarım adımı, V74" data-en="Current design step, V74">Güncel tasarım adımı, V74</h2>
+    <p class="lead" style="margin-bottom:1.5rem"
+       data-tr="Mimarinin son tasarım adımı V74'tür. Dört kanallı modülün her birinde iki eş eksenli rotor bulunur ve bu düzen projenin vazgeçilmeyecek tasarım kriteridir. Tezin güncel araştırması, merkezi ve federe pekiştirmeli öğrenmeyi dört V74 ve altı heliporttan oluşan bir şehir görevinde karşılaştırmaktadır."
+       data-en="V74 is the last design step of the architecture. Each of its four ducted modules carries two coaxial rotors, and this arrangement is a design criterion of the project that will not be given up. The current research of the thesis compares centralised and federated reinforcement learning in a city mission with four V74 aircraft and six heliports.">
+      Mimarinin son tasarım adımı V74'tür. Dört kanallı modülün her birinde iki eş eksenli rotor bulunur ve bu düzen projenin vazgeçilmeyecek tasarım kriteridir. Tezin güncel araştırması, merkezi ve federe pekiştirmeli öğrenmeyi dört V74 ve altı heliporttan oluşan bir şehir görevinde karşılaştırmaktadır.
+    </p>
+
+    <figure class="cizim" id="gorunusler">
+      <img src="../assets/v74_uc_gorunus.jpg" alt="V74 önden, yandan ve üstten görünüş, Unreal Engine sunum görüntüsü" width="2000" height="1250" loading="lazy">
+      <figcaption>
+        <span data-tr="V74'ün aynı kayıtlı uçuş pozunda önden, yandan ve üstten görünüşü. Unreal Engine yüzeyleriyle kinematik sunumdur, uçuş testi kanıtı değildir. Görüntüdeki etiketler sunum çıktısında olduğu gibi Türkçe bırakılmıştır."
+              data-en="V74 from the front, side and top in the same recorded flight pose. A kinematic presentation with Unreal Engine surfaces, not evidence of a flight test. The labels in the image are left in Turkish as the presentation output produced them.">V74'ün aynı kayıtlı uçuş pozunda önden, yandan ve üstten görünüşü. Unreal Engine yüzeyleriyle kinematik sunumdur, uçuş testi kanıtı değildir. Görüntüdeki etiketler sunum çıktısında olduğu gibi Türkçe bırakılmıştır.</span>
+        <a class="bak" href="../assets/v74_uc_gorunus.jpg" target="_blank" rel="noopener" data-tr="tam boyut ↗" data-en="full size ↗">tam boyut ↗</a>
+      </figcaption>
+    </figure>
+
+    <div class="card" style="overflow-x:auto;margin-top:1.5rem">
+      <table class="cfg">
+        <thead><tr><th data-tr="Büyüklük" data-en="Quantity">Büyüklük</th><th data-tr="V74 değeri" data-en="V74 value">V74 değeri</th></tr></thead>
+        <tbody>
+          <tr><td data-tr="Kabin" data-en="Cabin">Kabin</td><td data-tr="tek koltuk, modelde 90 kg pilot" data-en="single seat, 90 kg pilot in the model">tek koltuk, modelde 90 kg pilot</td></tr>
+          <tr><td data-tr="Rotor düzeni" data-en="Rotor arrangement">Rotor düzeni</td><td data-tr="dört kanallı modül, modül başına iki eş eksenli rotor düzlemi, toplam sekiz düzlem, düzlem başına 5 pal" data-en="four ducted modules, two coaxial rotor planes per module, eight planes in total, 5 blades per plane">dört kanallı modül, modül başına iki eş eksenli rotor düzlemi, toplam sekiz düzlem, düzlem başına 5 pal</td></tr>
+          <tr><td data-tr="Rotor çapı, ön ve arka" data-en="Rotor diameter, front and rear">Rotor çapı, ön ve arka</td><td data-tr="2,45 m ve 1,97 m" data-en="2.45 m and 1.97 m">2,45 m ve 1,97 m</td></tr>
+          <tr><td data-tr="Toplam disk alanı, disk yükü" data-en="Total disc area, disc loading">Toplam disk alanı, disk yükü</td><td data-tr="15,52 m², 2512 N/m²" data-en="15.52 m², 2512 N/m²">15,52 m², 2512 N/m²</td></tr>
+          <tr><td data-tr="Gövde boyu, en büyük genişlik, yükseklik" data-en="Fuselage length, maximum width, height">Gövde boyu, en büyük genişlik, yükseklik</td><td data-tr="9,8 m, 1,28 m, 2,77 m" data-en="9.8 m, 1.28 m, 2.77 m">9,8 m, 1,28 m, 2,77 m</td></tr>
+          <tr><td data-tr="Kanat açıklığı, alanı, en-boy oranı" data-en="Wing span, area, aspect ratio">Kanat açıklığı, alanı, en-boy oranı</td><td data-tr="7,36 m, 11,11 m², 4,87" data-en="7.36 m, 11.11 m², 4.87">7,36 m, 11,11 m², 4,87</td></tr>
+          <tr><td data-tr="Kuyruk ve kontrol yüzeyleri" data-en="Tail and control surfaces">Kuyruk ve kontrol yüzeyleri</td><td data-tr="50° V kuyruk, iki ruddervator, dört flaperon paneli" data-en="50° V-tail, two ruddervators, four flaperon panels">50° V kuyruk, iki ruddervator, dört flaperon paneli</td></tr>
+          <tr><td data-tr="İniş takımı" data-en="Landing gear">İniş takımı</td><td data-tr="dört tekerlek, gövde içine katlanır" data-en="four wheels, retracting into the fuselage">dört tekerlek, gövde içine katlanır</td></tr>
+          <tr><td data-tr="Araç kütlesi" data-en="Vehicle mass">Araç kütlesi</td><td data-tr="3976,04 kg, 1105 parçalı listenin toplamı, hedef değer değildir" data-en="3976.04 kg, the sum of a 1105-part list, not a target value">3976,04 kg, 1105 parçalı listenin toplamı, hedef değer değildir</td></tr>
+          <tr><td data-tr="Batarya" data-en="Battery">Batarya</td><td data-tr="SA88 hücresi, 196S52P, 1484,88 kg" data-en="SA88 cell, 196S52P, 1484.88 kg">SA88 hücresi, 196S52P, 1484,88 kg</td></tr>
+          <tr><td data-tr="Hover gücü, mil ve bara" data-en="Hover power, shaft and bus">Hover gücü, mil ve bara</td><td data-tr="1884,2 kW ve 2035,8 kW" data-en="1884.2 kW and 2035.8 kW">1884,2 kW ve 2035,8 kW</td></tr>
+          <tr><td data-tr="Referans görev" data-en="Reference mission">Referans görev</td><td data-tr="sabit ve rüzgârsız platform çevresinde 1267,6 m kapalı tur, 6 m irtifa, 30 s hover rezervi, 187,88 s" data-en="a 1267.6 m closed circuit around a fixed, windless platform, 6 m altitude, 30 s hover reserve, 187.88 s">sabit ve rüzgârsız platform çevresinde 1267,6 m kapalı tur, 6 m irtifa, 30 s hover rezervi, 187,88 s</td></tr>
+          <tr><td data-tr="Nominal görev sonunda batarya" data-en="Battery at the end of the nominal mission">Nominal görev sonunda batarya</td><td data-tr="SoC 0,68, hücre ısınması 24,91 K, 101,16 kWh" data-en="SoC 0.68, cell temperature rise 24.91 K, 101.16 kWh">SoC 0,68, hücre ısınması 24,91 K, 101,16 kWh</td></tr>
+          <tr><td data-tr="Kanıt düzeyi" data-en="Evidence level">Kanıt düzeyi</td><td data-tr="benzetim ortamında ölçülmüş, donanım ve uçuş kanıtı yok" data-en="measured in simulation, no hardware or flight evidence">benzetim ortamında ölçülmüş, donanım ve uçuş kanıtı yok</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box"
+         data-tr="<strong>V74 tezin güncel referans aracıdır.</strong> Değerler tez v62'deki V74 tablolarından alınmıştır ve benzetim ortamında ölçülmüştür. Özgün görev hedefi olan dört kişi ve 120 km V74 ile karşılanmamıştır. Bu sayfanın geri kalanı ve arşivdeki 149 koşu V74'ten önceki tasarım adımına aittir, hiçbiri V74 üzerinde koşulmamıştır."
+         data-en="<strong>V74 is the current reference aircraft of the thesis.</strong> The values are taken from the V74 tables of thesis v62 and were measured in simulation. The original mission target of four people and 120 km is not met by V74. The rest of this page and the 149 archived runs belong to the design step before V74, and none of them was run on V74.">
+      <strong>V74 tezin güncel referans aracıdır.</strong> Değerler tez v62'deki V74 tablolarından alınmıştır ve benzetim ortamında ölçülmüştür. Özgün görev hedefi olan dört kişi ve 120 km V74 ile karşılanmamıştır. Bu sayfanın geri kalanı ve arşivdeki 149 koşu V74'ten önceki tasarım adımına aittir, hiçbiri V74 üzerinde koşulmamıştır.
+    </div>
+  </section>
+
+  <section>
+    <h2 data-tr="Arşivlenen çalışma, bir simülatör ve dört varyant" data-en="The archived study, one simulator and four variants">Arşivlenen çalışma, bir simülatör ve dört varyant</h2>
     <p class="lead"
        data-tr="Senkron eğim, ikili eğim ve lift-cruise ayrı simülatörler değildir. Aynı altı serbestlik dereceli modelin, eylem uzayına kısıt konarak elde edilen hâlleridir. Bu, karşılaştırmayı bir yarışma olmaktan çıkarıp bir sınamaya çevirir, çünkü kısıtlının olurlu kümesi kısıtsızın içindedir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bunun bir çözücü kusuru olduğu gösterilebilir."
        data-en="Synchronous tilt, paired tilt and lift-cruise are not separate simulators. They are instances of the same six-degree-of-freedom model obtained by placing constraints on the action space. This turns the comparison from a contest into a test, because the constrained feasible set lies inside the unconstrained one, and when a constrained variant outperforms the unconstrained one that can be shown to be a solver defect.">
       Senkron eğim, ikili eğim ve lift-cruise ayrı simülatörler değildir. Aynı altı serbestlik dereceli modelin, eylem uzayına kısıt konarak elde edilen hâlleridir. Bu, karşılaştırmayı bir yarışma olmaktan çıkarıp bir sınamaya çevirir, çünkü kısıtlının olurlu kümesi kısıtsızın içindedir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bunun bir çözücü kusuru olduğu gösterilebilir.
     </p>
 
-    <div class="sections-grid" style="margin-top:2.5rem">
-      <div class="section-card"><div class="section-num">4</div>
+    <div class="sections-grid varyant-grid" style="margin-top:2.5rem">
+      <div class="section-card"><div class="section-num">4</div><div class="eksen-etiket" data-tr="bağımsız eğim ekseni" data-en="independent tilt axes">bağımsız eğim ekseni</div>
         <h3>LIMULUS</h3>
         <p data-tr="Dört bağımsız eğim ekseni. Kısıtsız hâl, diğer üçünü kapsar." data-en="Four independent tilt axes. The unconstrained instance, it contains the other three.">Dört bağımsız eğim ekseni. Kısıtsız hâl, diğer üçünü kapsar.</p></div>
-      <div class="section-card"><div class="section-num">1</div>
+      <div class="section-card"><div class="section-num">1</div><div class="eksen-etiket" data-tr="bağımsız eğim ekseni" data-en="independent tilt axis">bağımsız eğim ekseni</div>
         <h3 data-tr="Senkron" data-en="Synchronous">Senkron</h3>
         <p data-tr="Dört modül eğimlenir fakat tek kanaldan, hepsi aynı açıda." data-en="Four modules tilt, but through one channel, all at the same angle.">Dört modül eğimlenir fakat tek kanaldan, hepsi aynı açıda.</p></div>
-      <div class="section-card"><div class="section-num">2</div>
+      <div class="section-card"><div class="section-num">2</div><div class="eksen-etiket" data-tr="bağımsız eğim ekseni" data-en="independent tilt axes">bağımsız eğim ekseni</div>
         <h3 data-tr="İkili" data-en="Paired">İkili</h3>
         <p data-tr="Ön çift ve arka çift ayrı eğimlenir. Yanal simetrik kalır." data-en="Front pair and rear pair tilt separately. It stays laterally symmetric.">Ön çift ve arka çift ayrı eğimlenir. Yanal simetrik kalır.</p></div>
-      <div class="section-card"><div class="section-num">0</div>
+      <div class="section-card"><div class="section-num">0</div><div class="eksen-etiket" data-tr="bağımsız eğim ekseni" data-en="independent tilt axes">bağımsız eğim ekseni</div>
         <h3>Lift-cruise</h3>
         <p data-tr="Eğim yok. Ayrı bir cruise itki birimi taşır, bayrak arkasında." data-en="No tilt. It carries a separate cruise propulsion unit, behind a flag.">Eğim yok. Ayrı bir cruise itki birimi taşır, bayrak arkasında.</p></div>
     </div>
   </section>
 
   <section>
-    <h2 id="gorunusler" data-tr="Görünüşler" data-en="Views">Görünüşler</h2>
-    <p class="lead" style="margin-bottom:1.5rem"
-       data-tr="Ölçülendirilmiş teknik çizim ve mühendislik görünüşleri <span class='mono'>2-CIZIM-MOTORU</span> tarafından <span class='mono'>geometri.py</span>'deki tek sözlükten üretilir. Bir boyut değişirse yalnız orası düzenlenir ve çizimler yeniden koşturulunca hepsi birden güncellenir, yani çizimde okuduğun sayı ile aşağıdaki tabloda okuduğun sayı ayrışamaz."
-       data-en="The dimensioned technical drawing and the engineering views are produced by <span class='mono'>2-CIZIM-MOTORU</span> from the single dictionary in <span class='mono'>geometri.py</span>. If a dimension changes only that file is edited, and rerunning the drawings updates all of them at once, so a number read off a drawing cannot drift from the number in the table below.">
-      Ölçülendirilmiş teknik çizim ve mühendislik görünüşleri <span class="mono">2-CIZIM-MOTORU</span> tarafından <span class="mono">geometri.py</span>'deki tek sözlükten üretilir. Bir boyut değişirse yalnız orası düzenlenir ve çizimler yeniden koşturulunca hepsi birden güncellenir, yani çizimde okuduğun sayı ile aşağıdaki tabloda okuduğun sayı ayrışamaz.
-    </p>
-
-    <figure class="cizim" style="margin-top:1.5rem">
-      <img src="../gorseller/limulus_donmus_v67_karsilastirma.png" alt="Dondurulmuş geometri ile v67 renderının karşılaştırma levhası">
-      <figcaption>
-        <span data-tr="Karşılaştırma levhası, 25.08.2026 denetimi. Aynı üç görünüşün yanında dondurulmuş geometri ile v67 fotogerçekçi renderının ölçülen farkları ve açık bulgular. Tarihli bir denetim kaydıdır, çizim motoru güncellense de bu levha o günü gösterir."
-              data-en="Comparison plate, audit of 25.08.2026. The same three views together with the measured differences between the frozen geometry and the v67 photorealistic render, and the open findings. A dated audit record; it shows that day even as the drawing engine moves on.">Karşılaştırma levhası, 25.08.2026 denetimi. Aynı üç görünüşün yanında dondurulmuş geometri ile v67 fotogerçekçi renderının ölçülen farkları ve açık bulgular. Tarihli bir denetim kaydıdır, çizim motoru güncellense de bu levha o günü gösterir.</span>
-        <a class="bak" href="../gorseller/limulus_donmus_v67_karsilastirma.png" target="_blank" rel="noopener" data-tr="tam boyut ↗" data-en="full size ↗">tam boyut ↗</a>
-      </figcaption>
-    </figure>
-
-
-    
-
-    
-    <div class="note-box"
-         data-tr="Çizimlerin üzerindeki başlıklar ve etiketler <strong>Türkçedir ve öyle bırakılmıştır</strong>, çünkü çizimler projenin kendi motorundan çıktığı gibi duruyor. Bir çizimi yeniden etiketlemek, onu üreten koddan koparmak olurdu."
-         data-en="The titles and labels on the drawings are <strong>in Turkish and are left that way</strong>, because the drawings stand exactly as the project's own engine produced them. Relabelling a drawing would cut it loose from the code that generates it.">
-      Çizimlerin üzerindeki başlıklar ve etiketler <strong>Türkçedir ve öyle bırakılmıştır</strong>, çünkü çizimler projenin kendi motorundan çıktığı gibi duruyor. Bir çizimi yeniden etiketlemek, onu üreten koddan koparmak olurdu.
-    </div>
-  </section>
-
-  <section>
     <h2 id="modulerlik" data-tr="Modülerlik kanıtı, Platform B" data-en="Modularity demonstration, Platform B">Modülerlik kanıtı, Platform B</h2>
     <p class="lead" style="margin-bottom:1.5rem"
-       data-tr="Rotor tahrik modülünün bir platforma değil, bir arayüze bağlı olduğu iddiası ancak ikinci bir platform gösterilerek sınanabilir. Aşağıdaki yüksek hızlı zeplin bu iş için çizildi. Taşıdığı dört modül LIMULUS'unkiyle <strong>özdeştir</strong>, ø2,80 m, 148 kg, modül başına 2 × 134 kW, ve platforma özgü olan tek parça arayüz bracket'idir."
-       data-en="The claim that the rotor drive module belongs to an interface rather than to a platform can only be tested by showing a second platform. The high-speed airship below was drawn for that purpose. The four modules it carries are <strong>identical</strong> to those of LIMULUS, ø2.80 m, 148 kg, 2 × 134 kW per module, and the only platform-specific part is the interface bracket.">
-      Rotor tahrik modülünün bir platforma değil, bir arayüze bağlı olduğu iddiası ancak ikinci bir platform gösterilerek sınanabilir. Aşağıdaki yüksek hızlı zeplin bu iş için çizildi. Taşıdığı dört modül LIMULUS'unkiyle <strong>özdeştir</strong>, ø2,80 m, 148 kg, modül başına 2 × 134 kW, ve platforma özgü olan tek parça arayüz bracket'idir.
+       data-tr="Rotor tahrik modülünün bir platforma değil, bir arayüze bağlı olduğu iddiası ancak ikinci bir platform gösterilerek sınanabilir. Aşağıdaki yüksek hızlı zeplin bu iş için çizildi. Taşıdığı dört modül arşivlenen tasarım adımındaki LIMULUS modülüyle <strong>özdeştir</strong>, ø2,80 m, 148 kg, modül başına 2 × 134 kW ve platforma özgü olan tek parça arayüz bracket'idir. V74'ün kanallı ve eş eksenli modülü bu gösterimde kullanılmamıştır."
+       data-en="The claim that the rotor drive module belongs to an interface rather than to a platform can only be tested by showing a second platform. The high-speed airship below was drawn for that purpose. The four modules it carries are <strong>identical</strong> to the LIMULUS module of the archived design step, ø2.80 m, 148 kg, 2 × 134 kW per module, and the only platform-specific part is the interface bracket. The ducted coaxial module of V74 is not used in this demonstration.">
+      Rotor tahrik modülünün bir platforma değil, bir arayüze bağlı olduğu iddiası ancak ikinci bir platform gösterilerek sınanabilir. Aşağıdaki yüksek hızlı zeplin bu iş için çizildi. Taşıdığı dört modül arşivlenen tasarım adımındaki LIMULUS modülüyle <strong>özdeştir</strong>, ø2,80 m, 148 kg, modül başına 2 × 134 kW ve platforma özgü olan tek parça arayüz bracket'idir. V74'ün kanallı ve eş eksenli modülü bu gösterimde kullanılmamıştır.
     </p>
 
     <div class="stop-box" style="margin-top:0;margin-bottom:1.5rem"
-         data-tr="⚠️ <strong>Bu bir tasarım gösterimidir, analiz edilmiş bir araç değildir.</strong> Zeplinin dinamik modeli yoktur, bu sitedeki yüz kırk dokuz koşunun hiçbiri ona ait değildir ve hakkında ölçülmüş tek bir başarım sayısı yoktur. Tezde de <strong>dördüncül katkı</strong> olarak, yani en alt sırada listelenir. Buradaki tek iddia şudur, aynı modül farklı bir gövdeye takılabiliyor."
-         data-en="⚠️ <strong>This is a design demonstration, not an analysed vehicle.</strong> The airship has no dynamic model, none of the one hundred and forty-nine runs on this site belong to it, and there is not a single measured performance number for it. The thesis lists it as a <strong>fourth-order contribution</strong>, that is, last. The only claim made here is that the same module mounts on a different body.">
-      ⚠️ <strong>Bu bir tasarım gösterimidir, analiz edilmiş bir araç değildir.</strong> Zeplinin dinamik modeli yoktur, bu sitedeki yüz kırk dokuz koşunun hiçbiri ona ait değildir ve hakkında ölçülmüş tek bir başarım sayısı yoktur. Tezde de <strong>dördüncül katkı</strong> olarak, yani en alt sırada listelenir. Buradaki tek iddia şudur, aynı modül farklı bir gövdeye takılabiliyor.
+         data-tr="⚠️ <strong>Bu bir tasarım gösterimidir, analiz edilmiş bir araç değildir.</strong> Zeplinin dinamik modeli yoktur, bu sitedeki yüz kırk dokuz koşunun hiçbiri ona ait değildir ve hakkında ölçülmüş tek bir başarım sayısı yoktur. Tezin güncel katkıları arasında yer almaz, <strong>tarihsel tasarım altyapısının</strong> bir gösterimidir. Buradaki tek iddia şudur, aynı modül farklı bir gövdeye takılabiliyor."
+         data-en="⚠️ <strong>This is a design demonstration, not an analysed vehicle.</strong> The airship has no dynamic model, none of the one hundred and forty-nine runs on this site belong to it, and there is not a single measured performance number for it. It is not among the current contributions of the thesis, it is a demonstration of the <strong>historical design infrastructure</strong>. The only claim made here is that the same module mounts on a different body.">
+      ⚠️ <strong>Bu bir tasarım gösterimidir, analiz edilmiş bir araç değildir.</strong> Zeplinin dinamik modeli yoktur, bu sitedeki yüz kırk dokuz koşunun hiçbiri ona ait değildir ve hakkında ölçülmüş tek bir başarım sayısı yoktur. Tezin güncel katkıları arasında yer almaz, <strong>tarihsel tasarım altyapısının</strong> bir gösterimidir. Buradaki tek iddia şudur, aynı modül farklı bir gövdeye takılabiliyor.
     </div>
 
     <figure class="cizim">
@@ -124,7 +153,12 @@
   </section>
 
   <section>
-    <h2 id="tasarim" data-tr="Tasarım noktası" data-en="Design point">Tasarım noktası</h2>
+    <h2 id="tasarim" data-tr="Arşivlenen tasarımın tasarım noktası" data-en="Design point of the archived design">Arşivlenen tasarımın tasarım noktası</h2>
+    <p class="lead" style="margin-bottom:1.5rem"
+       data-tr="Bu bölümden sonraki tasarım noktası, geometri ve başarım değerleri arşivlenen çalışmanın tasarım adımına aittir, Rev. 2026-08. V74'ün değerleri sayfanın başındaki tablodadır."
+       data-en="The design point, geometry and performance values from here on belong to the design step of the archived study, Rev. 2026-08. The values of V74 are in the table at the top of the page.">
+      Bu bölümden sonraki tasarım noktası, geometri ve başarım değerleri arşivlenen çalışmanın tasarım adımına aittir, Rev. 2026-08. V74'ün değerleri sayfanın başındaki tablodadır.
+    </p>
     <div class="chips" id="chips"></div>
   </section>
 
@@ -167,10 +201,10 @@
 <footer>
   <a href="../" data-tr="← Ana Sayfa" data-en="← Home">← Ana Sayfa</a> ·
   <a href="https://github.com/Orfeomete/limulus-evtol/tree/main/9-DIJITAL-IKIZ/dinamik" target="_blank" rel="noopener" data-tr="Dinamik model" data-en="Dynamic model">Dinamik model</a> ·
-  <a href="https://doi.org/10.5281/zenodo.21934971" target="_blank" rel="noopener">DOI</a>
+  <a href="https://doi.org/10.5281/zenodo.21934970" target="_blank" rel="noopener">DOI</a>
 </footer>
 
-<script src="../assets/limulus.js?v=20260814g"></script>
+<script src="../assets/limulus.js?v=20261014a"></script>
 <script>
 var IKIZ = {};
 function T(tr, en) { return window.LANG === 'en' ? en : tr; }
