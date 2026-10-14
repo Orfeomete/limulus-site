@@ -63,4 +63,25 @@ async function veri(ad) {
   return r.json();
 }
 
-document.addEventListener('DOMContentLoaded', function () { initLang(); fadeIn(); });
+/* Dar ekranda menu dugmesi. Baglantilar 900 px altinda gizlenir, dugme onlari acar ve kapatir. */
+function menuDugmesi() {
+  var nav = document.querySelector('nav');
+  var ul = nav && nav.querySelector('.nav-links');
+  if (!ul || nav.querySelector('.nav-toggle')) return;
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'nav-toggle';
+  b.setAttribute('aria-label', 'Menü');
+  b.setAttribute('aria-expanded', 'false');
+  b.textContent = '☰';
+  b.addEventListener('click', function () {
+    var acik = ul.classList.toggle('acik');
+    b.setAttribute('aria-expanded', acik ? 'true' : 'false');
+  });
+  ul.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { ul.classList.remove('acik'); b.setAttribute('aria-expanded', 'false'); }
+  });
+  nav.insertBefore(b, nav.querySelector('.lang-btn'));
+}
+
+document.addEventListener('DOMContentLoaded', function () { menuDugmesi(); initLang(); fadeIn(); });
