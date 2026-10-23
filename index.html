@@ -22,7 +22,10 @@
 <link rel="stylesheet" href="assets/home.css?v=20261023pastel1">
 <script src="assets/limulus.js?v=20261023r1" defer>
 </script>
-<script src="assets/home.js?v=20261023r1" defer>
+<link rel="stylesheet" href="assets/mission.css?v=20261024demo1">
+<script src="assets/mission-engine.js?v=20261024demo1" defer></script>
+<script src="assets/mission-ui.js?v=20261024demo1" defer></script>
+<script src="assets/home.js?v=20261024demo1" defer>
 </script>
 </head>
 <body class="home" data-kok="">
@@ -141,23 +144,27 @@
 </div>
 </section>
 <section id="senaryo" class="mission-section">
-<div class="section-heading">
-<div>
-<p class="eyebrow" data-tr="02 / GÖREV BAĞLAMI" data-en="02 / MISSION CONTEXT" >02 / GÖREV BAĞLAMI</p>
-<h2 class="" data-tr="Bir hava sahası, dört karar verici." data-en="One airspace, four decision makers." >Bir hava sahası, dört karar verici.</h2>
+<div class="section-heading"><div>
+<p class="eyebrow" data-tr="02 / GÖREV SANDBOX’I" data-en="02 / MISSION SANDBOX">02 / GÖREV SANDBOX’I</p>
+<h2 data-tr="Aynı hava sahası.&lt;br&gt;Karar şimdi sende." data-en="One airspace.&lt;br&gt;Your next decision.">Aynı hava sahası.<br>Karar şimdi sende.</h2>
+</div><p class="lead" data-tr="Dört aracı izleyin, hedeflerini değiştirin, bir iniş alanını kapatın. Bir kararın ortak görev akışını nasıl değiştirdiğini deneyin." data-en="Follow four aircraft, change their targets and close a landing site. Explore how one decision changes the shared mission flow.">Dört aracı izleyin, hedeflerini değiştirin, bir iniş alanını kapatın. Bir kararın ortak görev akışını nasıl değiştirdiğini deneyin.</p></div>
+<div class="mission-console" id="mission-demo">
+<div class="console-head"><span>LIMULUS / MISSION SANDBOX</span><span class="console-tag" data-tr="KURAL TABANLI · TEMSİLİ DEMO" data-en="RULE-BASED · ILLUSTRATIVE DEMO">KURAL TABANLI · TEMSİLİ DEMO</span></div>
+<div class="demo-presets" role="group" aria-label="Senaryo / Scenario">
+<button type="button" data-preset="normal" aria-pressed="true"><span>01</span><b data-tr="Ayrı hedefler" data-en="Separate targets">Ayrı hedefler</b></button>
+<button type="button" data-preset="shared" aria-pressed="false"><span>02</span><b data-tr="Ortak hedef" data-en="Shared target">Ortak hedef</b></button>
+<button type="button" data-preset="closed" aria-pressed="false"><span>03</span><b data-tr="Kapalı alan" data-en="Closed site">Kapalı alan</b></button>
 </div>
-<p class="lead" data-tr="Bir aracı seçerek karar bağlamını inceleyin. Bu şema araştırma düzenini anlatır; uçuş verisi veya çalışan bir PPO politikası değildir." data-en="Select an aircraft to inspect its decision context. This schematic explains the research setup; it is neither a flight record nor a running PPO policy." >Bir aracı seçerek karar bağlamını inceleyin. Bu şema araştırma düzenini anlatır; uçuş verisi veya çalışan bir PPO politikası değildir.</p>
+<div class="demo-toolbar">
+<div class="demo-transport"><button type="button" id="demo-play" aria-pressed="false">▶ Başlat</button><button type="button" id="demo-step" data-tr="+10 sn" data-en="+10 s">+10 sn</button><button type="button" id="demo-reset" data-tr="↺ Sıfırla" data-en="↺ Reset">↺ Sıfırla</button></div>
+<div class="demo-speed" role="group" aria-label="Hız / Speed"><button type="button" data-speed="1" aria-pressed="true">1×</button><button type="button" data-speed="4" aria-pressed="false">4×</button><button type="button" data-speed="16" aria-pressed="false">16×</button></div>
+<div class="demo-time"><span id="demo-run-state"></span><b id="demo-clock">00:00</b></div>
 </div>
-<div class="mission-console">
-<div class="console-head">
-<span>LIMULUS / MISSION BRIEF</span>
-<span class="console-tag" data-tr="ŞEMATİK · TELEMETRİ DEĞİL" data-en="SCHEMATIC · NOT TELEMETRY" >ŞEMATİK · TELEMETRİ DEĞİL</span>
-</div>
-<div class="mission-layout">
-<div class="airspace">
+<p id="demo-scenario-copy" class="demo-scenario-copy"></p>
+<div class="mission-layout"><div class="demo-map-column"><div class="airspace">
 <svg viewBox="0 0 800 500" role="img" aria-labelledby="airspace-title airspace-desc">
 <title id="airspace-title">Dört araç ve altı heliport</title>
-<desc id="airspace-desc">Ölçeksiz ve temsili görev şeması. Gerçek rota, konum, ayırma veya uçuş kaydı içermez.</desc>
+<desc id="airspace-desc">Tarayıcıda çalışan temsili 2B görev gösterimi. Gerçek uçuş, fizik veya PPO verisi içermez.</desc>
 <defs>
 <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
 <path d="M40 0H0V40" fill="none" stroke="#203247" stroke-width=".7"/>
@@ -182,121 +189,23 @@
 <circle cx="400" cy="250" r="190" stroke-dasharray="4 7"/>
 <circle cx="400" cy="250" r="115" stroke-dasharray="3 8"/>
 </g>
-<g class="concept-route" data-route="V1" stroke="#edece6">
-<path d="M190 200Q130 170 140 110"/>
-<path d="M190 200Q260 80 430 100"/>
-</g>
-<g class="concept-route" data-route="V2" stroke="#efb088" hidden>
-<path d="M530 300Q650 320 670 200"/>
-<path d="M530 300Q480 400 550 420"/>
-</g>
-<g class="concept-route" data-route="V3" stroke="#a4b6a2" hidden>
-<path d="M345 370Q260 370 220 420"/>
-<path d="M345 370Q330 230 430 100"/>
-</g>
-<g class="concept-route" data-route="V4" stroke="#efa89b" hidden>
-<path d="M610 155Q660 100 690 75"/>
-<path d="M610 155Q640 180 670 200"/>
-</g>
-<g class="heliport" transform="translate(140 110)">
-<rect x="-16" y="-16" width="32" height="32" rx="8"/>
-<path d="M-6-7V7M6-7V7M-6 0H6"/>
-<text x="23" y="5">A</text>
-</g>
-<g class="heliport" transform="translate(430 100)">
-<rect x="-16" y="-16" width="32" height="32" rx="8"/>
-<path d="M-6-7V7M6-7V7M-6 0H6"/>
-<text x="23" y="5">B</text>
-</g>
-<g class="heliport" transform="translate(670 200)">
-<rect x="-16" y="-16" width="32" height="32" rx="8"/>
-<path d="M-6-7V7M6-7V7M-6 0H6"/>
-<text x="23" y="5">C</text>
-</g>
-<g class="heliport" transform="translate(550 420)">
-<rect x="-16" y="-16" width="32" height="32" rx="8"/>
-<path d="M-6-7V7M6-7V7M-6 0H6"/>
-<text x="23" y="5">D</text>
-</g>
-<g class="heliport" transform="translate(220 420)">
-<rect x="-16" y="-16" width="32" height="32" rx="8"/>
-<path d="M-6-7V7M6-7V7M-6 0H6"/>
-<text x="23" y="5">E</text>
-</g>
-<g class="heliport" transform="translate(690 75)">
-<rect x="-16" y="-16" width="32" height="32" rx="8"/>
-<path d="M-6-7V7M6-7V7M-6 0H6"/>
-<text x="23" y="5">F</text>
-</g>
-<g class="map-aircraft" data-aircraft="V1" style="color:#edece6" transform="translate(190 200)">
-<circle class="selection-ring" r="34"/>
-<g transform="rotate(-25)">
-<use href="#v74-symbol"/>
-</g>
-<text x="27" y="-18">V1</text>
-</g>
-<g class="map-aircraft" data-aircraft="V2" style="color:#efb088" transform="translate(530 300)">
-<circle class="selection-ring" r="34"/>
-<g transform="rotate(35)">
-<use href="#v74-symbol"/>
-</g>
-<text x="27" y="-18">V2</text>
-</g>
-<g class="map-aircraft" data-aircraft="V3" style="color:#a4b6a2" transform="translate(345 370)">
-<circle class="selection-ring" r="34"/>
-<g transform="rotate(-40)">
-<use href="#v74-symbol"/>
-</g>
-<text x="27" y="-18">V3</text>
-</g>
-<g class="map-aircraft" data-aircraft="V4" style="color:#efa89b" transform="translate(610 155)">
-<circle class="selection-ring" r="34"/>
-<g transform="rotate(30)">
-<use href="#v74-symbol"/>
-</g>
-<text x="27" y="-18">V4</text>
-</g>
-<g class="map-compass">
-<path d="M40 83V45L34 57M40 45L46 57"/>
-<text x="35" y="33">N</text>
-</g>
-</svg>
-<div class="map-caption">
-<span class="" data-tr="6 HELİPORT · 2 YEDEK ALAN" data-en="6 HELIPORTS · 2 ALTERNATES" >6 HELİPORT · 2 YEDEK ALAN</span>
-<span class="" data-tr="Ölçek ve rotalar temsilidir." data-en="Scale and routes are illustrative." >Ölçek ve rotalar temsilidir.</span>
-</div>
-</div>
+<g id="demo-trails"></g><g id="demo-routes"></g><g class="heliport" data-map-pad="A" transform="translate(140 110)"><rect x="-16" y="-16" width="32" height="32" rx="8"/><path d="M-6-7V7M6-7V7M-6 0H6"/><text x="23" y="5">A</text><path class="pad-cross" d="M-10-10L10 10M10-10L-10 10"/></g><g class="heliport" data-map-pad="B" transform="translate(430 100)"><rect x="-16" y="-16" width="32" height="32" rx="8"/><path d="M-6-7V7M6-7V7M-6 0H6"/><text x="23" y="5">B</text><path class="pad-cross" d="M-10-10L10 10M10-10L-10 10"/></g><g class="heliport" data-map-pad="C" transform="translate(670 200)"><rect x="-16" y="-16" width="32" height="32" rx="8"/><path d="M-6-7V7M6-7V7M-6 0H6"/><text x="23" y="5">C</text><path class="pad-cross" d="M-10-10L10 10M10-10L-10 10"/></g><g class="heliport" data-map-pad="D" transform="translate(550 420)"><rect x="-16" y="-16" width="32" height="32" rx="8"/><path d="M-6-7V7M6-7V7M-6 0H6"/><text x="23" y="5">D</text><path class="pad-cross" d="M-10-10L10 10M10-10L-10 10"/></g><g class="heliport" data-map-pad="E" transform="translate(220 420)"><rect x="-16" y="-16" width="32" height="32" rx="8"/><path d="M-6-7V7M6-7V7M-6 0H6"/><text x="23" y="5">E</text><path class="pad-cross" d="M-10-10L10 10M10-10L-10 10"/></g><g class="heliport" data-map-pad="F" transform="translate(690 75)"><rect x="-16" y="-16" width="32" height="32" rx="8"/><path d="M-6-7V7M6-7V7M-6 0H6"/><text x="23" y="5">F</text><path class="pad-cross" d="M-10-10L10 10M10-10L-10 10"/></g><g id="demo-aircraft"></g><g class="map-compass"><path d="M40 83V45L34 57M40 45L46 57"/><text x="35" y="33">N</text></g></svg>
+<div class="map-caption"><span data-tr="6 ALAN · 4 ARAÇ" data-en="6 SITES · 4 AIRCRAFT">6 ALAN · 4 ARAÇ</span><span data-tr="2B temsili hareket · ölçekli uçuş değil" data-en="Illustrative 2D motion · not scaled flight">2B temsili hareket · ölçekli uçuş değil</span></div>
+</div><div class="demo-fleet"><div class="demo-fleet-item" style="--vehicle:var(--v1)"><b>V1</b><span id="demo-status-V1"></span><span id="demo-site-V1" class="demo-site"></span></div><div class="demo-fleet-item" style="--vehicle:var(--v2)"><b>V2</b><span id="demo-status-V2"></span><span id="demo-site-V2" class="demo-site"></span></div><div class="demo-fleet-item" style="--vehicle:var(--v3)"><b>V3</b><span id="demo-status-V3"></span><span id="demo-site-V3" class="demo-site"></span></div><div class="demo-fleet-item" style="--vehicle:var(--v4)"><b>V4</b><span id="demo-status-V4"></span><span id="demo-site-V4" class="demo-site"></span></div></div>
+<div class="demo-log"><div class="demo-log-heading"><span data-tr="OLAY AKIŞI" data-en="EVENT FLOW">OLAY AKIŞI</span><span><span data-tr="Gösterimde iniş" data-en="Demo landings">Gösterimde iniş</span> <b id="demo-count">0 / 4</b></span></div><ol id="demo-events" aria-label="Olaylar / Events"></ol></div></div>
 <aside class="mission-detail">
-<div class="aircraft-switch" role="group" aria-label="Araç seçimi">
-<button type="button" data-vehicle="V1" aria-pressed="true" style="--vehicle:var(--v1)">V1</button>
-<button type="button" data-vehicle="V2" aria-pressed="false" style="--vehicle:var(--v2)">V2</button>
-<button type="button" data-vehicle="V3" aria-pressed="false" style="--vehicle:var(--v3)">V3</button>
-<button type="button" data-vehicle="V4" aria-pressed="false" style="--vehicle:var(--v4)">V4</button>
-</div>
-<div class="selected-vehicle">
-<span class="small-label" data-tr="SEÇİLİ ARAÇ" data-en="SELECTED AIRCRAFT">SEÇİLİ ARAÇ</span>
-<strong id="vehicle-name">V1</strong>
-</div>
-<h3 id="vehicle-title" aria-live="polite">
-</h3>
-<p id="vehicle-description">
-</p>
-<dl class="context-list">
-<div>
-<dt class="" data-tr="Gözlenen bağlam" data-en="Observed context" >Gözlenen bağlam</dt>
-<dd id="vehicle-context">
-</dd>
-</div>
-<div>
-<dt class="" data-tr="Politikanın görevi" data-en="Policy task" >Politikanın görevi</dt>
-<dd id="vehicle-task">
-</dd>
-</div>
-</dl>
-<p class="console-footnote" data-tr="Gösterilen yollar seçenekleri temsil eder. Bir rota önerisi, emniyetli ayırma ölçümü veya başarılı iniş iddiası içermez." data-en="The displayed paths represent options. They do not provide route advice, measured separation or a successful-landing claim." >Gösterilen yollar seçenekleri temsil eder. Bir rota önerisi, emniyetli ayırma ölçümü veya başarılı iniş iddiası içermez.</p>
-</aside>
-</div>
-</div>
+<div class="aircraft-switch" role="group" aria-label="Araç seçimi / Select aircraft"><button type="button" data-vehicle="V1" aria-pressed="true" style="--vehicle:var(--v1)">V1</button><button type="button" data-vehicle="V2" aria-pressed="false" style="--vehicle:var(--v2)">V2</button><button type="button" data-vehicle="V3" aria-pressed="false" style="--vehicle:var(--v3)">V3</button><button type="button" data-vehicle="V4" aria-pressed="false" style="--vehicle:var(--v4)">V4</button></div>
+<div class="selected-vehicle"><span class="small-label" data-tr="SEÇİLİ ARAÇ" data-en="SELECTED AIRCRAFT">SEÇİLİ ARAÇ</span><strong id="vehicle-name">V1</strong></div>
+<div class="demo-vehicle-state"><span id="demo-vehicle-status"></span><b id="demo-target-value">A</b></div>
+<label class="demo-label" for="demo-target" data-tr="HEDEF ALANI DEĞİŞTİR" data-en="CHANGE TARGET SITE">HEDEF ALANI DEĞİŞTİR</label><div class="demo-command"><select id="demo-target"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select><button type="button" id="demo-hold" aria-pressed="false">Beklet</button></div>
+<p class="demo-control-help" data-tr="Komutunuzu seçin, ardından Başlat veya +10 sn ile ilerleyin." data-en="Choose a command, then use Start or +10 s to advance.">Komutunuzu seçin, ardından Başlat veya +10 sn ile ilerleyin.</p>
+<div class="demo-pads-heading"><span class="demo-label" data-tr="ALAN ERİŞİMİ" data-en="SITE ACCESS">ALAN ERİŞİMİ</span><small data-tr="Dokun: aç / kapat" data-en="Tap: open / close">Dokun: aç / kapat</small></div>
+<div class="demo-pad-grid"><button type="button" data-pad-toggle="A" aria-pressed="false"><b>A</b><span>Açık</span></button><button type="button" data-pad-toggle="B" aria-pressed="false"><b>B</b><span>Açık</span></button><button type="button" data-pad-toggle="C" aria-pressed="false"><b>C</b><span>Açık</span></button><button type="button" data-pad-toggle="D" aria-pressed="false"><b>D</b><span>Açık</span></button><button type="button" data-pad-toggle="E" aria-pressed="false"><b>E</b><span>Açık</span></button><button type="button" data-pad-toggle="F" aria-pressed="false"><b>F</b><span>Açık</span></button></div>
+<p id="demo-hint" class="demo-control-help"></p>
+<details class="demo-scope"><summary data-tr="Bu sandbox neyi gösterir?" data-en="What does this sandbox show?">Bu sandbox neyi gösterir?</summary><p data-tr="Sabit hız, alan ayırma ve bekleme kurallarıyla hazırlanmış bir 2B gösterimdir. Çarpışma önleme, aerodinamik, batarya ve ısıl model içermez. PPO politikası, gerçek uçuş telemetrisi veya dört uçağın emniyetli iniş kanıtı değildir; 6. aşamanın kabulünü değiştirmez." data-en="A 2D illustration with fixed-speed motion, site reservations and hold rules. It contains no collision avoidance, aerodynamics, battery or thermal model. It is not a PPO policy, flight telemetry or evidence of safe four-aircraft landings; it does not change Step 6 acceptance.">Sabit hız, alan ayırma ve bekleme kurallarıyla hazırlanmış bir 2B gösterimdir. Çarpışma önleme, aerodinamik, batarya ve ısıl model içermez. PPO politikası, gerçek uçuş telemetrisi veya dört uçağın emniyetli iniş kanıtı değildir; 6. aşamanın kabulünü değiştirmez.</p></details>
+</aside></div>
+<div class="demo-bottom-note" data-tr="Tarayıcınızda çalışır · Gerçek eğitim ve testlere bağlı değildir · Sayfadan ayrılınca duraklar" data-en="Runs in your browser · Separate from actual training and tests · Pauses when out of view">Tarayıcınızda çalışır · Gerçek eğitim ve testlere bağlı değildir · Sayfadan ayrılınca duraklar</div>
+</div><noscript><p data-tr="Etkileşimli gösterim için JavaScript’i etkinleştirin." data-en="Enable JavaScript for the interactive demo.">Etkileşimli gösterim için JavaScript’i etkinleştirin.</p></noscript>
 </section>
 <section id="yontem" class="method-section">
 <div class="section-heading">
