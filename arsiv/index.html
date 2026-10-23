@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/limulus.css?v=20261014b">
+<link rel="stylesheet" href="../assets/limulus.css?v=20261023r1">
 <script>document.documentElement.classList.add("js")</script>
 
 <style>
@@ -24,24 +24,11 @@ pre.kod .c { color: #64748b; }
 .kopyala:hover { border-color: var(--accent); color: var(--accent); }
 </style>
 </head>
-<body data-kok="../">
+<body data-kok="../" class="archive-page"><a class="skip-link" href="#archive-content">İçeriğe geç / Skip to content</a>
 
-<nav>
-  <a class="nav-logo" href="../"><img src="../favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
-  <ul class="nav-links">
-    <li><a href="../#ozet" data-tr="Özet" data-en="Overview">Özet</a></li>
-    <li><a href="../ikiz/" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
-    <li><a href="../kararlar/" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
-    <li><a href="../kampanyalar/" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
-    <li><a href="../#makaleler" data-tr="Makaleler" data-en="Manuscripts">Makaleler</a></li>
-    <li><a href="../#sonuc" data-tr="Sonuç" data-en="Conclusion">Sonuç</a></li>
-    <li><a href="../#kaynakca" data-tr="Kaynakça" data-en="References">Kaynakça</a></li>
-    <li><a href="../arsiv/" class="on" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
-  </ul>
-  <button class="lang-btn" onclick="toggleLang()">EN</button>
-</nav>
+<nav aria-label="Ana gezinme"><a class="nav-logo" href="../"><img src="../favicon.svg" alt="" width="42" height="42"><span class="brand-word">LIMULUS<small>eVTOL RESEARCH</small></span></a><ul class="nav-links" id="main-nav"><li><a class="" data-tr="Araştırma" data-en="Research" href="../#ozet">Araştırma</a></li><li><a class="" data-tr="Görev" data-en="Mission" href="../#senaryo">Görev</a></li><li><a class="" data-tr="Yöntem" data-en="Methods" href="../#yontem">Yöntem</a></li><li><a class="" data-tr="Doğrulama" data-en="Validation" href="../#dogrulama">Doğrulama</a></li><li><a class="" data-tr="Dijital ikiz" data-en="Digital twin" href="../ikiz/">Dijital ikiz</a></li><li><a class="" data-tr="Arşiv" data-en="Archive" href="../arsiv/">Arşiv</a></li></ul><button type="button" class="lang-btn" onclick="toggleLang()" aria-label="Switch to English">EN</button></nav>
 
-<header class="page-head">
+<header class="page-head"><p class="archive-context" data-tr="Önceki tasarım adımının arşivi. Güncel V74 araştırma durumu ana sayfada ayrı sunulur." data-en="Archive of the earlier design stage. The current V74 research status is presented separately on the home page." >Önceki tasarım adımının arşivi. Güncel V74 araştırma durumu ana sayfada ayrı sunulur.</p>
   <div class="section-label" data-tr="Arşiv" data-en="Archive">Arşiv</div>
   <h1 data-tr="Depo, DOI ve yeniden üretim" data-en="Repository, DOI and reproduction">Depo, DOI ve yeniden üretim</h1>
   <div class="badge-line">
@@ -51,7 +38,7 @@ pre.kod .c { color: #64748b; }
   </div>
 </header>
 
-<main>
+<main id="archive-content">
   <section style="padding-top:1rem">
     <div class="chips">
       <div class="chip"><div class="v">489</div><div class="k" data-tr="dosya, 42 MB kaynak" data-en="files, 42 MB source">dosya, 42 MB kaynak</div></div>
@@ -162,7 +149,7 @@ release v1.1.0). No third-party data were used.</pre>
   <a href="https://doi.org/10.5281/zenodo.21934970" target="_blank" rel="noopener">Zenodo</a>
 </footer>
 
-<script src="../assets/limulus.js?v=20261014b"></script>
+<script src="../assets/limulus.js?v=20261023r1"></script>
 <script>
 function kopyala(id, btn) {
   var t = document.getElementById(id).innerText;

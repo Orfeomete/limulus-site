@@ -1,354 +1,577 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIMULUS-eVTOL · Çok Araçlı Görev Yönetimi İçin Merkezi ve Federe Öğrenme</title>
-<meta name="description" content="Kentsel hava hareketliliğinde dört V74 ve altı heliport üzerinde merkezi ve federe derin pekiştirmeli öğrenmenin karşılaştırmalı değerlendirilmesi. Önceki tasarım adımının 149 eğitim koşusu açık arşivdedir.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIMULUS-eVTOL · Birlikte öğrenmek, emniyeti ölçmek</title>
+<meta name="description" content="Dört V74, altı heliport. Merkezi ve federe pekiştirmeli öğrenmenin görev emniyetine etkisini inceleyen ön kayıtlı araştırma programı.">
+<link rel="canonical" href="https://limulus.cdsa.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LIMULUS-eVTOL">
-<meta property="og:title" content="LIMULUS-eVTOL · Merkezi ve Federe Derin Pekiştirmeli Öğrenme">
-<meta property="og:description" content="Kentsel hava hareketliliğinde dört V74 ve altı heliport üzerinde merkezi ve federe derin pekiştirmeli öğrenmenin karşılaştırmalı değerlendirilmesi. Önceki tasarım adımının 149 eğitim koşusu açık arşivdedir.">
+<meta property="og:title" content="LIMULUS-eVTOL · Birlikte öğrenmek, emniyeti ölçmek">
+<meta property="og:description" content="Dört araç, altı heliport; merkezi ve federe öğrenme, izlenebilir doğrulama.">
 <meta property="og:url" content="https://limulus.cdsa.app/">
 <meta property="og:image" content="https://limulus.cdsa.app/assets/v74_helipad.jpg">
-<meta property="og:image:width" content="1280">
-<meta property="og:image:height" content="760">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/limulus.css?v=20261015a">
-<script>document.documentElement.classList.add("js")</script>
-
+<meta name="theme-color" content="#f8fafc">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&family=B612+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/limulus.css?v=20261023r1">
+<link rel="stylesheet" href="assets/home.css?v=20261023r1">
+<script src="assets/limulus.js?v=20261023r1" defer>
+</script>
+<script src="assets/home.js?v=20261023r1" defer>
+</script>
 </head>
-<body data-kok="">
-
-<nav>
-  <a class="nav-logo" href="./"><img src="favicon.svg" width="52" height="52" alt="LIMULUS" style="border-radius:13px;display:block"></a>
-  <ul class="nav-links">
-    <li><a href="#ozet" data-tr="Özet" data-en="Overview">Özet</a></li>
-    <li><a href="ikiz/" data-tr="Dijital İkiz" data-en="Digital Twin">Dijital İkiz</a></li>
-    <li><a href="kararlar/" data-tr="Kararlar" data-en="Decisions">Kararlar</a></li>
-    <li><a href="kampanyalar/" data-tr="Kampanyalar" data-en="Campaigns">Kampanyalar</a></li>
-    <li><a href="#makaleler" data-tr="Makaleler" data-en="Manuscripts">Makaleler</a></li>
-    <li><a href="#sonuc" data-tr="Sonuç" data-en="Conclusion">Sonuç</a></li>
-    <li><a href="#kaynakca" data-tr="Kaynakça" data-en="References">Kaynakça</a></li>
-    <li><a href="arsiv/" data-tr="Arşiv" data-en="Archive">Arşiv</a></li>
-  </ul>
-  <button class="lang-btn" onclick="toggleLang()">EN</button>
+<body class="home" data-kok="">
+<a class="skip-link" data-tr="İçeriğe geç" data-en="Skip to content" href="#content">İçeriğe geç</a>
+<nav aria-label="Ana gezinme">
+<a class="nav-logo" href="./">
+<img src="favicon.svg" alt="" width="42" height="42">
+<span class="brand-word">LIMULUS<small>eVTOL RESEARCH</small>
+</span>
+</a>
+<ul class="nav-links" id="main-nav">
+<li>
+<a class="" data-tr="Araştırma" data-en="Research" href="#ozet">Araştırma</a>
+</li>
+<li>
+<a class="" data-tr="Görev" data-en="Mission" href="#senaryo">Görev</a>
+</li>
+<li>
+<a class="" data-tr="Yöntem" data-en="Methods" href="#yontem">Yöntem</a>
+</li>
+<li>
+<a class="" data-tr="Doğrulama" data-en="Validation" href="#dogrulama">Doğrulama</a>
+</li>
+<li>
+<a class="" data-tr="Dijital ikiz" data-en="Digital twin" href="ikiz/">Dijital ikiz</a>
+</li>
+<li>
+<a class="" data-tr="Arşiv" data-en="Archive" href="arsiv/">Arşiv</a>
+</li>
+</ul>
+<button type="button" class="lang-btn" onclick="toggleLang()" aria-label="Switch to English">EN</button>
 </nav>
-
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-badge" data-tr="DOKTORA TEZİ · GEÇİCİ ÇALIŞMA BAŞLIĞI" data-en="DOCTORAL THESIS · WORKING TITLE">DOKTORA TEZİ · GEÇİCİ ÇALIŞMA BAŞLIĞI</div>
-    <h1 data-tr="Kentsel Hava Hareketliliğinde Çok Araçlı Görev Yönetimi İçin <span>Merkezi ve Federe</span> Derin Pekiştirmeli Öğrenmenin Karşılaştırmalı Değerlendirilmesi"
-        data-en="Comparative Evaluation of <span>Centralized and Federated</span> Deep Reinforcement Learning for Multi-Vehicle Mission Management in Urban Air Mobility">
-      Kentsel Hava Hareketliliğinde Çok Araçlı Görev Yönetimi İçin <span>Merkezi ve Federe</span> Derin Pekiştirmeli Öğrenmenin Karşılaştırmalı Değerlendirilmesi
-    </h1>
-    <p class="hero-sub" data-tr="Dört V74 ve altı heliporttan oluşan bir şehir görevinde, farklı görev ve arıza deneyimleri yaşayan araçların birlikte öğrenmesinin emniyetli görev tamamlamaya etkisi araştırılıyor. Önceki tasarım adımında koşulmuş 149 eğitim koşusu ve elli dört karar belgesi ayrı bir arşiv olarak açıktır." data-en="In a city mission with four V74 aircraft and six heliports, the research examines how learning together affects safe mission completion when the aircraft go through different mission and fault experiences. The 149 training runs and fifty-four decision documents of the previous design step remain open as a separate archive.">Dört V74 ve altı heliporttan oluşan bir şehir görevinde, farklı görev ve arıza deneyimleri yaşayan araçların birlikte öğrenmesinin emniyetli görev tamamlamaya etkisi araştırılıyor. Önceki tasarım adımında koşulmuş 149 eğitim koşusu ve elli dört karar belgesi ayrı bir arşiv olarak açıktır.</p>
-    <div class="hero-meta">
-      <span class="meta-tag" data-tr="Kentsel Hava Hareketliliği" data-en="Urban Air Mobility">Kentsel Hava Hareketliliği</span>
-      <span class="meta-tag" data-tr="Federe Öğrenme" data-en="Federated Learning">Federe Öğrenme</span>
-      <span class="meta-tag" data-tr="PPO ve FedPPO" data-en="PPO and FedPPO">PPO ve FedPPO</span>
-      <span class="meta-tag" data-tr="eVTOL" data-en="eVTOL">eVTOL</span>
-      <span class="meta-tag" data-tr="Ön Kayıt" data-en="Preregistration">Ön Kayıt</span>
-      <span class="meta-tag" data-tr="Yeniden Üretilebilirlik" data-en="Reproducibility">Yeniden Üretilebilirlik</span>
-    </div>
-  </div>
+<main id="content" class="home-main">
+<header class="intro">
+<div class="intro-copy">
+<p class="eyebrow" data-tr="ÖN KAYITLI HAVACILIK ARAŞTIRMASI" data-en="PREREGISTERED AVIATION RESEARCH" >ÖN KAYITLI HAVACILIK ARAŞTIRMASI</p>
+<h1 class="" data-tr="Birlikte öğrenmek.&lt;br&gt;&lt;span&gt;Emniyeti ölçmek.&lt;/span&gt;" data-en="Learning together.&lt;br&gt;&lt;span&gt;Measuring safety.&lt;/span&gt;" >Birlikte öğrenmek.<br>
+<span>Emniyeti ölçmek.</span>
+</h1>
+<p class="intro-lead" data-tr="Dört V74 aynı hava sahasını paylaşırken, farklı deneyimlerden öğrenmek emniyetli görev tamamlamayı iyileştirir mi? LIMULUS, merkezi ve federe pekiştirmeli öğrenmeyi aynı benzetim ortamında karşılaştırıyor." data-en="When four V74 aircraft share an airspace, can learning from different experiences improve safe mission completion? LIMULUS compares centralised and federated reinforcement learning in the same simulation environment." >Dört V74 aynı hava sahasını paylaşırken, farklı deneyimlerden öğrenmek emniyetli görev tamamlamayı iyileştirir mi? LIMULUS, merkezi ve federe pekiştirmeli öğrenmeyi aynı benzetim ortamında karşılaştırıyor.</p>
+<div class="intro-actions">
+<a class="button primary" data-tr="Görevi keşfet &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;" data-en="Explore the mission &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;" href="#senaryo">Görevi keşfet <span aria-hidden="true">↗</span>
+</a>
+<a class="button secondary" data-tr="Araştırmanın durumu &lt;span aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;" data-en="Research status &lt;span aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;" href="#dogrulama">Araştırmanın durumu <span aria-hidden="true">↓</span>
+</a>
 </div>
-
-<div class="hero-cizim fade-in">
-  <figure class="cizim">
-    <img src="assets/v74_helipad.jpg" alt="V74, Jack-up platformunun helipadında, Unreal Engine sunum görüntüsü" width="1280" height="760" loading="lazy">
-    <figcaption>
-      <span data-tr="Güncel tasarım adımı V74, Jack-up platformunun helipadında. Sunum görüntüsüdür, uçuş testi kanıtı değildir. Dört kanallı modülün her birinde iki eş eksenli rotor vardır. Bu sitedeki kampanyalar ve 149 koşu V74'ten önceki tasarım adımına aittir."
-            data-en="The current design step V74 on the helideck of a jack-up platform. A presentation image, not evidence of a flight test. Each of the four ducted modules carries two coaxial rotors. The campaigns and the 149 runs on this site belong to the design step before V74.">Güncel tasarım adımı V74, Jack-up platformunun helipadında. Sunum görüntüsüdür, uçuş testi kanıtı değildir. Dört kanallı modülün her birinde iki eş eksenli rotor vardır. Bu sitedeki kampanyalar ve 149 koşu V74'ten önceki tasarım adımına aittir.</span>
-      <a class="bak" href="assets/v74_helipad.jpg" target="_blank" rel="noopener" data-tr="tam boyut ↗" data-en="full size ↗">tam boyut ↗</a>
-      <a class="bak" href="ikiz/#v74" data-tr="V74 görünüşleri ve sayıları" data-en="V74 views and numbers">V74 görünüşleri ve sayıları</a>
-      <a class="bak" href="ikiz/#modulerlik" data-tr="Platform B" data-en="Platform B">Platform B</a>
-    </figcaption>
-  </figure>
+<dl class="intro-facts">
+<div>
+<dt>04</dt>
+<dd class="" data-tr="V74 araç" data-en="V74 aircraft" >V74 araç</dd>
 </div>
-
-<section id="ozet" class="fade-in">
-  <div class="section-label" data-tr="Özet" data-en="Overview">Özet</div>
-  <h2 data-tr="Araştırma ne soruyor" data-en="What the research asks">Araştırma ne soruyor</h2>
-  <div class="abstract-box">
-    <p data-tr="Birden çok eVTOL aynı hava sahasını paylaştığında iniş alanlarının doluluğu, enerji rezervi, diğer araçların hareketi ve beklenmeyen koşullar birlikte karar verilmesini gerektirir. Bu tez, dört V74 ve altı heliport üzerinden, farklı deneyimler yaşayan araçların birlikte öğrenmesinin emniyetli görev tamamlamaya etkisini araştırıyor. Merkezi PPO bütün deneyimi tek havuzda toplayan referanstır. FedPPO'da ise her mantıksal istemci kendi aracının deneyimiyle yerel güncelleme yapar ve yalnız ağ ağırlıkları birleştirilir." data-en="When several eVTOL aircraft share one airspace, the occupancy of landing sites, energy reserves, the movement of other aircraft and unexpected conditions have to be decided together. This thesis examines, with four V74 aircraft and six heliports, how learning together affects safe mission completion when the aircraft go through different experiences. Centralized PPO is the reference that pools all experience in one place. In FedPPO each logical client updates locally from its own aircraft's experience, and only the network weights are aggregated.">Birden çok eVTOL aynı hava sahasını paylaştığında iniş alanlarının doluluğu, enerji rezervi, diğer araçların hareketi ve beklenmeyen koşullar birlikte karar verilmesini gerektirir. Bu tez, dört V74 ve altı heliport üzerinden, farklı deneyimler yaşayan araçların birlikte öğrenmesinin emniyetli görev tamamlamaya etkisini araştırıyor. Merkezi PPO bütün deneyimi tek havuzda toplayan referanstır. FedPPO'da ise her mantıksal istemci kendi aracının deneyimiyle yerel güncelleme yapar ve yalnız ağ ağırlıkları birleştirilir.</p>
-    <div class="sections-grid" style="margin-top:1.8rem">
-      <div class="section-card">
-        <h3 data-tr="H1 · İstemci heterojenliği" data-en="H1 · Client heterogeneity">H1 · İstemci heterojenliği</h3>
-        <p data-tr="Aynı eğitim havuzu araçlara farklı dağıtıldığında standart FedPPO'nun hangi görev ve arıza gruplarında kayıp ürettiği ve birleştirmenin bu kayba payı inceleniyor." data-en="When the same training pool is distributed differently across the aircraft, the study examines in which mission and fault groups standard FedPPO loses performance and what share aggregation has in that loss.">Aynı eğitim havuzu araçlara farklı dağıtıldığında standart FedPPO'nun hangi görev ve arıza gruplarında kayıp ürettiği ve birleştirmenin bu kayba payı inceleniyor.</p>
-      </div>
-      <div class="section-card">
-        <h3 data-tr="H2 · Bağlam Dengeli FedPPO" data-en="H2 · Context Balanced FedPPO">H2 · Bağlam Dengeli FedPPO</h3>
-        <p data-tr="Görev erişilebilirliği, enerji yeterliliği ve gözlenebilir arıza bağlamlarını hesaba katan birleştirme ağırlıklarının bu kaybı azaltıp azaltmadığı sınanıyor. Fizik, ödül ve yerel PPO bütçesi standart FedPPO ile aynı tutuluyor." data-en="The study tests whether aggregation weights that account for destination availability, energy adequacy and observable fault contexts reduce that loss. Physics, rewards and the local PPO budget are kept identical to standard FedPPO.">Görev erişilebilirliği, enerji yeterliliği ve gözlenebilir arıza bağlamlarını hesaba katan birleştirme ağırlıklarının bu kaybı azaltıp azaltmadığı sınanıyor. Fizik, ödül ve yerel PPO bütçesi standart FedPPO ile aynı tutuluyor.</p>
-      </div>
-      <div class="section-card">
-        <h3 data-tr="H3 · Eğitim düzeyi ve politika seçimi" data-en="H3 · Training level and policy selection">H3 · Eğitim düzeyi ve politika seçimi</h3>
-        <p data-tr="Erken, orta ve son politikalar eğitimde kullanılmamış görevlerde karşılaştırılıyor ve eğitim ödülüne göre seçilen politikanın sınırları inceleniyor. H1 ve H2 ana katkı, H3 destekleyici katkıdır." data-en="Early, intermediate and final policies are compared on tasks not used in training, and the limits of selecting a policy by its training reward are examined. H1 and H2 are the main contributions, H3 a supporting one.">Erken, orta ve son politikalar eğitimde kullanılmamış görevlerde karşılaştırılıyor ve eğitim ödülüne göre seçilen politikanın sınırları inceleniyor. H1 ve H2 ana katkı, H3 destekleyici katkıdır.</p>
-      </div>
-    </div>
-    <p style="margin-top:1.8rem" data-tr="Başarı, çarpışma, açıklık ihlali, süre ve enerji ayrı ölçülüyor. Hedefe emniyetli iniş, gerekli yedek iniş ve gerekli dönüş ayrı sonuçlar olarak tutuluyor. Bulgular sayısal benzetime ve SA88 hücresi için koşullu varsayımlara bağlıdır. Hücre sıcaklığı artışı için 25 K ve SoC için 0,65 taban genel sertifikasyon eşikleri değil, araştırma kabul sınırlarıdır. Çalışma üretilebilir uçak, sertifikasyon ya da gerçek ağda federe işletim iddiası taşımaz." data-en="Success, collisions, separation violations, duration and energy are measured separately. A safe landing at the destination, a necessary alternate landing and a necessary return are kept as distinct outcomes. The findings depend on numerical simulation and on conditional assumptions for the SA88 cell. The 25 K cell temperature rise limit and the 0.65 SoC floor are research acceptance bounds, not general certification thresholds. The work makes no claim of a producible aircraft, of certification, or of federated operation over a real network.">Başarı, çarpışma, açıklık ihlali, süre ve enerji ayrı ölçülüyor. Hedefe emniyetli iniş, gerekli yedek iniş ve gerekli dönüş ayrı sonuçlar olarak tutuluyor. Bulgular sayısal benzetime ve SA88 hücresi için koşullu varsayımlara bağlıdır. Hücre sıcaklığı artışı için 25 K ve SoC için 0,65 taban genel sertifikasyon eşikleri değil, araştırma kabul sınırlarıdır. Çalışma üretilebilir uçak, sertifikasyon ya da gerçek ağda federe işletim iddiası taşımaz.</p>
-    <div class="keywords">
-      <span class="keyword" data-tr="kentsel hava hareketliliği" data-en="urban air mobility">kentsel hava hareketliliği</span>
-      <span class="keyword" data-tr="çok araçlı görev yönetimi" data-en="multi-vehicle mission management">çok araçlı görev yönetimi</span>
-      <span class="keyword" data-tr="PPO" data-en="PPO">PPO</span>
-      <span class="keyword" data-tr="federe pekiştirmeli öğrenme" data-en="federated reinforcement learning">federe pekiştirmeli öğrenme</span>
-      <span class="keyword" data-tr="Bağlam Dengeli FedPPO" data-en="Context Balanced FedPPO">Bağlam Dengeli FedPPO</span>
-      <span class="keyword" data-tr="uçuş benzetimi" data-en="flight simulation">uçuş benzetimi</span>
-    </div>
-  </div>
-
-  <div class="chips" style="margin-top:2rem">
-    <div class="chip"><div class="v">4</div><div class="k" data-tr="V74, dört kanallı modül ve kanal başına iki eş eksenli rotor" data-en="V74 aircraft, four ducted modules with two coaxial rotors each">V74, dört kanallı modül ve kanal başına iki eş eksenli rotor</div></div>
-    <div class="chip"><div class="v">6</div><div class="k" data-tr="heliport, ikisi yedek iniş alanı" data-en="heliports, two of them alternate landing sites">heliport, ikisi yedek iniş alanı</div></div>
-    <div class="chip"><div class="v">3</div><div class="k" data-tr="hipotez, H1 ve H2 ana, H3 destekleyici" data-en="hypotheses, H1 and H2 main, H3 supporting">hipotez, H1 ve H2 ana, H3 destekleyici</div></div>
-    <div class="chip"><div class="v">5</div><div class="k" data-tr="ayrı ölçüt, başarı, çarpışma, açıklık, süre ve enerji" data-en="separate measures, success, collision, separation, duration and energy">ayrı ölçüt, başarı, çarpışma, açıklık, süre ve enerji</div></div>
-  </div>
-
-  <div class="video-baslik" data-tr="V74 sunum videoları" data-en="V74 presentation videos">V74 sunum videoları</div>
-  <div class="video-grid">
-    <figure class="video">
-      <div class="video-cerceve"><iframe src="https://www.youtube-nocookie.com/embed/yaDpz0VlPyU?rel=0" title="Limulus 6" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <figcaption data-tr="V74, açık deniz üzerinde tek araç sunumu. Unreal Engine'de kayıtlı uçuş izinin sunumudur, uçuş testi kanıtı değildir." data-en="V74, single-aircraft presentation over open sea. A presentation of a recorded flight trace in Unreal Engine, not evidence of a flight test.">V74, açık deniz üzerinde tek araç sunumu. Unreal Engine'de kayıtlı uçuş izinin sunumudur, uçuş testi kanıtı değildir.</figcaption>
-    </figure>
-    <figure class="video">
-      <div class="video-cerceve"><iframe src="https://www.youtube-nocookie.com/embed/VywWKcl-vSo?rel=0" title="Limulus 15" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <figcaption data-tr="Dört V74, şehir sahnesinde dört panelli sunum. Her panel bir aracı izler, renkler araçları ayırır. Uçuş testi kanıtı değildir." data-en="Four V74 aircraft in a city scene, a four-panel presentation. Each panel follows one aircraft and the colours tell them apart. Not evidence of a flight test.">Dört V74, şehir sahnesinde dört panelli sunum. Her panel bir aracı izler, renkler araçları ayırır. Uçuş testi kanıtı değildir.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<div class="band-section">
-  <div class="band-inner">
-    <div class="section-label" data-tr="Tezin Yapısı" data-en="Thesis Structure">Tezin Yapısı</div>
-    <h2 data-tr="Dört kısım" data-en="Four parts">Dört kısım</h2>
-    <div class="sections-grid varyant-grid">
-      <a class="section-card fade-in" href="ikiz/#v74">
-        <div class="section-num">01</div>
-        <h3 data-tr="Tasarım" data-en="Design">Tasarım</h3>
-        <p data-tr="Görev gereksinimleri, V74 konfigürasyonu, dual rotor mimarisi, boyutlandırma ve alt sistemler." data-en="Mission requirements, the V74 configuration, the dual rotor architecture, sizing and subsystems.">Görev gereksinimleri, V74 konfigürasyonu, dual rotor mimarisi, boyutlandırma ve alt sistemler.</p>
-      </a>
-      <div class="section-card fade-in">
-        <div class="section-num">02</div>
-        <h3 data-tr="Benzetim Ortamı" data-en="Simulation Environment">Benzetim Ortamı</h3>
-        <p data-tr="Unreal Engine görselleştirmesi, uçuş dinamiği, öğrenme ortamı ve karşılaştırma düzeni." data-en="Unreal Engine visualisation, flight dynamics, the learning environment and the comparison setup.">Unreal Engine görselleştirmesi, uçuş dinamiği, öğrenme ortamı ve karşılaştırma düzeni.</p>
-      </div>
-      <div class="section-card fade-in">
-        <div class="section-num">03</div>
-        <h3 data-tr="Otonom Uçuş ve Karşılaştırmalı Değerlendirme" data-en="Autonomous Flight and Comparative Evaluation">Otonom Uçuş ve Karşılaştırmalı Değerlendirme</h3>
-        <p data-tr="PPO ve FedPPO yöntemleri, H1 ve H2 deneyleri, H3 politika karşılaştırmaları ve sonuçlar." data-en="PPO and FedPPO methods, the H1 and H2 experiments, the H3 policy comparisons and the results.">PPO ve FedPPO yöntemleri, H1 ve H2 deneyleri, H3 politika karşılaştırmaları ve sonuçlar.</p>
-      </div>
-      <div class="section-card fade-in">
-        <div class="section-num">04</div>
-        <h3 data-tr="Sentez" data-en="Synthesis">Sentez</h3>
-        <p data-tr="Bilimsel katkılar, uçak ve görev uyumluluğu, enerji ve hover sınırları, sınırlılıklar ve sonuç." data-en="Scientific contributions, aircraft and mission compliance, energy and hover limits, limitations and conclusion.">Bilimsel katkılar, uçak ve görev uyumluluğu, enerji ve hover sınırları, sınırlılıklar ve sonuç.</p>
-      </div>
-    </div>
-  </div>
+<div>
+<dt>06</dt>
+<dd class="" data-tr="heliport" data-en="heliports" >heliport</dd>
 </div>
-
-<section id="durum" class="fade-in">
-  <div class="section-label" data-tr="Durum" data-en="Status">Durum</div>
-  <h2 data-tr="Deneyler nerede" data-en="Where the experiments stand">Deneyler nerede</h2>
-  <div class="note-box" data-tr="<strong>15 Ekim 2026 itibarıyla.</strong> Merkezi PPO ve standart FedPPO referans eğitimleri ile 63 ortak dünyalık referans karşılaştırması tamamlandı. Bağlam Dengeli FedPPO uygulandı ve ilk işlevsel pilotu doğrulandı. H1 ve H2 için üç eğitim tohumlu eşleştirilmiş karşılaştırma sürüyor. Arıza ve rüzgâr altında tam görev öğrenmesi ile H3 politika seçimi henüz başlamadı. Hiçbir hipotez için sonuç ya da yöntem üstünlüğü iddiası yoktur." data-en="<strong>As of 15 October 2026.</strong> The centralized PPO and standard FedPPO reference trainings and the reference comparison over 63 shared worlds are complete. Context Balanced FedPPO has been implemented and its first functional pilot verified. The paired comparison for H1 and H2 with three training seeds is running. Full-mission learning under faults and wind and the H3 policy selection have not started yet. No result or method superiority is claimed for any hypothesis."><strong>15 Ekim 2026 itibarıyla.</strong> Merkezi PPO ve standart FedPPO referans eğitimleri ile 63 ortak dünyalık referans karşılaştırması tamamlandı. Bağlam Dengeli FedPPO uygulandı ve ilk işlevsel pilotu doğrulandı. H1 ve H2 için üç eğitim tohumlu eşleştirilmiş karşılaştırma sürüyor. Arıza ve rüzgâr altında tam görev öğrenmesi ile H3 politika seçimi henüz başlamadı. Hiçbir hipotez için sonuç ya da yöntem üstünlüğü iddiası yoktur.</div>
-</section>
-
-<div class="band-section">
-  <div class="band-inner">
-    <div class="section-label" data-tr="Arşivlenen Çalışma" data-en="Archived Study">Arşivlenen Çalışma</div>
-    <h2 data-tr="Önceki tasarım adımının dijital ikizi ve ön kayıtlı kampanyaları" data-en="Digital twin and preregistered campaigns of the previous design step">Önceki tasarım adımının dijital ikizi ve ön kayıtlı kampanyaları</h2>
-    <p class="lead" data-tr="V74'ten önceki tasarım adımında dört bağımsız eğimlenen rotor modülünün bir eVTOL'e ne kazandırdığı ölçüldü. Senkron eğim, ikili eğim ve lift-cruise varyantları aynı simülatörün kısıtlanmış hâlleriydi ve her kampanyanın karar kuralları ölçümden önce donduruldu. Bu çalışmanın bütün kayıtları açıktır ve aşağıdaki sayfalarda durur." data-en="At the design step before V74, the programme measured what four independently tilting rotor modules give an eVTOL. The synchronous-tilt, paired-tilt and lift-cruise variants were constrained instances of one simulator, and the decision rules of every campaign were frozen before measurement. All records of this study are open and are kept on the pages below.">V74'ten önceki tasarım adımında dört bağımsız eğimlenen rotor modülünün bir eVTOL'e ne kazandırdığı ölçüldü. Senkron eğim, ikili eğim ve lift-cruise varyantları aynı simülatörün kısıtlanmış hâlleriydi ve her kampanyanın karar kuralları ölçümden önce donduruldu. Bu çalışmanın bütün kayıtları açıktır ve aşağıdaki sayfalarda durur.</p>
-    <div class="chips" style="margin-top:2rem">
-      <div class="chip"><div class="v">54</div><div class="k" data-tr="karar belgesi, karar kuralları ölçümden önce donmuş" data-en="decision documents, rules frozen before measurement">karar belgesi, karar kuralları ölçümden önce donmuş</div></div>
-      <div class="chip"><div class="v">149</div><div class="k" data-tr="eğitim koşusu, on beş koşu dizininde" data-en="training runs, in fifteen run directories">eğitim koşusu, on beş koşu dizininde</div></div>
-      <div class="chip"><div class="v">489</div><div class="k" data-tr="arşivlenmiş dosya, 42 MB" data-en="archived files, 42 MB">arşivlenmiş dosya, 42 MB</div></div>
-    </div>
-    <div class="sections-grid varyant-grid">
-      <a class="section-card fade-in" href="ikiz/">
-        <div class="section-num">01</div>
-        <h3 data-tr="Dijital İkiz ve Tasarım" data-en="Digital Twin and Design">Dijital İkiz ve Tasarım</h3>
-        <p data-tr="Güncel tasarım adımı V74'ün görünüşleri ve sayıları, arşivlenen tasarım adımının geometrisi ve başarım noktası, altı serbestlik dereceli model ve dört varyantın aynı simülatörden nasıl türetildiği. Arşivlenen tasarımın her sayısı tek kaynaktan, geometri.py. Sayfanın sonunda <strong>Platform B</strong>, aynı rotor modülünün bir zepline takıldığı modülerlik gösterimi."
-           data-en="Views and numbers of the current design step V74, the geometry and design point of the archived design step, the six-degree-of-freedom model, and how the four variants derive from one simulator. Every number of the archived design comes from a single source, geometri.py. At the end of the page, <strong>Platform B</strong>, the modularity demonstration mounting the same rotor module on an airship.">Güncel tasarım adımı V74'ün görünüşleri ve sayıları, arşivlenen tasarım adımının geometrisi ve başarım noktası, altı serbestlik dereceli model ve dört varyantın aynı simülatörden nasıl türetildiği. Arşivlenen tasarımın her sayısı tek kaynaktan, geometri.py. Sayfanın sonunda <strong>Platform B</strong>, aynı rotor modülünün bir zepline takıldığı modülerlik gösterimi.</p>
-      </a>
-      <a class="section-card fade-in" href="kararlar/">
-        <div class="section-num">02</div>
-        <h3 data-tr="Kararlar ve Ön Kayıtlar" data-en="Decisions and Preregistrations">Kararlar ve Ön Kayıtlar</h3>
-        <p data-tr="Elli dört belge, altı kısım. Başarısız denemeler ve bulunan kusurlar da burada durur, tam da bir sonraki denemede aynı yola girilmesin diye."
-           data-en="Fifty-four documents in six parts. Failed attempts and discovered defects are kept here too, precisely so the same road is not taken twice.">Elli dört belge, altı kısım. Başarısız denemeler ve bulunan kusurlar da burada durur, tam da bir sonraki denemede aynı yola girilmesin diye.</p>
-      </a>
-      <a class="section-card fade-in" href="kampanyalar/">
-        <div class="section-num">03</div>
-        <h3 data-tr="Kampanyalar ve Koşu Kayıtları" data-en="Campaigns and Run Records">Kampanyalar ve Koşu Kayıtları</h3>
-        <p data-tr="On beş koşu dizini, yüz kırk dokuz koşu. Öğrenme eğrileri ve seviye dağılımları doğrudan arşivlenmiş günlüklerden çizilir, ara bir özet dosyasından değil."
-           data-en="Fifteen run directories, one hundred and forty-nine runs. Learning curves and level distributions are drawn straight from the archived logs, not from an intermediate summary file.">On beş koşu dizini, yüz kırk dokuz koşu. Öğrenme eğrileri ve seviye dağılımları doğrudan arşivlenmiş günlüklerden çizilir, ara bir özet dosyasından değil.</p>
-      </a>
-      <a class="section-card fade-in" href="arsiv/">
-        <div class="section-num">04</div>
-        <h3 data-tr="Arşiv, Depo ve DOI" data-en="Archive, Repository and DOI">Arşiv, Depo ve DOI</h3>
-        <p data-tr="GitHub deposu, Zenodo DOI'si, yeniden üretim komutları ve lisanslar. Arşivlenen betikler değiştirilmedi, bu iddia edilmedi ölçüldü."
-           data-en="GitHub repository, Zenodo DOI, reproduction commands and licences. The archived scripts were not edited, and this was measured rather than asserted.">GitHub deposu, Zenodo DOI'si, yeniden üretim komutları ve lisanslar. Arşivlenen betikler değiştirilmedi, bu iddia edilmedi ölçüldü.</p>
-      </a>
-    </div>
-  </div>
+<div>
+<dt>03</dt>
+<dd class="" data-tr="araştırma hipotezi" data-en="research hypotheses" >araştırma hipotezi</dd>
 </div>
-
-<section id="makaleler" class="fade-in">
-  <div class="section-label" data-tr="Makaleler" data-en="Manuscripts">Makaleler</div>
-  <h2 data-tr="Dört makale, tek kanıt tabanı" data-en="Four manuscripts, one evidence base">Dört makale, tek kanıt tabanı</h2>
-  <p class="lead"
-     data-tr="Dördü de aynı dijital ikizden ve aynı koşulardan besleniyor. Hiçbiri bir diğerinin bölümlerini, tablolarını ya da figürlerini yinelemiyor."
-     data-en="All four draw on the same digital twin and the same runs. None reproduces another's sections, tables or figures.">Dördü de aynı dijital ikizden ve aynı koşulardan besleniyor. Hiçbiri bir diğerinin bölümlerini, tablolarını ya da figürlerini yinelemiyor.</p>
-
-  <div class="card" style="margin-top:2rem;overflow-x:auto">
-    <table class="cfg">
-      <thead><tr>
-        <th data-tr="Kod" data-en="Code">Kod</th>
-        <th data-tr="Başlık" data-en="Title">Başlık</th>
-        <th data-tr="İlk gönderim" data-en="First submission">İlk gönderim</th>
-        <th data-tr="Durum" data-en="Status">Durum</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>M1</strong></td>
-          <td style="text-align:left;max-width:420px;line-height:1.5"
-              data-tr="Rakip eVTOL Kontrol Mimarilerinin Tek Simülatörün Kısıtlanmış Hâlleri Olarak Karşılaştırılması. İç İçe Geçmişlik Garantili ve Ön Kayıtlı Bir Çerçeve"
-              data-en="Comparing Competing eVTOL Control Architectures as Constrained Variants of a Single Simulator. A Nestedness-Guaranteed and Preregistered Framework">Rakip eVTOL Kontrol Mimarilerinin Tek Simülatörün Kısıtlanmış Hâlleri Olarak Karşılaştırılması. İç İçe Geçmişlik Garantili ve Ön Kayıtlı Bir Çerçeve</td>
-          <td class="mono">Simulation Modelling<br>Practice and Theory</td>
-          <td><span class="pill uyari" data-tr="reddedildi · 17.09.2026" data-en="declined · 17 Sep 2026">reddedildi · 17.09.2026</span></td>
-        </tr>
-        <tr>
-          <td><strong>M5</strong></td>
-          <td style="text-align:left;max-width:420px;line-height:1.5"
-              data-tr="Uçuş Kontrolü İçin Öğrenme Ortamı Tasarımında Beş Sessiz Kusur. Ölçülmüş Bir Vaka Çalışması"
-              data-en="Five Silent Defects in Learning Environment Design for Flight Control. A Measured Case Study">Uçuş Kontrolü İçin Öğrenme Ortamı Tasarımında Beş Sessiz Kusur. Ölçülmüş Bir Vaka Çalışması</td>
-          <td class="mono">Robotics and<br>Autonomous Systems</td>
-          <td><span class="pill uyari" data-tr="reddedildi · 05.10.2026" data-en="declined · 5 Oct 2026">reddedildi · 05.10.2026</span></td>
-        </tr>
-        <tr>
-          <td><strong>M2</strong></td>
-          <td style="text-align:left;max-width:420px;line-height:1.5"
-              data-tr="Rim-Drive eVTOL Rotorlarının Ön Tasarımında Özgül Güç ve Kütle Tabanı"
-              data-en="Specific Power and Mass Basis in the Preliminary Design of Rim-Driven eVTOL Rotors">Rim-Drive eVTOL Rotorlarının Ön Tasarımında Özgül Güç ve Kütle Tabanı</td>
-          <td class="mono">Aerospace Science<br>and Technology</td>
-          <td><span class="pill uyari" data-tr="reddedildi · 17.09.2026" data-en="declined · 17 Sep 2026">reddedildi · 17.09.2026</span></td>
-        </tr>
-        <tr>
-          <td><strong>M6</strong></td>
-          <td style="text-align:left;max-width:420px;line-height:1.5"
-              data-tr="Dört Rotorlu Bir Tilt-Rotor eVTOL Kaç Bağımsız Tilt Eksenine İhtiyaç Duyar? Ön Kayıtlı Bir Olumsuz Sonuç"
-              data-en="How Many Independent Tilt Axes Does a Quad Tilt-Rotor eVTOL Need? A Preregistered Negative Result">Dört Rotorlu Bir Tilt-Rotor eVTOL Kaç Bağımsız Tilt Eksenine İhtiyaç Duyar? Ön Kayıtlı Bir Olumsuz Sonuç</td>
-          <td class="mono">Advances in<br>Engineering Software</td>
-          <td><span class="pill uyari" data-tr="reddedildi · 16.08.2026" data-en="declined · 16 Aug 2026">reddedildi · 16.08.2026</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note-box"
-       data-tr="<strong>Dört ilk gönderimin dördü de reddedildi.</strong> Makaleler güncel tasarım adımı V74 kapsamıyla yeniden yazılıyor ve yeni hedef dergi henüz seçilmedi. Her metnin tam hâli kendi süreci sonuçlandığında yayımlanır. Kanıt tabanı ise şimdiden açıktır, kodun ve koşuların tamamı arşivde ve DOI ile anılabilir."
-       data-en="<strong>All four first submissions were declined.</strong> The manuscripts are being rewritten for the scope of the current design step V74, and no new target journal has been chosen yet. The full text of each is published when its own process concludes. The evidence base, however, is already open, the code and all runs are archived and citable by DOI.">
-    <strong>Dört ilk gönderimin dördü de reddedildi.</strong> Makaleler güncel tasarım adımı V74 kapsamıyla yeniden yazılıyor ve yeni hedef dergi henüz seçilmedi. Her metnin tam hâli kendi süreci sonuçlandığında yayımlanır. Kanıt tabanı ise şimdiden açıktır, kodun ve koşuların tamamı arşivde ve DOI ile anılabilir.
-  </div>
+</dl>
+</div>
+<figure class="intro-image">
+<div class="image-label">V74 <span>UNREAL ENGINE</span>
+</div>
+<img src="assets/v74_helipad.jpg" width="1280" height="760" alt="V74 tasarımının açık deniz platformundaki Unreal Engine görünümü" fetchpriority="high">
+<figcaption class="" data-tr="Dört kanallı modül · modül başına iki eş eksenli rotor.&lt;br&gt;Mevcut tasarımın sunum görüntüsü; fiziksel uçuş testi değildir." data-en="Four ducted modules · two coaxial rotors per module.&lt;br&gt;A presentation of the current design; not a physical flight test." >Dört kanallı modül · modül başına iki eş eksenli rotor.<br>Mevcut tasarımın sunum görüntüsü; fiziksel uçuş testi değildir.</figcaption>
+</figure>
+</header>
+<div class="research-strip">
+<span class="strip-state">
+<i>
+</i>
+<span class="" data-tr="Araştırma sürüyor" data-en="Research in progress" >Araştırma sürüyor</span>
+</span>
+<span class="" data-tr="Sayısal benzetim · Ön kayıtlı karşılaştırmalar" data-en="Numerical simulation · Preregistered comparisons" >Sayısal benzetim · Ön kayıtlı karşılaştırmalar</span>
+<a class="text-link" data-tr="Doğrulama durumunu incele →" data-en="Review validation status →" href="#dogrulama">Doğrulama durumunu incele →</a>
+</div>
+<section id="ozet" class="research-section">
+<div class="section-intro">
+<p class="eyebrow" data-tr="01 / ARAŞTIRMA SORUSU" data-en="01 / RESEARCH QUESTION" >01 / ARAŞTIRMA SORUSU</p>
+<h2 class="" data-tr="Aynı görev.&lt;br&gt;Farklı deneyimler." data-en="The same mission.&lt;br&gt;Different experiences." >Aynı görev.<br>Farklı deneyimler.</h2>
+<p class="lead" data-tr="İniş alanının doluluğu, enerji rezervi ve diğer araçların hareketi, her kararı birbirine bağlıyor. Araştırmanın odağı yalnızca uçabilmek değil; bu koşullarda görev emniyetini karşılaştırılabilir biçimde ölçmek." data-en="Landing-site occupancy, energy reserve and other aircraft movements connect every decision. The research concerns both flight and a comparable measurement of mission safety under these conditions." >İniş alanının doluluğu, enerji rezervi ve diğer araçların hareketi, her kararı birbirine bağlıyor. Araştırmanın odağı yalnızca uçabilmek değil; bu koşullarda görev emniyetini karşılaştırılabilir biçimde ölçmek.</p>
+<a class="text-link" data-tr="V74 tasarımını incele ↗" data-en="Explore the V74 design ↗" href="ikiz/#v74">V74 tasarımını incele ↗</a>
+</div>
+<div class="hypotheses">
+<article class="hypothesis">
+<span class="h-code">H1</span>
+<div>
+<span class="small-label" data-tr="Ana hipotez" data-en="Primary hypothesis" >Ana hipotez</span>
+<h3 class="" data-tr="Deneyimler eşit dağılmıyor" data-en="Experience is not equally distributed" >Deneyimler eşit dağılmıyor</h3>
+<p class="" data-tr="Araçların görev ve arıza deneyimleri farklılaştığında standart federe öğrenmenin nerede kayıp ürettiği inceleniyor." data-en="Where does standard federated learning lose performance when aircraft encounter different missions and failures?" >Araçların görev ve arıza deneyimleri farklılaştığında standart federe öğrenmenin nerede kayıp ürettiği inceleniyor.</p>
+</div>
+</article>
+<article class="hypothesis">
+<span class="h-code">H2</span>
+<div>
+<span class="small-label" data-tr="Ana hipotez" data-en="Primary hypothesis" >Ana hipotez</span>
+<h3 class="" data-tr="Bağlamı gözeten birleştirme" data-en="Context-aware aggregation" >Bağlamı gözeten birleştirme</h3>
+<p class="" data-tr="Görev erişilebilirliği, enerji yeterliliği ve gözlenebilir arıza bağlamlarının birleştirmeye katılması sınanıyor." data-en="Aggregation is evaluated with mission accessibility, energy sufficiency and observable failure context." >Görev erişilebilirliği, enerji yeterliliği ve gözlenebilir arıza bağlamlarının birleştirmeye katılması sınanıyor.</p>
+</div>
+</article>
+<article class="hypothesis">
+<span class="h-code">H3</span>
+<div>
+<span class="small-label" data-tr="Destekleyici hipotez" data-en="Supporting hypothesis" >Destekleyici hipotez</span>
+<h3 class="" data-tr="Politika ne zaman seçilmeli?" data-en="When should a policy be selected?" >Politika ne zaman seçilmeli?</h3>
+<p class="" data-tr="Erken, orta ve son politikalar bağımsız görevlerde karşılaştırılıyor; eğitim ödülünün seçim için yeterli olup olmadığı sorgulanıyor." data-en="Early, middle and late policies are compared on independent missions to examine the limits of training-reward-based selection." >Erken, orta ve son politikalar bağımsız görevlerde karşılaştırılıyor; eğitim ödülünün seçim için yeterli olup olmadığı sorgulanıyor.</p>
+</div>
+</article>
+</div>
 </section>
-
-<div class="divider"></div>
-
-<section id="sonuc" class="fade-in">
-  <div class="section-label" data-tr="Sonuç" data-en="Conclusion">Sonuç</div>
-  <h2 data-tr="Arşivlenen çalışmanın sonucu" data-en="Conclusion of the archived study">Arşivlenen çalışmanın sonucu</h2>
-  <div class="abstract-box">
-    <p data-tr="LIMULUS, dört bağımsız eğimlenen rotor modülünün bir eVTOL'e ne kazandırdığını ölçmek için kuruldu ve <strong>aradığı kazancı bulamadı</strong>. Asimetrik rejimde dört eksen, iki eksenden iki puan geride kaldı. Aktüatör yedekliliğinde oran ters yönde çıktı, dört eksenli kurgu sıkışmadan 1,15 kat daha çok etkilendi. Karşılaştırma kapısı ilk kez tam ölçekte açıldığında altı varyant çiftinin altısında fark çıkmadı. Öğrenme ekseninde ise değerlendirilen altmış koşunun altmışında azami irtifa 150,0 m'de kaldı, yani hiçbir politika tırmanmadı ve geçiş görevinin müfredat kapısını yirmi koşunun yirmisi geçemedi. Programın ürettiği şey bir başarı gösterimi değil, <strong>bir tasarım iddiasının adım adım daraltılmasıdır</strong>."
-       data-en="LIMULUS was set up to measure what four independently tilting rotor modules give an eVTOL, and <strong>it did not find the gain it was looking for</strong>. In the asymmetric regime four axes finished two points behind two axes. On actuator redundancy the ratio came out in the reverse direction, the four-axis arrangement being affected 1.15 times more by a jam. When the comparison gate first opened at full scale, six variant pairs out of six showed no difference. On the learning side, in all sixty evaluated runs the maximum altitude stayed at 150.0 m, meaning no policy climbed, and twenty runs out of twenty failed the curriculum gate of the transition task. What the programme produced is not a demonstration of success but <strong>the step-by-step narrowing of a design claim</strong>.">
-      LIMULUS, dört bağımsız eğimlenen rotor modülünün bir eVTOL'e ne kazandırdığını ölçmek için kuruldu ve <strong>aradığı kazancı bulamadı</strong>. Asimetrik rejimde dört eksen, iki eksenden iki puan geride kaldı. Aktüatör yedekliliğinde oran ters yönde çıktı, dört eksenli kurgu sıkışmadan 1,15 kat daha çok etkilendi. Karşılaştırma kapısı ilk kez tam ölçekte açıldığında altı varyant çiftinin altısında fark çıkmadı. Öğrenme ekseninde ise değerlendirilen altmış koşunun altmışında azami irtifa 150,0 m'de kaldı, yani hiçbir politika tırmanmadı ve geçiş görevinin müfredat kapısını yirmi koşunun yirmisi geçemedi. Programın ürettiği şey bir başarı gösterimi değil, <strong>bir tasarım iddiasının adım adım daraltılmasıdır</strong>.
-    </p>
-    <p style="margin-top:1.2rem"
-       data-tr="Bunu söyleyebilmesini iki yapısal seçime borçlu. Birincisi, varyantlar ayrı simülatörler değil aynı simülatörün kısıtlanmış hâlleridir, dolayısıyla olurlu kümeleri iç içe geçmiştir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bu bir bulgu değil <strong>kanıtlanabilir bir çözücü kusurudur</strong>. Karar 45 tam bunu yaptı ve karar 21'in üç kat yan kayma farkını geri aldı. İkincisi, her kampanyanın karar kuralları ölçüm görülmeden dondurulmuştur. Bunun bedeli de ödendi, karar 53'ün sonuç yorumu yanlış çıktı ve 14.08.2026'da düzeltildi, hatalı cümleler silinmedi. Ayrıca üç kez bir reçete ölçümden önce yazıldı ve üçünde de yanlış çıktı, bu yüzden <strong>bir düzeltme önerilmeden önce düzelteceği mekanizma ölçülür</strong> kuralı kondu."
-       data-en="It owes the ability to say this to two structural choices. First, the variants are not separate simulators but constrained instances of one, so their feasible sets are nested and a constrained variant outperforming the unconstrained one is not a finding but <strong>a provable solver defect</strong>. Decision 45 did exactly that and withdrew the threefold sideslip difference of decision 21. Second, the decision rules of every campaign were frozen before any measurement was seen. That carried a price too, the results reading of decision 53 turned out to be wrong and was corrected on 14 August 2026 without deleting the erroneous sentences. Three times as well a remedy was written before the measurement and all three were wrong, which is why the rule was adopted that <strong>before a correction is proposed, the mechanism it would correct is measured</strong>.">
-      Bunu söyleyebilmesini iki yapısal seçime borçlu. Birincisi, varyantlar ayrı simülatörler değil aynı simülatörün kısıtlanmış hâlleridir, dolayısıyla olurlu kümeleri iç içe geçmiştir ve kısıtlı bir varyant kısıtsızından iyi çıktığında bu bir bulgu değil <strong>kanıtlanabilir bir çözücü kusurudur</strong>. Karar 45 tam bunu yaptı ve karar 21'in üç kat yan kayma farkını geri aldı. İkincisi, her kampanyanın karar kuralları ölçüm görülmeden dondurulmuştur. Bunun bedeli de ödendi, karar 53'ün sonuç yorumu yanlış çıktı ve 14.08.2026'da düzeltildi, hatalı cümleler silinmedi. Ayrıca üç kez bir reçete ölçümden önce yazıldı ve üçünde de yanlış çıktı, bu yüzden <strong>bir düzeltme önerilmeden önce düzelteceği mekanizma ölçülür</strong> kuralı kondu.
-    </p>
-    <p style="margin-top:1.2rem"
-       data-tr="Sonuçların sınırı açıktır. Uçuş verisi, rüzgâr tüneli verisi, hesaplamalı akışkanlar dinamiği ve sonlu eleman sonucu yoktur. Dinamik model, türediği 2012 kavramsal tasarım çalışmasının dokuz bağımsız büyüklüğünü yeniden üretmektedir, bu <strong>kaynağıyla tutarlılığı</strong> gösterir, mutlak doğruluğu değil. Menzil sayısının birinci belirleyicisi hâlâ yapılmamış olan HAD'dir. Bütün eğitim iki işlemci çekirdeğinde koştu, GPU kullanılmadı. Determinizm makineye bağlıdır, aynı tohum farklı bir işlemcide dokuzuncu ondalıkta ayrışır. Bu sitedeki her sayı arşivdeki betiklerden yeniden üretilebilir ve arşiv bir DOI ile anılabilir."
-       data-en="The limits of the results are stated plainly. There are no flight data, no wind tunnel data, and no computational fluid dynamics or finite element results. The dynamic model reproduces nine independent quantities of the 2012 conceptual design study it derives from, which shows <strong>consistency with its source</strong> and not absolute correctness. The first determinant of the range figure is still CFD, which has not been done. All training ran on two CPU cores with no GPU. Determinism is machine-dependent, the same seed diverging at the ninth decimal on a different processor. Every number on this site can be regenerated from the archived scripts, and the archive is citable by DOI.">
-      Sonuçların sınırı açıktır. Uçuş verisi, rüzgâr tüneli verisi, hesaplamalı akışkanlar dinamiği ve sonlu eleman sonucu yoktur. Dinamik model, türediği 2012 kavramsal tasarım çalışmasının dokuz bağımsız büyüklüğünü yeniden üretmektedir, bu <strong>kaynağıyla tutarlılığı</strong> gösterir, mutlak doğruluğu değil. Menzil sayısının birinci belirleyicisi hâlâ yapılmamış olan HAD'dir. Bütün eğitim iki işlemci çekirdeğinde koştu, GPU kullanılmadı. Determinizm makineye bağlıdır, aynı tohum farklı bir işlemcide dokuzuncu ondalıkta ayrışır. Bu sitedeki her sayı arşivdeki betiklerden yeniden üretilebilir ve arşiv bir DOI ile anılabilir.
-    </p>
-  </div>
+<section id="senaryo" class="mission-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow" data-tr="02 / GÖREV BAĞLAMI" data-en="02 / MISSION CONTEXT" >02 / GÖREV BAĞLAMI</p>
+<h2 class="" data-tr="Bir hava sahası, dört karar verici." data-en="One airspace, four decision makers." >Bir hava sahası, dört karar verici.</h2>
+</div>
+<p class="lead" data-tr="Bir aracı seçerek karar bağlamını inceleyin. Bu şema araştırma düzenini anlatır; uçuş verisi veya çalışan bir PPO politikası değildir." data-en="Select an aircraft to inspect its decision context. This schematic explains the research setup; it is neither a flight record nor a running PPO policy." >Bir aracı seçerek karar bağlamını inceleyin. Bu şema araştırma düzenini anlatır; uçuş verisi veya çalışan bir PPO politikası değildir.</p>
+</div>
+<div class="mission-console">
+<div class="console-head">
+<span>LIMULUS / MISSION BRIEF</span>
+<span class="console-tag" data-tr="ŞEMATİK · TELEMETRİ DEĞİL" data-en="SCHEMATIC · NOT TELEMETRY" >ŞEMATİK · TELEMETRİ DEĞİL</span>
+</div>
+<div class="mission-layout">
+<div class="airspace">
+<svg viewBox="0 0 800 500" role="img" aria-labelledby="airspace-title airspace-desc">
+<title id="airspace-title">Dört araç ve altı heliport</title>
+<desc id="airspace-desc">Ölçeksiz ve temsili görev şeması. Gerçek rota, konum, ayırma veya uçuş kaydı içermez.</desc>
+<defs>
+<pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="#203247" stroke-width=".7"/>
+</pattern>
+<g id="v74-symbol">
+<path d="M0 -17C-5 -13-6 -6-5 3L-17 11V15L-4 11L-3 19L0 16L3 19L4 11L17 15V11L5 3C6-6 5-13 0-17Z" fill="currentColor"/>
+<g fill="#0b1524" stroke="currentColor" stroke-width="2">
+<circle cx="-11" cy="-4" r="6"/>
+<circle cx="11" cy="-4" r="6"/>
+<circle cx="-11" cy="8" r="6"/>
+<circle cx="11" cy="8" r="6"/>
+</g>
+</g>
+</defs>
+<rect width="800" height="500" fill="url(#map-grid)"/>
+<path d="M-10 410C150 420 200 250 330 285S530 360 820 80" fill="none" stroke="#132d42" stroke-width="70"/>
+<path d="M-10 410C150 420 200 250 330 285S530 360 820 80" fill="none" stroke="#23506a" stroke-width="1"/>
+<g fill="#152233" stroke="#203247">
+<path d="M75 60H250V145H75Z M290 55H365V205H290Z M500 45H600V115H500Z M650 300H750V400H650Z M75 260H175V360H75Z M290 380H395V450H290Z M430 200H500V260H430Z"/>
+</g>
+<g fill="none" stroke="#28435c">
+<circle cx="400" cy="250" r="190" stroke-dasharray="4 7"/>
+<circle cx="400" cy="250" r="115" stroke-dasharray="3 8"/>
+</g>
+<g class="concept-route" data-route="V1" stroke="#edece6">
+<path d="M190 200Q130 170 140 110"/>
+<path d="M190 200Q260 80 430 100"/>
+</g>
+<g class="concept-route" data-route="V2" stroke="#efb088" hidden>
+<path d="M530 300Q650 320 670 200"/>
+<path d="M530 300Q480 400 550 420"/>
+</g>
+<g class="concept-route" data-route="V3" stroke="#a4b6a2" hidden>
+<path d="M345 370Q260 370 220 420"/>
+<path d="M345 370Q330 230 430 100"/>
+</g>
+<g class="concept-route" data-route="V4" stroke="#efa89b" hidden>
+<path d="M610 155Q660 100 690 75"/>
+<path d="M610 155Q640 180 670 200"/>
+</g>
+<g class="heliport" transform="translate(140 110)">
+<rect x="-16" y="-16" width="32" height="32" rx="8"/>
+<path d="M-6-7V7M6-7V7M-6 0H6"/>
+<text x="23" y="5">A</text>
+</g>
+<g class="heliport" transform="translate(430 100)">
+<rect x="-16" y="-16" width="32" height="32" rx="8"/>
+<path d="M-6-7V7M6-7V7M-6 0H6"/>
+<text x="23" y="5">B</text>
+</g>
+<g class="heliport" transform="translate(670 200)">
+<rect x="-16" y="-16" width="32" height="32" rx="8"/>
+<path d="M-6-7V7M6-7V7M-6 0H6"/>
+<text x="23" y="5">C</text>
+</g>
+<g class="heliport" transform="translate(550 420)">
+<rect x="-16" y="-16" width="32" height="32" rx="8"/>
+<path d="M-6-7V7M6-7V7M-6 0H6"/>
+<text x="23" y="5">D</text>
+</g>
+<g class="heliport" transform="translate(220 420)">
+<rect x="-16" y="-16" width="32" height="32" rx="8"/>
+<path d="M-6-7V7M6-7V7M-6 0H6"/>
+<text x="23" y="5">E</text>
+</g>
+<g class="heliport" transform="translate(690 75)">
+<rect x="-16" y="-16" width="32" height="32" rx="8"/>
+<path d="M-6-7V7M6-7V7M-6 0H6"/>
+<text x="23" y="5">F</text>
+</g>
+<g class="map-aircraft" data-aircraft="V1" style="color:#edece6" transform="translate(190 200)">
+<circle class="selection-ring" r="34"/>
+<g transform="rotate(-25)">
+<use href="#v74-symbol"/>
+</g>
+<text x="27" y="-18">V1</text>
+</g>
+<g class="map-aircraft" data-aircraft="V2" style="color:#efb088" transform="translate(530 300)">
+<circle class="selection-ring" r="34"/>
+<g transform="rotate(35)">
+<use href="#v74-symbol"/>
+</g>
+<text x="27" y="-18">V2</text>
+</g>
+<g class="map-aircraft" data-aircraft="V3" style="color:#a4b6a2" transform="translate(345 370)">
+<circle class="selection-ring" r="34"/>
+<g transform="rotate(-40)">
+<use href="#v74-symbol"/>
+</g>
+<text x="27" y="-18">V3</text>
+</g>
+<g class="map-aircraft" data-aircraft="V4" style="color:#efa89b" transform="translate(610 155)">
+<circle class="selection-ring" r="34"/>
+<g transform="rotate(30)">
+<use href="#v74-symbol"/>
+</g>
+<text x="27" y="-18">V4</text>
+</g>
+<g class="map-compass">
+<path d="M40 83V45L34 57M40 45L46 57"/>
+<text x="35" y="33">N</text>
+</g>
+</svg>
+<div class="map-caption">
+<span class="" data-tr="6 HELİPORT · 2 YEDEK ALAN" data-en="6 HELIPORTS · 2 ALTERNATES" >6 HELİPORT · 2 YEDEK ALAN</span>
+<span class="" data-tr="Ölçek ve rotalar temsilidir." data-en="Scale and routes are illustrative." >Ölçek ve rotalar temsilidir.</span>
+</div>
+</div>
+<aside class="mission-detail">
+<div class="aircraft-switch" role="group" aria-label="Araç seçimi">
+<button type="button" data-vehicle="V1" aria-pressed="true" style="--vehicle:var(--v1)">V1</button>
+<button type="button" data-vehicle="V2" aria-pressed="false" style="--vehicle:var(--v2)">V2</button>
+<button type="button" data-vehicle="V3" aria-pressed="false" style="--vehicle:var(--v3)">V3</button>
+<button type="button" data-vehicle="V4" aria-pressed="false" style="--vehicle:var(--v4)">V4</button>
+</div>
+<div class="selected-vehicle">
+<span class="small-label" data-tr="SEÇİLİ ARAÇ" data-en="SELECTED AIRCRAFT">SEÇİLİ ARAÇ</span>
+<strong id="vehicle-name">V1</strong>
+</div>
+<h3 id="vehicle-title" aria-live="polite">
+</h3>
+<p id="vehicle-description">
+</p>
+<dl class="context-list">
+<div>
+<dt class="" data-tr="Gözlenen bağlam" data-en="Observed context" >Gözlenen bağlam</dt>
+<dd id="vehicle-context">
+</dd>
+</div>
+<div>
+<dt class="" data-tr="Politikanın görevi" data-en="Policy task" >Politikanın görevi</dt>
+<dd id="vehicle-task">
+</dd>
+</div>
+</dl>
+<p class="console-footnote" data-tr="Gösterilen yollar seçenekleri temsil eder. Bir rota önerisi, emniyetli ayırma ölçümü veya başarılı iniş iddiası içermez." data-en="The displayed paths represent options. They do not provide route advice, measured separation or a successful-landing claim." >Gösterilen yollar seçenekleri temsil eder. Bir rota önerisi, emniyetli ayırma ölçümü veya başarılı iniş iddiası içermez.</p>
+</aside>
+</div>
+</div>
 </section>
-
-<div class="divider"></div>
-
-<section id="kaynakca" class="fade-in">
-  <div class="section-label" data-tr="Kaynakça" data-en="References">Kaynakça</div>
-  <p class="lead" style="margin-bottom:0"
-     data-tr="M1 ve M5 makalelerinin kaynakçalarının birleşimi, on dört kalem. Üçü iki makalede de geçiyor. Bu liste arşivlenen çalışmaya aittir, tezin güncel kaynakçası tez metnindedir."
-     data-en="The union of the reference lists of manuscripts M1 and M5, fourteen entries. Three appear in both. This list belongs to the archived study, and the current reference list of the thesis is in the thesis text.">M1 ve M5 makalelerinin kaynakçalarının birleşimi, on dört kalem. Üçü iki makalede de geçiyor. Bu liste arşivlenen çalışmaya aittir, tezin güncel kaynakçası tez metnindedir.</p>
-  <div class="abstract-box">
-    <div class="kaynak-liste">
-      <p>Aljalbout, E., Frank, F., Karl, M., &amp; van der Smagt, P. (2023). On the Role of the Action Space in Robot Manipulation Learning and Sim-to-Real Transfer. <em>arXiv:2312.03673</em>.</p>
-      <p>Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., &amp; Mané, D. (2016). Concrete Problems in AI Safety. <em>arXiv:1606.06565</em>.</p>
-      <p>Bacchini, A., &amp; Cestino, E. (2019). Electric VTOL Configurations Comparison. <em>Aerospace</em>, 6(3), 26.</p>
-      <p>Benyamen, H., Chowdhury, M., &amp; Keshmiri, S. (2023). Reinforcement Learning Based Aircraft Controller Enhanced By Gaussian Process Trim Finding. <em>ASME Letters in Dynamic Systems and Control</em>, 3(3), 031002.</p>
-      <p>Bøhn, E., Coates, E. M., Moe, S., &amp; Johansen, T. A. (2019). Deep Reinforcement Learning Attitude Control of Fixed-Wing UAVs Using Proximal Policy Optimization. <em>ICUAS 2019</em>. arXiv:1911.05478.</p>
-      <p>Cantekin, M., &amp; Durmuş, G. (2012). Geleceğin Hava Taşımacılığında Öncü Yaklaşımlar. <em>UHUK-2012-114</em>, Hava Harp Okulu, İstanbul.</p>
-      <p>Caudle, D., Singh, R., Malpica, C., Nadell, S. J., Berger, T., &amp; Suh, P. (2025). Development and Integration of Flight Dynamics Models for Study of eVTOL Aircraft in the NASA Vertical Motion Simulator. <em>Vertical Flight Society 81st Annual Forum</em>, Virginia Beach, VA.</p>
-      <p>Dai, Y., Wang, Y., Ashley, D. R., &amp; Schmidhuber, J. (2026). Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization. <em>arXiv:2603.15388</em>.</p>
-      <p>Gleave, A., Freire, P., Wang, S., &amp; Toyer, S. (2020). <em>seals: Suite of Environments for Algorithms that Learn Specifications</em>. GitHub deposu.</p>
-      <p>Hofman, J. M., Chatzimparmpas, A., Sharma, A., Watts, D. J., &amp; Hullman, J. (2023). Pre-registration for Predictive Modeling. <em>arXiv:2311.18807</em>.</p>
-      <p>Pan, A., Bhatia, K., &amp; Steinhardt, J. (2022). The Effects of Reward Misspecification: Mapping and Mitigating Misaligned Models. <em>ICLR 2022</em>. arXiv:2201.03544.</p>
-      <p>Schulman, J., Wolski, F., Dhariwal, P., Radford, A., &amp; Klimov, O. (2017). Proximal Policy Optimization Algorithms. <em>arXiv:1707.06347</em>.</p>
-      <p>Skalse, J., Howe, N. H. R., Krasheninnikov, D., &amp; Krueger, D. (2022). Defining and Characterizing Reward Hacking. <em>NeurIPS 2022</em>. arXiv:2209.13085.</p>
-      <p>Zhang, W., Ma, Z., Li, J., Wang, H., Liu, H., Sugihara, J., Chen, C., Chen, Y., &amp; Zhao, M. (2026). Learning Agile and Robust Omnidirectional Aerial Motion on Overactuated Tiltable-Quadrotors. <em>arXiv:2602.21583</em>.</p>
-    </div>
-
-    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
-      <div class="kaynak-baslik" data-tr="Arşiv ve kaynak kod" data-en="Archive and source code">Arşiv ve kaynak kod</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px">
-        <a href="https://github.com/Orfeomete/limulus-evtol" target="_blank" rel="noopener" class="repo-card">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="gh-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <div><div class="repo-name">limulus-evtol</div><div class="repo-path">489 dosya · 149 koşu · MIT ve CC BY 4.0</div></div>
-        </a>
-        <a href="https://doi.org/10.5281/zenodo.23376970" target="_blank" rel="noopener" class="repo-card">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="gh-icon"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8zm-1 3v6h2V7h-2zm0 8v2h2v-2h-2z"/></svg>
-          <div><div class="repo-name">Zenodo · v1.1.0</div><div class="repo-path">10.5281/zenodo.23376970</div></div>
-        </a>
-        <a href="https://github.com/Orfeomete/limulus-site" target="_blank" rel="noopener" class="repo-card">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="gh-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <div><div class="repo-name">limulus-site</div><div class="repo-path" data-tr="bu sitenin kaynağı" data-en="the source of this site">bu sitenin kaynağı</div></div>
-        </a>
-        <a href="https://cdsa.app/" target="_blank" rel="noopener" class="repo-card">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="gh-icon"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM4.26 13h3.5c.1 2.1.5 3.9 1.1 5.2A8.03 8.03 0 014.26 13zm3.5-2h-3.5a8.03 8.03 0 014.6-5.2c-.6 1.3-1 3.1-1.1 5.2zm4.24 8.9c-.8-.9-1.6-3.2-1.74-6.9h3.48c-.14 3.7-.94 6-1.74 6.9zM10.26 11c.14-3.7.94-6 1.74-6.9.8.9 1.6 3.2 1.74 6.9h-3.48zm5.88 0c-.1-2.1-.5-3.9-1.1-5.2a8.03 8.03 0 014.6 5.2h-3.5zm0 2h3.5a8.03 8.03 0 01-4.6 5.2c.6-1.3 1-3.1 1.1-5.2z"/></svg>
-          <div><div class="repo-name">cdsa.app</div><div class="repo-path" data-tr="yazarın diğer araştırma programı" data-en="the author's other research programme">yazarın diğer araştırma programı</div></div>
-        </a>
-      </div>
-    </div>
-  </div>
+<section id="yontem" class="method-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow" data-tr="03 / KARŞILAŞTIRMA DÜZENİ" data-en="03 / COMPARISON DESIGN" >03 / KARŞILAŞTIRMA DÜZENİ</p>
+<h2 class="" data-tr="Ne değişiyor?&lt;br&gt;Ne aynı kalıyor?" data-en="What changes?&lt;br&gt;What stays the same?" >Ne değişiyor?<br>Ne aynı kalıyor?</h2>
+</div>
+<p class="lead" data-tr="Aynı uçak, fizik, ödül ve kabul sınırları. Değişen, deneyimin nerede işlendiği ve yerel güncellemelerin nasıl birleştirildiği." data-en="The same aircraft, physics, reward and acceptance limits. What changes is where experience is processed and how local updates are aggregated." >Aynı uçak, fizik, ödül ve kabul sınırları. Değişen, deneyimin nerede işlendiği ve yerel güncellemelerin nasıl birleştirildiği.</p>
+</div>
+<div class="method-box">
+<div class="method-tabs" role="tablist" aria-label="Öğrenme yöntemleri">
+<button class="method-tab" data-tr="Merkezi PPO" data-en="Centralised PPO" type="button" role="tab" id="tab-central" data-method="central" aria-selected="true" aria-controls="method-panel" tabindex="0">Merkezi PPO</button>
+<button class="method-tab" data-tr="Standart FedPPO" data-en="Standard FedPPO" type="button" role="tab" id="tab-federated" data-method="federated" aria-selected="false" aria-controls="method-panel" tabindex="-1">Standart FedPPO</button>
+<button class="method-tab" data-tr="Bağlam Dengeli FedPPO" data-en="Context-balanced FedPPO" type="button" role="tab" id="tab-context" data-method="context" aria-selected="false" aria-controls="method-panel" tabindex="-1">Bağlam Dengeli FedPPO</button>
+</div>
+<div id="method-panel" role="tabpanel" aria-labelledby="tab-central" class="method-panel">
+<div class="method-diagram">
+<div class="client-row">
+<span>
+<i style="background:var(--v1)">
+</i>V1</span>
+<span>
+<i style="background:var(--v2)">
+</i>V2</span>
+<span>
+<i style="background:var(--v3)">
+</i>V3</span>
+<span>
+<i style="background:var(--v4)">
+</i>V4</span>
+</div>
+<div class="flow-lines">
+<span>↓</span>
+<span>↓</span>
+<span>↓</span>
+<span>↓</span>
+</div>
+<div class="learning-node" id="learning-node">
+</div>
+<p class="diagram-caption" id="flow-caption">
+</p>
+<div class="return-flow">↑ &nbsp; ↑ &nbsp; ↑ &nbsp; ↑</div>
+<span class="small-label" data-tr="Sonraki toplama turuna politika" data-en="Policy for the next collection round" >Sonraki toplama turuna politika</span>
+</div>
+<div class="method-copy">
+<p class="small-label" id="method-kicker">
+</p>
+<h3 id="method-title">
+</h3>
+<p id="method-description" aria-live="polite">
+</p>
+<div class="method-constant">
+<strong class="" data-tr="Ortak değerlendirme" data-en="Shared evaluation" >Ortak değerlendirme</strong>
+<p class="" data-tr="Başarı, çarpışma, ayırma ihlali, süre ve enerji ayrı raporlanır. Eğitim ödülü, görev başarısının yerine geçmez." data-en="Success, collision, separation violation, time and energy are reported separately. Training reward does not stand in for mission success." >Başarı, çarpışma, ayırma ihlali, süre ve enerji ayrı raporlanır. Eğitim ödülü, görev başarısının yerine geçmez.</p>
+</div>
+</div>
+</div>
+</div>
+<p class="section-footnote" data-tr="Araştırmanın ana karşılaştırma planı üç eğitim tohumu ve ortak dört araçlı değerlendirme dünyaları üzerine kuruludur. Sınırlı C/D ayar araştırması bu nihai karşılaştırmanın veya kör genellemenin tamamlandığı anlamına gelmez." data-en="The main comparison plan uses three training seeds and shared four-aircraft evaluation worlds. The bounded C/D settings study does not establish completion of that final comparison or blind generalisation." >Araştırmanın ana karşılaştırma planı üç eğitim tohumu ve ortak dört araçlı değerlendirme dünyaları üzerine kuruludur. Sınırlı C/D ayar araştırması bu nihai karşılaştırmanın veya kör genellemenin tamamlandığı anlamına gelmez.</p>
 </section>
-
-<div class="divider"></div>
-
-<section class="fade-in">
-  <div class="section-label" data-tr="Yazar" data-en="Author">Yazar</div>
-  <div class="card" style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;padding:2.5rem">
-    <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:Syne,sans-serif;font-size:1.8rem;font-weight:800;color:#fff;flex-shrink:0">MC</div>
-    <div style="flex:1 1 320px">
-      <div style="font-family:Syne,sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.3rem">Mete Cantekin</div>
-      <div style="color:var(--accent);font-size:0.9rem;margin-bottom:0.8rem">ORCID 0009-0001-6990-6340</div>
-      <div style="color:var(--text-muted);font-size:0.9rem;line-height:1.7"
-           data-tr="Nişantaşı Üniversitesi, Sivil Havacılık Yüksekokulu · İstanbul Beykent Üniversitesi, Lisansüstü Eğitim Enstitüsü"
-           data-en="Nisantasi University, School of Civil Aviation · Istanbul Beykent University, Graduate Education Institute">Nişantaşı Üniversitesi, Sivil Havacılık Yüksekokulu · İstanbul Beykent Üniversitesi, Lisansüstü Eğitim Enstitüsü</div>
-    </div>
-  </div>
+<section id="dogrulama" class="validation-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow" data-tr="04 / KANIT VE SONRAKİ ADIM" data-en="04 / EVIDENCE AND NEXT STEP" >04 / KANIT VE SONRAKİ ADIM</p>
+<h2 class="" data-tr="İlerleme görünür.&lt;br&gt;Kabul koşulları sabit." data-en="Visible progress.&lt;br&gt;Fixed acceptance criteria." >İlerleme görünür.<br>Kabul koşulları sabit.</h2>
+</div>
+<div class="snapshot">
+<span class="small-label" data-tr="DURUMLA İLGİLİ TARİHLİ KAYIT" data-en="DATED STATUS SNAPSHOT" >DURUMLA İLGİLİ TARİHLİ KAYIT</span>
+<time datetime="2026-10-23T21:03:34+03:00">23.10.2026 · 21:03 TRT</time>
+<p class="" data-tr="Canlı eğitim bağlantısı değildir." data-en="Not a live training connection." >Canlı eğitim bağlantısı değildir.</p>
+</div>
+</div>
+<div class="validation-grid">
+<article class="status-summary">
+<span class="status-pill">
+<span class="" data-tr="C/D KARŞILAŞTIRMASI SÜRÜYOR" data-en="C/D COMPARISON IN PROGRESS" >C/D KARŞILAŞTIRMASI SÜRÜYOR</span>
+</span>
+<h3 class="" data-tr="Eğitim ve görev başarısı ayrı ölçülür." data-en="Completing training and completing a mission are separate." >Eğitim ve görev başarısı ayrı ölçülür.</h3>
+<p class="" data-tr="Bu kayıtta C’nin sınırlı eğitim bütçesi tamamlandı, D eğitimi sürüyor. Yetkili dört bağımsız geliştirme değerlendirmesi ve C/D karşılaştırması henüz hazır değil." data-en="At this snapshot, C has completed its bounded training budget and D training is ongoing. The four authorised independent development evaluations and the C/D comparison are not ready." >Bu kayıtta C’nin sınırlı eğitim bütçesi tamamlandı, D eğitimi sürüyor. Yetkili dört bağımsız geliştirme değerlendirmesi ve C/D karşılaştırması henüz hazır değil.</p>
+<div class="status-checks">
+<div>
+<span class="check pending">○</span>
+<span class="" data-tr="Dört aracın kendi hedeflerine birlikte güvenli inişi" data-en="Safe joint landing at all four assigned targets" >Dört aracın kendi hedeflerine birlikte güvenli inişi</span>
+<b class="" data-tr="Doğrulanmadı" data-en="Unverified" >Doğrulanmadı</b>
+</div>
+<div>
+<span class="check pending">○</span>
+<span class="" data-tr="KD.1–KD.4 mühendislik kapanışları" data-en="KD.1–KD.4 engineering closure" >KD.1–KD.4 mühendislik kapanışları</span>
+<b class="" data-tr="Açık" data-en="Open" >Açık</b>
+</div>
+<div>
+<span class="check pending">○</span>
+<span class="" data-tr="6. adım · Sentez ve sonuçların aktarımı" data-en="Step 6 · Synthesis and results transfer" >6. adım · Sentez ve sonuçların aktarımı</span>
+<b class="" data-tr="Beklemede" data-en="Pending" >Beklemede</b>
+</div>
+</div>
+<p class="status-note" data-tr="Sayfanın sunumu 6. adım için hazırlanmıştır; araştırmanın bu aşamaya kabul edildiği anlamına gelmez." data-en="The page is prepared to present Step 6; this does not mean the research has been admitted to that stage." >Sayfanın sunumu 6. adım için hazırlanmıştır; araştırmanın bu aşamaya kabul edildiği anlamına gelmez.</p>
+</article>
+<div class="gates">
+<div class="gate-row">
+<span>01</span>
+<div>
+<h3 class="" data-tr="Öğrenilmiş dört araçlı görev" data-en="Learned four-aircraft mission" >Öğrenilmiş dört araçlı görev</h3>
+<p class="" data-tr="Dört hedefe güvenli iniş; çarpışma ve fiziksel başarısızlık olmadan, değişmeyen araştırma sınırları içinde doğrulanır." data-en="Safe landing at four targets must be verified within the unchanged research limits, with no collision or physical failure." >Dört hedefe güvenli iniş; çarpışma ve fiziksel başarısızlık olmadan, değişmeyen araştırma sınırları içinde doğrulanır.</p>
+</div>
+</div>
+<div class="gate-row">
+<span>02</span>
+<div>
+<h3 class="" data-tr="Mühendislik bütünlüğü" data-en="Engineering consistency" >Mühendislik bütünlüğü</h3>
+<p class="" data-tr="KD.1 kokpit ve kumandalar; KD.2 batarya ve elektrik; KD.3 yükler ve mekanizmalar; KD.4 kütle, ağırlık merkezi, atalet ve dayanım." data-en="KD.1 cockpit and controls; KD.2 battery and electrical systems; KD.3 loads and mechanisms; KD.4 mass, centre of gravity, inertia and strength." >KD.1 kokpit ve kumandalar; KD.2 batarya ve elektrik; KD.3 yükler ve mekanizmalar; KD.4 kütle, ağırlık merkezi, atalet ve dayanım.</p>
+</div>
+</div>
+<div class="gate-row">
+<span>03</span>
+<div>
+<h3 class="" data-tr="İzlenebilir sonuç aktarımı" data-en="Traceable transfer of results" >İzlenebilir sonuç aktarımı</h3>
+<p class="" data-tr="Koşullar tamamlandığında yeni doğrulanmış sonuçlar sunuma bağlanır. Olumsuz bulgular, sürüm ve kaynak ilişkisiyle birlikte korunur." data-en="Once the conditions are met, newly verified results can be linked to the presentation. Negative findings retain their version and source context." >Koşullar tamamlandığında yeni doğrulanmış sonuçlar sunuma bağlanır. Olumsuz bulgular, sürüm ve kaynak ilişkisiyle birlikte korunur.</p>
+</div>
+</div>
+</div>
+</div>
+<details class="acceptance-details">
+<summary>
+<span class="" data-tr="Araştırma kabul sınırları ve kanıtın kapsamı" data-en="Research acceptance limits and scope of evidence" >Araştırma kabul sınırları ve kanıtın kapsamı</span>
+<span aria-hidden="true">+</span>
+</summary>
+<div class="acceptance-content">
+<div class="limit-list">
+<div>
+<strong>25 m</strong>
+<span class="" data-tr="En az araçlar arası ayırma" data-en="Minimum inter-aircraft separation" >En az araçlar arası ayırma</span>
+</div>
+<div>
+<strong>25 K</strong>
+<span class="" data-tr="En fazla hücre sıcaklığı artışı" data-en="Maximum cell temperature rise" >En fazla hücre sıcaklığı artışı</span>
+</div>
+<div>
+<strong>65%</strong>
+<span class="" data-tr="En az SoC" data-en="Minimum state of charge" >En az SoC</span>
+</div>
+<div>
+<strong>102 A</strong>
+<span class="" data-tr="En fazla hücre akımı" data-en="Maximum cell current" >En fazla hücre akımı</span>
+</div>
+<div>
+<strong>3300 A</strong>
+<span class="" data-tr="En fazla paket akımı" data-en="Maximum pack current" >En fazla paket akımı</span>
+</div>
+<div>
+<strong>2.5 V</strong>
+<span class="" data-tr="En az hücre gerilimi" data-en="Minimum cell voltage" >En az hücre gerilimi</span>
+</div>
+</div>
+<p class="" data-tr="Bunlar sabit araştırma kabul sınırlarıdır; sertifikasyon kriterleri değildir. SA88 hücresine dayalı paket, elektrik ve termal davranışın bir bölümü araştırma varsayımlarına bağlıdır. Benzetim sonuçları üretim, montaj veya fiziksel uçuşa hazır araç kanıtı oluşturmaz." data-en="These are fixed research acceptance limits, not certification criteria. Parts of the SA88-based pack, electrical and thermal behaviour rely on research assumptions. Simulation findings do not establish manufacturing, assembly or physical flight readiness." >Bunlar sabit araştırma kabul sınırlarıdır; sertifikasyon kriterleri değildir. SA88 hücresine dayalı paket, elektrik ve termal davranışın bir bölümü araştırma varsayımlarına bağlıdır. Benzetim sonuçları üretim, montaj veya fiziksel uçuşa hazır araç kanıtı oluşturmaz.</p>
+</div>
+</details>
 </section>
-
-<footer>
-  <span data-tr="LIMULUS-eVTOL · ön kayıtlı araştırma programı" data-en="LIMULUS-eVTOL · preregistered research programme">LIMULUS-eVTOL · ön kayıtlı araştırma programı</span><br>
-  <a href="https://github.com/Orfeomete/limulus-evtol" target="_blank" rel="noopener">GitHub</a> ·
-  <a href="https://doi.org/10.5281/zenodo.21934970" target="_blank" rel="noopener">DOI 10.5281/zenodo.21934970</a> ·
-  <a href="https://cdsa.app/" target="_blank" rel="noopener">CDSA</a><br>
-  <span style="font-size:0.78rem" data-tr="Kod MIT, koşu kayıtları ve ön kayıt belgeleri CC BY 4.0" data-en="Code MIT, run records and preregistration documents CC BY 4.0">Kod MIT, koşu kayıtları ve ön kayıt belgeleri CC BY 4.0</span>
+<section id="gorsellestirme" class="media-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow" data-tr="05 / TASARIM VE GÖRSELLEŞTİRME" data-en="05 / DESIGN AND VISUALISATION" >05 / TASARIM VE GÖRSELLEŞTİRME</p>
+<h2 class="" data-tr="Modeli görün.&lt;br&gt;Kanıt düzeyini ayırın." data-en="See the model.&lt;br&gt;Distinguish the evidence." >Modeli görün.<br>Kanıt düzeyini ayırın.</h2>
+</div>
+<a class="text-link" data-tr="Görünüşler ve tasarım ayrıntıları ↗" data-en="Views and design details ↗" href="ikiz/#v74">Görünüşler ve tasarım ayrıntıları ↗</a>
+</div>
+<div class="video-grid">
+<figure class="video">
+<div class="video-cerceve">
+<iframe src="https://www.youtube-nocookie.com/embed/yaDpz0VlPyU?rel=0" title="V74 · Tek araç" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<figcaption class="" data-tr="Açık deniz üzerinde tek araç sunumu. Kayıtlı uçuş izinin Unreal Engine görünümüdür. &lt;strong&gt;Fiziksel uçuş testi veya öğrenilmiş dört güvenli iniş kanıtı değildir.&lt;/strong&gt;" data-en="Single-aircraft presentation over open sea. An Unreal Engine view of a recorded trace. &lt;strong&gt;Not a physical flight test or proof of four safe learned landings.&lt;/strong&gt;" >Açık deniz üzerinde tek araç sunumu. Kayıtlı uçuş izinin Unreal Engine görünümüdür. <strong>Fiziksel uçuş testi veya öğrenilmiş dört güvenli iniş kanıtı değildir.</strong>
+</figcaption>
+</figure>
+<figure class="video">
+<div class="video-cerceve">
+<iframe src="https://www.youtube-nocookie.com/embed/VywWKcl-vSo?rel=0" title="V74 · Dört araç" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<figcaption class="" data-tr="Şehir sahnesinde dört panelli sunum. Her panel ayrı bir aracı izler. &lt;strong&gt;Fiziksel uçuş testi veya öğrenilmiş dört güvenli iniş kanıtı değildir.&lt;/strong&gt;" data-en="Four-panel presentation in a city scene. Each panel follows one aircraft. &lt;strong&gt;Not a physical flight test or proof of four safe learned landings.&lt;/strong&gt;" >Şehir sahnesinde dört panelli sunum. Her panel ayrı bir aracı izler. <strong>Fiziksel uçuş testi veya öğrenilmiş dört güvenli iniş kanıtı değildir.</strong>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="arsiv" class="archive-section">
+<div class="archive-heading">
+<p class="eyebrow" data-tr="06 / ARAŞTIRMA HAFIZASI" data-en="06 / RESEARCH RECORD" >06 / ARAŞTIRMA HAFIZASI</p>
+<h2 class="" data-tr="Yeni sorulara geçerken,&lt;br&gt;eski bulguları koruyoruz." data-en="New questions.&lt;br&gt;Preserved findings." >Yeni sorulara geçerken,<br>eski bulguları koruyoruz.</h2>
+<p class="lead" data-tr="V74 öncesi tasarım adımının 149 koşusu ve 54 karar belgesi ayrı arşivde duruyor. Bu kayıtlar güncel C/D eğitiminin sonuçları olarak sunulmaz." data-en="The 149 runs and 54 decision documents from the pre-V74 design stage remain in a separate archive. They are not presented as results of the current C/D training." >V74 öncesi tasarım adımının 149 koşusu ve 54 karar belgesi ayrı arşivde duruyor. Bu kayıtlar güncel C/D eğitiminin sonuçları olarak sunulmaz.</p>
+</div>
+<div class="archive-links">
+<a class="archive-link" href="ikiz/">
+<span class="archive-num">01</span>
+<div>
+<h3 class="" data-tr="Tasarım ve dijital ikiz" data-en="Design and digital twin" >Tasarım ve dijital ikiz</h3>
+<p class="" data-tr="V74 görünüşleri, tasarım değerleri ve önceki modelin sınırları." data-en="V74 views, design quantities and the limits of the earlier model." >V74 görünüşleri, tasarım değerleri ve önceki modelin sınırları.</p>
+</div>
+<span class="link-arrow" aria-hidden="true">↗</span>
+</a>
+<a class="archive-link" href="kararlar/">
+<span class="archive-num">02</span>
+<div>
+<h3 class="" data-tr="Kararlar ve ön kayıtlar" data-en="Decisions and preregistrations" >Kararlar ve ön kayıtlar</h3>
+<p class="" data-tr="Ölçümden önce dondurulan kurallar; düzeltmeler ve olumsuz sonuçlar." data-en="Rules frozen before measurement; corrections and negative findings." >Ölçümden önce dondurulan kurallar; düzeltmeler ve olumsuz sonuçlar.</p>
+</div>
+<span class="link-arrow" aria-hidden="true">↗</span>
+</a>
+<a class="archive-link" href="kampanyalar/">
+<span class="archive-num">03</span>
+<div>
+<h3 class="" data-tr="Arşivlenmiş kampanyalar" data-en="Archived campaigns" >Arşivlenmiş kampanyalar</h3>
+<p class="" data-tr="Önceki tasarım adımının koşu günlükleri ve kayıtlı öğrenme eğrileri." data-en="Run logs and recorded learning curves of the earlier design stage." >Önceki tasarım adımının koşu günlükleri ve kayıtlı öğrenme eğrileri.</p>
+</div>
+<span class="link-arrow" aria-hidden="true">↗</span>
+</a>
+<a class="archive-link" href="arsiv/">
+<span class="archive-num">04</span>
+<div>
+<h3 class="" data-tr="Depo, DOI ve yeniden üretim" data-en="Repository, DOI and reproduction" >Depo, DOI ve yeniden üretim</h3>
+<p class="" data-tr="Kaynaklar, sürümler, arşiv bağlantıları ve lisanslar." data-en="Sources, versions, archive links and licences." >Kaynaklar, sürümler, arşiv bağlantıları ve lisanslar.</p>
+</div>
+<span class="link-arrow" aria-hidden="true">↗</span>
+</a>
+</div>
+<details id="sonuc" class="archive-conclusion">
+<summary>
+<span class="" data-tr="Önceki tasarım adımından ne öğrendik?" data-en="What did the earlier design stage show?" >Önceki tasarım adımından ne öğrendik?</span>
+<span aria-hidden="true">+</span>
+</summary>
+<p class="" data-tr="Arşivlenen çalışma, bağımsız tilt eksenleri için beklenen üstünlüğü doğrulamadı. Bazı karşılaştırmalar çözücü kusurları nedeniyle düzeltildi; öğrenme kampanyalarında görev kapıları aşılamadı. Bu olumsuz bulgular ve düzeltmeler arşivde korunuyor. Güncel V74 öğrenilmiş görev yeterliğinin yerine geçmezler." data-en="The archived study did not establish the anticipated benefit of independent tilt axes. Some comparisons were corrected after solver defects, and learning campaigns failed their mission gates. These negative findings and corrections remain in the archive. They do not establish learned mission proficiency for the current V74." >Arşivlenen çalışma, bağımsız tilt eksenleri için beklenen üstünlüğü doğrulamadı. Bazı karşılaştırmalar çözücü kusurları nedeniyle düzeltildi; öğrenme kampanyalarında görev kapıları aşılamadı. Bu olumsuz bulgular ve düzeltmeler arşivde korunuyor. Güncel V74 öğrenilmiş görev yeterliğinin yerine geçmezler.</p>
+</details>
+</section>
+<section id="kaynakca" class="sources-section">
+<div>
+<p class="eyebrow" data-tr="KAYNAKLAR VE PROGRAM" data-en="SOURCES AND PROGRAMME" >KAYNAKLAR VE PROGRAM</p>
+<h2 class="" data-tr="Bağlamıyla birlikte erişilebilir." data-en="Accessible with context." >Bağlamıyla birlikte erişilebilir.</h2>
+</div>
+<div class="source-links">
+<a href="https://github.com/Orfeomete/limulus-evtol" target="_blank" rel="noopener">GitHub <span>limulus-evtol ↗</span>
+</a>
+<a href="https://doi.org/10.5281/zenodo.23376970" target="_blank" rel="noopener">Zenodo <span>v1.1.0 · <span class="" data-tr="Önceki tasarım arşivi" data-en="Earlier design archive" >Önceki tasarım arşivi</span> ↗</span>
+</a>
+<a href="https://cdsa.app/" target="_blank" rel="noopener">CDSA <span>
+<span class="" data-tr="Diğer araştırma programı" data-en="Related research programme" >Diğer araştırma programı</span> ↗</span>
+</a>
+</div>
+<details class="references">
+<summary>
+<span class="" data-tr="Seçilmiş yöntem kaynakları" data-en="Selected methodological references" >Seçilmiş yöntem kaynakları</span>
+<span aria-hidden="true">+</span>
+</summary>
+<ol>
+<li>Schulman, J., Wolski, F., Dhariwal, P., Radford, A., &amp; Klimov, O. (2017). <a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">Proximal policy optimization algorithms.</a>
+</li>
+<li>McMahan, B., Moore, E., Ramage, D., Hampson, S., &amp; Agüera y Arcas, B. (2017). <a href="https://proceedings.mlr.press/v54/mcmahan17a.html" target="_blank" rel="noopener">Communication-efficient learning of deep networks from decentralized data.</a>
+</li>
+<li>Cantekin, M., &amp; Durmuş, G. (2012). Geleceğin Hava Taşımacılığında Öncü Yaklaşımlar. <em>UHUK-2012-114.</em>
+</li>
+</ol>
+</details>
+<div class="author-line">
+<span class="author-monogram">MC</span>
+<div>
+<strong>Mete Cantekin</strong>
+<a href="https://orcid.org/0009-0001-6990-6340" target="_blank" rel="noopener">ORCID 0009-0001-6990-6340 ↗</a>
+<p class="" data-tr="Nişantaşı Üniversitesi · İstanbul Beykent Üniversitesi" data-en="Nişantaşı University · İstanbul Beykent University" >Nişantaşı Üniversitesi · İstanbul Beykent Üniversitesi</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<a href="./" class="footer-brand">LIMULUS<span>eVTOL RESEARCH</span>
+</a>
+<p class="" data-tr="Ön kayıtlı araştırma · Sayısal benzetim · İzlenebilir kanıt" data-en="Preregistered research · Numerical simulation · Traceable evidence" >Ön kayıtlı araştırma · Sayısal benzetim · İzlenebilir kanıt</p>
+<div>
+<a href="arsiv/">
+<span class="" data-tr="Arşiv ve lisanslar" data-en="Archive and licences" >Arşiv ve lisanslar</span>
+</a>
+<a href="https://cdsa.app/">CDSA ↗</a>
+</div>
 </footer>
-
-<script src="assets/limulus.js?v=20261015a"></script>
 </body>
 </html>

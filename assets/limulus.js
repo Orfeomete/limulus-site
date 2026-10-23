@@ -16,7 +16,12 @@ function applyLang(lang) {
   });
   document.querySelectorAll('.lang-btn').forEach(function (b) {
     b.textContent = lang === 'en' ? 'TR' : 'EN';
+    b.setAttribute('aria-label', lang === 'en' ? 'Türkçeye geç' : 'Switch to English');
   });
+  var menu = document.querySelector('.nav-toggle');
+  if (menu) menu.setAttribute('aria-label', lang === 'en' ? 'Menu' : 'Menü');
+  var navigation = document.querySelector('nav');
+  if (navigation) navigation.setAttribute('aria-label', lang === 'en' ? 'Main navigation' : 'Ana gezinme');
   try { localStorage.setItem('limulus-lang', lang); } catch (e) {}
   window.LANG = lang;
   document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
@@ -73,14 +78,20 @@ function menuDugmesi() {
   b.className = 'nav-toggle';
   b.setAttribute('aria-label', 'Menü');
   b.setAttribute('aria-expanded', 'false');
+  ul.id = ul.id || 'main-nav';
+  b.setAttribute('aria-controls', ul.id);
   b.textContent = '☰';
   b.addEventListener('click', function () {
     var acik = ul.classList.toggle('acik');
     b.setAttribute('aria-expanded', acik ? 'true' : 'false');
   });
-  ul.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') { ul.classList.remove('acik'); b.setAttribute('aria-expanded', 'false'); }
+  function closeMenu() { ul.classList.remove('acik'); b.setAttribute('aria-expanded', 'false'); }
+  ul.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && ul.classList.contains('acik')) { closeMenu(); b.focus(); }
   });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeMenu(); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1080) closeMenu(); });
   nav.insertBefore(b, nav.querySelector('.lang-btn'));
 }
 

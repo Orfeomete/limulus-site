@@ -1,40 +1,41 @@
 # limulus.cdsa.app
 
-LIMULUS-eVTOL araştırma programının sayfası. Statik site, GitHub Pages üzerinde yayınlanır.
+LIMULUS-eVTOL araştırma programının statik sitesi. Mevcut GitHub Pages yayını ve alan adı korunur.
 
-## Sayfalar
+## İçerik
 
 | Yol | İçerik |
-|---|---|
-| `/` | Program özeti, makale portföyü ve durumları |
-| `/ikiz/` | Dijital ikiz, geometri ve başarım noktası |
-| `/kararlar/` | Elli dört karar belgesi, süzülebilir ve aranabilir |
-| `/kampanyalar/` | On dört koşu dizini, yüz kırk dört koşu, grafikler |
-| `/arsiv/` | Depo, DOI, yeniden üretim komutları, lisanslar |
+| --- | --- |
+| / | V74 araştırması, temsili görev şeması, yöntemler, tarihli doğrulama durumu, mevcut sunum videoları ve arşiv dizini |
+| /ikiz/ | V74 görünüşleri ve tarihli tasarım değerleri; önceki tasarım arşivi |
+| /kararlar/ | Önceki tasarım adımının aranabilir 54 karar belgesi |
+| /kampanyalar/ | Önceki tasarım adımının 149 koşusu ve kayıtlı eğrileri |
+| /arsiv/ | Kaynak depo, DOI, yeniden üretim bilgileri ve lisanslar |
 
-## Veri nereden geliyor
+Makaleler bölümü kaldırılmıştır. Eski #makaleler bağlantısı #dogrulama bölümüne yönlenir.
 
-`data/` altındaki dört dosya elle yazılmadı, kaynağından türetildi.
+## Sunum ile araştırma kaydının ayrımı
 
-| Dosya | Kaynak |
-|---|---|
-| `kararlar.json` | `LIMULUS-eVTOL/4-KARARLAR/00-INDEKS.md` tablolarından ayrıştırıldı |
-| `kampanyalar.json` | Arşivdeki 149 koşu günlüğünden sayıldı |
-| `egriler.json` | Aynı günlüklerden, varyant başına ortalama, 60 noktaya seyreltilmiş |
-| `ikiz.json` | `2-CIZIM-MOTORU/geometri.py` çıktısından ayrıştırıldı |
+Ana sayfanın doğrulama durumu 23 Ekim 2026, 21:03 TRT tarihli bir kayıttır. Canlı eğitim bağlantısı değildir. Bu kayıtta C'nin sınırlı eğitim bütçesi tamamlanmış, D eğitimi sürmektedir. Dört son geliştirme değerlendirmesi ve C/D karşılaştırması henüz hazır değildir. Dört aracın birlikte güvenli hedef inişi doğrulanmamıştır; KD.1–KD.4 açıktır; 6. adım beklemededir.
 
-Kanıt tabanı değiştiğinde bu dosyalar yeniden türetilir, elle düzenlenmez.
+Görev şeması yalnızca araştırma bağlamını anlatır. Ölçek, konumlar ve yollar temsilidir. Telemetri, kaydedilmiş uçuş, PPO çıkarımı veya yeni bir deney değildir. Yöntem sekmeleri açıklayıcıdır. Bu siteden eğitim süreçlerine, model ağırlıklarına veya kaynak kuyruğa erişilmez.
 
-## Bilinçli olarak konulmayanlar
+6. adımın sunum altyapısı hazırdır. Bu, araştırma koşullarının kapandığı veya bu aşamaya geçildiği anlamına gelmez. Sonuç eklerken:
 
-Hakem sürecindeki ya da gönderim aşamasındaki makalelerin **tam metinleri ve özetleri**.
-Kural, CDSA sitesinden devralındı. Her metnin tam hâli, kendi süreci sonuçlandığında eklenir.
+1. Yalnız yeni doğrulanmış ve yayımlanması yetkilendirilmiş kaydı kullanın.
+2. Kayıt tarihini, değerlendirme kapsamını ve sınırları birlikte güncelleyin.
+3. Eğitim bütçesini görev başarısı saymayın; uçak sonuçlarını bağımsız deney gibi toplamayın.
+4. Olumsuz sonuçları, sürüm ilişkisini ve gerekli mühendislik kapanışlarını koruyun.
+5. Tamamlanmamış çalışmanın modelini, ham kaydını veya tezini yayıma eklemeyin.
 
-## Tema
+## Arşiv verileri
 
-`cdsa.app` ile aynı. Plus Jakarta Sans ve Syne, `--accent: #2563eb`, `--accent2: #0891b2`,
-yüzen hap gezinme, `data-tr` ve `data-en` ikilisiyle dil değiştirme.
+Mevcut data/ JSON dosyaları arşiv verileridir ve bu tasarım güncellemesinde değiştirilmemiştir. Eski araştırma bulguları güncel V74 veya C/D sonucu olarak yeniden etiketlenmez.
+
+## Tasarım ve erişilebilirlik
+
+CDSA ile aynı Plus Jakarta Sans / Syne yazı ailesi ve beyaz, soluk gri, kobalt, camgöbeği paleti. Görev şemasında B612 Mono kullanılır. Ana sayfa kontrolleri en az 44 piksel yüksekliğindedir; menü Escape ile kapanır; yöntem sekmeleri ok tuşlarını, Home ve End'i destekler. Hareket azaltma tercihi ve klavye odağı korunur. İçerik Türkçe ve İngilizcedir.
 
 ## Lisans
 
-İçerik CC BY 4.0. Programın kendisi `github.com/Orfeomete/limulus-evtol`, kod MIT.
+Kod MIT; arşiv koşu kayıtları ve ön kayıt belgeleri CC BY 4.0. Kaynak araştırma: https://github.com/Orfeomete/limulus-evtol
