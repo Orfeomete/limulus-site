@@ -191,7 +191,7 @@ nav { width:calc(100% - 64px); max-width:1240px; top:20px; min-height:72px; padd
 .brand-word { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; letter-spacing:.055em; line-height:1.1; }
 .brand-word small { display:block; font-family:'Plus Jakarta Sans',sans-serif; font-size:8px; font-weight:500; color:#8292a7; letter-spacing:.18em; padding-top:5px; }
 .nav-links { gap:20px; align-items:center; margin-left:auto; }
-.nav-links a { font-size:12px; display:inline-flex; align-items:center; min-height:44px; font-weight:500; color:#5a6d85; }
+.nav-links a { font-size:14px; display:inline-flex; align-items:center; min-height:44px; font-weight:500; color:#5a6d85; }
 .nav-links a:hover { color:#2563eb; }
 .lang-btn { min-width:48px; min-height:44px; border-radius:10px; font-size:12px; padding:8px 12px; }
 .nav-toggle { min-width:44px; min-height:44px; border-radius:10px; }
