@@ -5,7 +5,7 @@
 .home h1,.home h2,.home h3 { text-wrap:balance; }
 .home h2 { font-family:'Syne',sans-serif; font-size:clamp(30px,3.6vw,46px); line-height:1.12; letter-spacing:-.045em; font-weight:700; margin:0 0 24px; }
 .eyebrow { font-size:11px; font-weight:700; letter-spacing:.15em; color:var(--accent); margin-bottom:22px; line-height:1.6; }
-.intro { max-width:1320px; padding:156px 40px 72px; margin:auto; display:grid; grid-template-columns:1fr 1.12fr; gap:48px; align-items:center; }
+.intro { max-width:1320px; padding:156px 40px 72px; margin:auto; display:grid; grid-template-columns:1.24fr 1fr; gap:48px; align-items:center; }
 .intro-copy { min-width:0; }
 .intro h1 { font-size:clamp(37px,4.5vw,62px); font-weight:800; line-height:1.08; letter-spacing:-.052em; margin:0 0 26px; }
 .intro h1 span { color:var(--accent); }
