@@ -20,7 +20,7 @@
 .intro-facts > div { flex:1; }
 .intro-facts dt { font-family:'Syne',sans-serif; font-size:30px; font-weight:700; color:#233d60; letter-spacing:-.04em; }
 .intro-facts dd { font-size:11px; color:#64748b; margin:6px 0 0; line-height:1.5; }
-.intro-image { min-width:0; margin:0; padding:9px; border:1px solid #dce4ed; border-radius:22px; background:#fff; box-shadow:0 20px 60px #253c5913; transform:rotate(1deg); }
+.intro-image { min-width:0; margin:0; padding:9px; border:1px solid #dce4ed; border-radius:22px; background:#fff; box-shadow:0 20px 60px #253c5913; transform:none; }
 .intro-image .image-label { display:flex; justify-content:space-between; padding:10px 12px 15px; color:#183b68; font-weight:800; font-size:13px; letter-spacing:.08em; }
 .image-label span { color:#738298; font-weight:500; font-size:10px; letter-spacing:.12em; }
 .intro-image img { width:100%; height:auto; display:block; border-radius:12px; }
