@@ -233,4 +233,4 @@ html { scroll-padding-top:0; }
 /* Shared aircraft palette: sage RGB is an existing presentation choice. */
 :root { --v1:#edece6; --v2:#efb088; --v3:#a4b6a2; --v4:#efa89b; }
 nav::after { content:''; position:absolute; left:20px; right:20px; bottom:0; height:3px; background:linear-gradient(90deg,var(--v1) 0 25%,var(--v2) 25% 50%,var(--v3) 50% 75%,var(--v4) 75%); border-radius:3px; pointer-events:none; }
-.archive-page .archive-context { background:#f0f3ed; border-left-color:var(--v3); color:#50664d; }
+.archive-page .archive-context { background:#f6f8f3; border-left-color:var(--v3); color:#50664d; }
