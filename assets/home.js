@@ -17,7 +17,7 @@
   }
   function render() {
     renderMethod();
-    document.title=language()==='en'?'LIMULUS-eVTOL · Learning together, measuring safety':'LIMULUS-eVTOL · Birlikte öğrenmek, emniyeti ölçmek';
+    document.title=language()==='en'?"LIMULUS-eVTOL · Reinforcement learning for multi-aircraft flight missions":"LIMULUS-eVTOL · Çok araçlı uçuş görevlerinde pekiştirmeli öğrenme";
     set('airspace-title',language()==='en'?'Four aircraft and six heliports':'Dört araç ve altı heliport');
     set('airspace-desc',language()==='en'?'Browser-local illustrative 2D mission demo. No real flight, physics or PPO data.':'Tarayıcıda çalışan temsili 2B görev gösterimi. Gerçek uçuş, fizik veya PPO verisi içermez.');
     document.querySelector('.aircraft-switch').setAttribute('aria-label',language()==='en'?'Select aircraft':'Araç seçimi');
