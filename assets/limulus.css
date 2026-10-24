@@ -250,3 +250,9 @@ nav::after { content:''; position:absolute; left:20px; right:20px; bottom:0; hei
  .nav-separator span { display:none; }
  html:not(.js) .nav-links { display:flex; flex-wrap:wrap; width:100%; order:3; }
 }
+
+/* Keep the approved 23/7px brand and both header controls on one phone row. */
+@media(max-width:480px) { nav { width:calc(100% - 28px); } }
+
+/* The current section or page is both darker and underlined. */
+.nav-links a[aria-current] { color:#3e583e; font-weight:700; box-shadow:inset 0 -2px #8fa787; }

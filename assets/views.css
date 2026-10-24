@@ -13,3 +13,23 @@
 .view-downloads a { display:inline-flex; align-items:center; min-height:44px; }
 @media(max-width:600px) { .view-heading { padding:20px 16px 12px; }.view-selector { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); padding:0 16px 16px; gap:8px; }.view-selector button { padding:10px 6px; }.view-stage { aspect-ratio:4/3; }.view-gallery figcaption { padding:14px 16px; }.view-downloads { gap:0 16px; } }
 .view-stage { width:100%; overflow:hidden; }
+
+/* Markers follow the painted image, including portrait letterboxing. */
+.view-stage { position:relative; }
+.component-markers { position:absolute; pointer-events:none; }
+.component-pin { pointer-events:auto; position:absolute; width:44px; height:44px; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; border:0; background:transparent; cursor:pointer; }
+.component-pin span { display:flex; align-items:center; justify-content:center; width:28px; height:28px; font:600 11px 'Plus Jakarta Sans',sans-serif; color:white; background:#173855; border:2px solid white; border-radius:50%; box-shadow:0 2px 9px #0006; }
+.component-pin[aria-pressed="true"] span { background:#50664d; box-shadow:0 0 0 3px #efb088; }
+.component-explorer { padding:20px 24px 0; border-top:1px solid #dfe6df; }
+.component-prompt { font-size:12px; color:#61738a; margin:0 0 12px; }
+.component-list { display:flex; flex-wrap:wrap; gap:8px; }
+.component-list button { display:flex; align-items:center; gap:8px; min-height:44px; padding:9px 12px; font:500 12px 'Plus Jakarta Sans',sans-serif; border:1px solid #dfe6df; border-radius:8px; color:#50664d; background:#fcfdfb; cursor:pointer; }
+.component-list b { font-size:10px; font-weight:500; opacity:.7; }
+.component-list button[aria-pressed="true"] { color:white; background:#50664d; border-color:#50664d; }
+.component-detail { min-height:125px; padding:20px 0; }
+.component-detail h3 { font:600 17px 'Syne',sans-serif; margin:0 0 9px; color:#173855; }
+.component-detail p { font-size:13px; line-height:1.8; color:#61738a; max-width:800px; margin:0; }
+.component-detail small { display:block; font-size:11px; line-height:1.7; color:#8a7656; margin-top:6px; }
+@media(max-width:600px) { .component-markers { display:none; }.component-explorer { padding:18px 16px 0; }.component-list { display:grid; grid-template-columns:1fr 1fr; }.component-list button { padding:10px 9px; font-size:11px; }.component-detail { min-height:155px; } }
+.component-pin[hidden] { display:none; }
+@media(max-width:1100px) { .component-markers { display:none; } }

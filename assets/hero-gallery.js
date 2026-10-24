@@ -1,26 +1,30 @@
-/* Archived UE5 colour views; no flight or model state. */
-(function () {
-  'use strict';
-  var image=document.getElementById('hero-ue5-image');
-  if(!image)return;
-  var selected='V1';
-  var views={
-    V1:{src:'assets/v74-ue5-inci-hud.jpg',tr:['V1 · İnci beyazı','İnci beyazı V74 aracının kayıtlı UE5 heliport görünümü'],en:['V1 · Pearl white','Recorded UE5 heliport view of the pearl-white V74']},
-    V2:{src:'assets/v74-ue5-turuncu-hud.jpg',tr:['V2 · Pastel turuncu','Pastel turuncu V74 aracının kayıtlı UE5 dış kamera görünümü'],en:['V2 · Pastel orange','Recorded UE5 external-camera view of the pastel-orange V74']},
-    V3:{src:'assets/v74-ue5-adacayi-hud.jpg',tr:['V3 · Adaçayı yeşili','Adaçayı V74 görünümü; arşiv videoda V4 etiketiyle gösterilmiştir'],en:['V3 · Sage green','Sage V74 view, labelled V4 in the archive video']},
-    V4:{src:'assets/v74-ue5-mercan-hud.jpg',tr:['V4 · Pastel mercan','Pastel mercan V74 aracının kayıtlı UE5 heliport görünümü'],en:['V4 · Pastel coral','Recorded UE5 heliport view of the pastel-coral V74']}
-  };
-  var buttons=Array.from(document.querySelectorAll('[data-gallery-vehicle]'));
-  function render(){
-    var en=window.LANG==='en';var view=views[selected];var copy=en?view.en:view.tr;
-    if(image.getAttribute('src')!==view.src)image.setAttribute('src',view.src);
-    image.alt=copy[1];
-    document.getElementById('hero-frame-title').textContent=copy[0];
-    document.getElementById('hero-frame-note').textContent=selected==='V3'?(en?'Archive-video frame; the original V4 label is retained.':'Arşiv video karesi; dönemin V4 etiketi korunmuştur.'):(en?'Archived UE5 frame; information boxes are a presentation layer.':'Arşiv UE5 karesi · bilgi kutuları sunum katmanıdır.');
-    document.querySelector('.fleet-palette').setAttribute('aria-label',en?'V74 colour views':'V74 renk görünümü');
-    buttons.forEach(function(b){var key=b.dataset.galleryVehicle;b.setAttribute('aria-pressed',String(key===selected));b.setAttribute('aria-label',en?views[key].en[0]:views[key].tr[0]);});
-  }
-  buttons.forEach(function(b){b.addEventListener('click',function(){selected=b.dataset.galleryVehicle;render();});});
-  document.addEventListener('langchange',render);
-  render();
+/* Archived UE5 exterior/pilot views; no flight or model state. */
+(function(){
+ 'use strict';
+ var image=document.getElementById('hero-ue5-image');if(!image)return;
+ var selected='V1',camera='external';
+ var views={
+ V1:{src:'assets/v74-ue5-inci-hud.jpg',pilot:'assets/v74-pilot-inci.png',tr:'V1 · İnci beyazı',en:'V1 · Pearl white'},
+ V2:{src:'assets/v74-ue5-turuncu-hud.jpg',pilot:'assets/v74-pilot-turuncu.png',tr:'V2 · Pastel turuncu',en:'V2 · Pastel orange'},
+ V3:{src:'assets/v74-ue5-adacayi-hud.jpg',pilot:'assets/v74-ue5-adacayi-hud.jpg',tr:'V3 · Adaçayı yeşili',en:'V3 · Sage green'},
+ V4:{src:'assets/v74-ue5-mercan-hud.jpg',pilot:'assets/v74-pilot-mercan.png',tr:'V4 · Pastel mercan',en:'V4 · Pastel coral'}
+ };
+ function render(){
+  var en=window.LANG==='en',v=views[selected],pilot=camera==='pilot',label=en?v.en:v.tr;
+  var cameraLabel=pilot?(en?'Pilot view':'Pilot gözü'):(en?'External view':'Dış kamera');
+  var src=pilot?v.pilot:v.src;if(image.getAttribute('src')!==src)image.src=src;
+  image.classList.toggle('pilot-sage',pilot&&selected==='V3');
+  image.alt=label+' · '+cameraLabel+(selected==='V3'?(en?' · recorded as V4 in the archive':' · arşivde V4 olarak kayıtlı'):'');
+  document.getElementById('hero-frame-title').textContent=label+' · '+cameraLabel;
+  var note=pilot?(en?'Recorded UE5 pilot camera; not a live flight.':'Kayıtlı UE5 pilot kamerası · canlı uçuş değildir.'):(en?'Archived UE5 frame; information boxes are a presentation layer.':'Arşiv UE5 karesi · bilgi kutuları sunum katmanıdır.');
+  if(selected==='V3')note=pilot?(en?'Pilot-window crop from the archive video; originally labelled V4.':'Arşiv videonun pilot penceresinden kesit; özgün araç etiketi V4’tür.'):(en?'Archive-video frame; the original V4 label is retained.':'Arşiv video karesi; dönemin V4 etiketi korunmuştur.');
+  document.getElementById('hero-frame-note').textContent=note;
+  document.querySelector('.fleet-palette').setAttribute('aria-label',en?'V74 colour views':'V74 renk görünümü');
+  document.querySelector('.hero-camera-switch').setAttribute('aria-label',en?'Camera selection':'Kamera seçimi');
+  document.querySelectorAll('[data-gallery-vehicle]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.galleryVehicle===selected));b.setAttribute('aria-label',en?views[b.dataset.galleryVehicle].en:views[b.dataset.galleryVehicle].tr);});
+  document.querySelectorAll('[data-gallery-camera]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.galleryCamera===camera));});
+ }
+ document.querySelectorAll('[data-gallery-vehicle]').forEach(function(b){b.addEventListener('click',function(){selected=b.dataset.galleryVehicle;render();});});
+ document.querySelectorAll('[data-gallery-camera]').forEach(function(b){b.addEventListener('click',function(){camera=b.dataset.galleryCamera;render();});});
+ document.addEventListener('langchange',render);render();
 }());

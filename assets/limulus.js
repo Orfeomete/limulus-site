@@ -96,3 +96,31 @@ function menuDugmesi() {
 }
 
 document.addEventListener('DOMContentLoaded', function () { menuDugmesi(); initLang(); fadeIn(); });
+
+/* Current page/section in the shared menu; independent of research state. */
+(function(){
+ 'use strict';
+ function init(){
+  var nav=document.querySelector('nav');if(!nav)return;
+  var links=Array.from(nav.querySelectorAll('.nav-links a'));
+  function path(url){return url.pathname.replace(/index\.html$/,'').replace(/\/$/,'')||'/';}
+  var current=path(new URL(location.href));
+  function mark(link,value){links.forEach(function(a){if(a===link)a.setAttribute('aria-current',value);else a.removeAttribute('aria-current');});}
+  var page=current==='/ikiz'?'/ikiz':(/^\/(arsiv|kararlar|kampanyalar)$/.test(current)?'/arsiv':null);
+  if(page){var selected=links.find(function(a){return path(new URL(a.href))===page;});if(selected)mark(selected,current===page?'page':'location');return;}
+  var sections=links.map(function(a){var u=new URL(a.href);return {link:a,section:current===path(u)&&u.hash?document.getElementById(u.hash.slice(1)):null};}).filter(function(x){return x.section;});
+  if(!sections.length)return;
+  var queued=false;
+  function update(){
+   queued=false;
+   var line=nav.querySelector('.nav-logo').getBoundingClientRect().bottom+70,selected=sections[0];
+   sections.forEach(function(x){if(x.section.getBoundingClientRect().top<=line)selected=x;});
+   if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-8)selected=sections[sections.length-1];
+   mark(selected.link,'location');
+  }
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
+  window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule);window.addEventListener('hashchange',schedule);document.addEventListener('langchange',schedule);
+  update();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+}());

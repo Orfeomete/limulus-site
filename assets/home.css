@@ -232,3 +232,10 @@ details[open] summary > span:last-child { transform:rotate(45deg); }
 .evidence-body dd { margin:0; font-size:12px; line-height:1.85; color:#61738a; overflow-wrap:anywhere; }
 @media(max-width:480px) { .evidence-card summary { padding:18px 16px; gap:10px; grid-template-columns:23px minmax(0,1fr) 18px; }.evidence-body { margin-left:49px; margin-right:16px; }.evidence-heading strong { font-size:15px; } }
 .validation-grid { align-items:start; }
+
+/* Existing native camera records, separate from the mission sandbox. */
+.hero-camera-switch { display:flex; gap:6px; padding:0 10px 12px; }
+.hero-camera-switch button { min-height:44px; padding:10px 14px; font:500 11px 'Plus Jakarta Sans',sans-serif; color:#50664d; background:#fcfdfb; border:1px solid #dce4d8; border-radius:8px; cursor:pointer; }
+.hero-camera-switch button[aria-pressed="true"] { color:white; background:#50664d; border-color:#50664d; }
+.hero-image-stage { position:relative; }
+.hero-image-stage #hero-ue5-image.pilot-sage { position:absolute; width:400%; height:400%; max-width:none; left:-295%; top:-53.333333%; object-fit:fill; }
