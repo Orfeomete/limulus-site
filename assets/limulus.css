@@ -188,8 +188,9 @@ button,a,input,select,summary { -webkit-tap-highlight-color:transparent; }
 nav { width:calc(100% - 64px); max-width:1240px; top:20px; min-height:72px; padding:10px 20px; border-radius:16px; box-shadow:0 8px 35px #233d6010; }
 .nav-logo { gap:10px; flex-shrink:0; color:#214a7b; }
 .nav-logo img { display:block; border-radius:11px; width:42px; height:42px; }
-.brand-word { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; letter-spacing:.055em; line-height:1.1; }
-.brand-word small { display:block; font-family:'Plus Jakarta Sans',sans-serif; font-size:8px; font-weight:500; color:#8292a7; letter-spacing:.18em; padding-top:5px; }
+.brand-word { display:inline-flex; flex-direction:column; align-items:center; font-family:'Plus Jakarta Sans',sans-serif; font-size:23px; font-weight:400; letter-spacing:.10em; line-height:1.16; text-align:center; white-space:nowrap; color:#173855; }
+.brand-word .brand-name { display:block; }
+.brand-word small { display:block; font-family:inherit; font-size:7px; font-weight:500; color:#4a6579; letter-spacing:.12em; line-height:1; padding-top:5px; }
 .nav-links { gap:20px; align-items:center; margin-left:auto; }
 .nav-links a { font-size:14px; display:inline-flex; align-items:center; min-height:44px; font-weight:500; color:#5a6d85; }
 .nav-links a:hover { color:#2563eb; }
@@ -216,7 +217,7 @@ nav { width:calc(100% - 64px); max-width:1240px; top:20px; min-height:72px; padd
 }
 @media(max-width:480px) {
  nav { width:calc(100% - 28px); top:14px; min-height:66px; padding:8px 12px; gap:9px; }
- .brand-word { font-size:17px; }.brand-word small { font-size:7px; }.nav-logo { gap:8px; }.nav-logo img { width:36px; height:36px; }
+ .nav-logo { gap:8px; }.nav-logo img { width:36px; height:36px; }
  .archive-page .page-head { padding-top:125px; }.archive-page table.cfg { font-size:12px; }.archive-page table.cfg th,.archive-page table.cfg td { padding:10px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { animation:none!important; transition:none!important; } }
@@ -224,8 +225,6 @@ nav { width:calc(100% - 64px); max-width:1240px; top:20px; min-height:72px; padd
  nav { gap:6px; padding:8px 10px; }
  .nav-logo { gap:6px; }
  .nav-logo img { width:30px; height:30px; }
- .brand-word { font-size:13px; }
- .brand-word small { font-size:6px; letter-spacing:.1em; }
 }
 /* One anchor offset: section padding already clears the fixed header. */
 html { scroll-padding-top:0; }
