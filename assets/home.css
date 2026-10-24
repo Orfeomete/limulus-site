@@ -153,11 +153,11 @@ details[open] summary > span:last-child { transform:rotate(45deg); }
 .author-line a { color:#5480ac; font-size:11px; display:inline-block; padding:6px 0; text-decoration:none; min-height:32px; }
 .author-line p { color:#8b9bb0; font-size:10px; }
 .site-footer { max-width:1240px; margin:auto; display:flex; justify-content:space-between; align-items:center; text-align:left; gap:20px; font-size:10px; padding:30px 32px; }
-.site-footer .footer-brand { font-family:'Syne',sans-serif; font-weight:800; font-size:19px; color:#396185; letter-spacing:.07em; }
-.footer-brand span { display:block; font:8px 'Plus Jakarta Sans',sans-serif; letter-spacing:.15em; color:#8ea1b6; }
+.site-footer .footer-brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+.footer-brand img { width:30px; height:30px; display:block; }
 .site-footer > div { display:flex; gap:22px; }
 .site-footer a { min-height:44px; display:inline-flex; align-items:center; }
-.site-footer .footer-brand { display:block; }
+
 @media(min-width:1500px) { .intro { padding-top:175px; padding-bottom:100px; } }
 @media(max-width:1100px) { .intro { gap:30px; padding-left:32px; padding-right:32px; }.research-section { gap:50px; }.mission-layout { grid-template-columns:1fr 275px; }.mission-detail { padding:20px; }.method-panel { gap:40px; padding:30px; }.validation-grid { gap:30px; }.intro-facts { gap:15px; } }
 @media(max-width:800px) { .intro { grid-template-columns:1fr; padding-top:134px; gap:42px; max-width:690px; }.intro h1 { font-size:clamp(30px,6vw,48px); }.intro-lead { max-width:none; }.intro-image { transform:none; }.home-main > section { padding:65px 24px; }.research-strip { flex-wrap:wrap; padding:18px 24px; gap:10px 24px; }.research-strip > span:nth-child(2) { display:none; }.research-section { grid-template-columns:1fr; gap:42px; }.section-heading { display:block; }.section-heading .lead { max-width:none; margin-top:22px; }.mission-layout { grid-template-columns:1fr; }.airspace { border-right:0; border-bottom:1px solid #233247; }.mission-detail { padding:24px; }.mission-detail > p { min-height:0; }.mission-detail h3 { font-size:22px; }.selected-vehicle { margin-bottom:12px; }.aircraft-switch { margin-bottom:20px; }.context-list { display:grid; grid-template-columns:1fr 1fr; gap:20px; }.method-panel { grid-template-columns:1fr; gap:28px; }.method-copy { min-height:200px; }.validation-grid { grid-template-columns:1fr; }.snapshot { text-align:left; margin-top:24px; }.limit-list { grid-template-columns:repeat(3,1fr); gap:25px; }.archive-section { grid-template-columns:1fr; gap:35px; }.source-links { gap:20px; }.sources-section { border-radius:0; margin-bottom:0!important; }.site-footer { flex-wrap:wrap; }.site-footer > p { order:3; width:100%; } }
