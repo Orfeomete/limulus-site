@@ -204,3 +204,15 @@ details[open] summary > span:last-child { transform:rotate(45deg); }
 @media(max-width:1100px) { .fleet-palette { grid-template-columns:repeat(2,minmax(0,1fr)); }.fleet-palette span { font-size:10px; } }
 @media(max-width:800px) { .fleet-palette { grid-template-columns:repeat(4,minmax(0,1fr)); } }
 @media(max-width:600px) { .fleet-palette { grid-template-columns:repeat(2,minmax(0,1fr)); }.fleet-palette li { padding:12px; }.research-strip { border-radius:0; } }
+
+/* Archived UE5 gallery, independent of mission teaching controls. */
+.hero-image-stage { aspect-ratio:16/9; overflow:hidden; border-radius:12px; background:#102030; }
+.hero-image-stage img { width:100%; height:100%; object-fit:contain; border-radius:0; }
+.intro-image .fleet-palette li { display:block; padding:0; border:0; background:none; }
+.fleet-palette button { width:100%; min-height:44px; display:flex; gap:7px; align-items:center; padding:12px 10px; border:1px solid #17233320; border-radius:8px; background:var(--vehicle); color:#203025; font-family:inherit; text-align:left; cursor:pointer; }
+.fleet-palette button[aria-pressed="true"] { outline:2px solid #173855; outline-offset:2px; }
+.fleet-palette button:hover { border-color:#173855; }
+.fleet-palette button:focus-visible { outline:3px solid #173855; outline-offset:3px; }
+#hero-frame-title { font-weight:600; color:#173855; }
+#hero-frame-note { display:inline; }
+@media(max-width:600px) { .fleet-palette button { padding:12px; } }
