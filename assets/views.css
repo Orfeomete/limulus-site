@@ -1,0 +1,15 @@
+/* Recorded UE5 views: preserve each frame and its aspect ratio. */
+.view-gallery { scroll-margin-top:110px; }
+.view-heading { display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; gap:12px; padding:22px 24px 12px; }
+.view-eyebrow { font-size:11px; font-weight:600; letter-spacing:.12em; color:#50664d; }
+#v74-view-label { font-size:12px; color:#61738a; }
+.view-selector { display:flex; gap:8px; padding:0 24px 20px; flex-wrap:wrap; }
+.view-selector button { min-height:44px; padding:10px 18px; font:500 13px 'Plus Jakarta Sans',sans-serif; border:1px solid #dfe6df; border-radius:9px; color:#50664d; background:#fcfdfb; cursor:pointer; }
+.view-selector button:hover { background:#eef3ec; }
+.view-selector button[aria-pressed="true"] { background:#50664d; color:white; border-color:#50664d; }
+.view-stage { background:#edf0eb; aspect-ratio:16/9; max-height:560px; display:flex; align-items:center; justify-content:center; }
+.view-stage #v74-view-image { width:100%; height:100%; max-height:560px; object-fit:contain; background:transparent; }
+.view-downloads { display:flex; flex-wrap:wrap; gap:8px 24px; }
+.view-downloads a { display:inline-flex; align-items:center; min-height:44px; }
+@media(max-width:600px) { .view-heading { padding:20px 16px 12px; }.view-selector { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); padding:0 16px 16px; gap:8px; }.view-selector button { padding:10px 6px; }.view-stage { aspect-ratio:4/3; }.view-gallery figcaption { padding:14px 16px; }.view-downloads { gap:0 16px; } }
+.view-stage { width:100%; overflow:hidden; }
