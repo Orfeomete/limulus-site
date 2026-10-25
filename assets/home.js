@@ -18,8 +18,8 @@
   function render() {
     renderMethod();
     document.title=language()==='en'?"LIMULUS-eVTOL · Reinforcement learning for multi-aircraft flight":"LIMULUS-eVTOL · Çok araçlı uçuşta pekiştirmeli öğrenme";
-    set('airspace-title',language()==='en'?'Four aircraft and six heliports':'Dört araç ve altı heliport');
-    set('airspace-desc',language()==='en'?'Browser-local illustrative 2D mission demo. No real flight, physics or PPO data.':'Tarayıcıda çalışan temsili 2B görev gösterimi. Gerçek uçuş, fizik veya PPO verisi içermez.');
+    set('airspace-title',language()==='en'?'Four V74 aircraft and six rooftops in the UE city layout':'UE şehir planında dört V74 ve altı çatı');
+    set('airspace-desc',language()==='en'?'Recorded UE city image and matching rooftop coordinates. Browser-local illustrative 2D model; no flight telemetry or PPO connection.':'Kayıtlı UE şehir görüntüsü ve aynı çatı koordinatları. Temsili 2B görev modeli; uçuş telemetrisi veya PPO bağlantısı yoktur.');
     document.querySelector('.aircraft-switch').setAttribute('aria-label',language()==='en'?'Select aircraft':'Araç seçimi');
     document.querySelector('.method-tabs').setAttribute('aria-label',language()==='en'?'Learning methods':'Öğrenme yöntemleri');
   }
