@@ -1,0 +1,44 @@
+/* Approved 69B typography: lightweight headings, navigation and action buttons. */
+body { font-family:'Plus Jakarta Sans',sans-serif; font-weight:400; }
+h1,h2,h3,.home h2,.intro h1,.page-head h1 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:400;
+  letter-spacing:.025em;
+  line-height:1.2;
+}
+h3,.home h3 { font-weight:500; letter-spacing:.012em; line-height:1.4; }
+.intro h1 { font-size:clamp(32px,3.4vw,49px); }
+.home h2 { font-size:clamp(28px,3.2vw,42px); }
+.intro-facts dt,.chip .v,.h-code,.section-num,.evidence-number {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:400; letter-spacing:.04em;
+}
+.evidence-heading strong { font-family:'Plus Jakarta Sans',sans-serif; font-weight:500; letter-spacing:.01em; }
+.eyebrow,.section-label,.small-label { font-weight:500; letter-spacing:.12em; }
+/* Keep every action box, selector and disclosure in the same light type style. */
+button,input,select,summary,[role="tab"],.button,.filter-btn,.kopyala,.sayfa-ic,
+.learning-node,.client-row span,.status-pill {
+  font-family:'Plus Jakarta Sans',sans-serif!important;
+  font-weight:400!important;
+  letter-spacing:.02em;
+}
+button strong,button b,button span,.button strong,.button b,.button span,
+summary strong,summary b,summary span {
+  font-family:inherit!important;
+  font-weight:400!important;
+}
+.kar-no,.gate-row > span,.limit-list strong {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:400;
+}
+.nav-links a { font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; font-weight:400; letter-spacing:.08em; }
+.nav-links a[aria-current] { font-weight:400; }
+@media(max-width:600px) {
+  h1,h2,.home h2,.intro h1,.page-head h1 { letter-spacing:.005em; line-height:1.25; }
+  h3,.home h3 { letter-spacing:0; }
+  .intro h1 { font-size:clamp(28px,7.6vw,34px); }
+  .home h2 { font-size:clamp(26px,7vw,32px); }
+  .intro-lead { font-size:15px; line-height:1.85; }
+  .section-intro .lead,.hypothesis p,.method-copy > p:not(.small-label) { font-size:14px; line-height:1.85; }
+  .nav-links a { font-weight:400; letter-spacing:.04em; }
+  .button { letter-spacing:.01em; }
+}
