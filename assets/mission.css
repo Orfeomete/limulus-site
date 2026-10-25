@@ -1,39 +1,99 @@
-/* Mission sandbox; keeps the site's four aircraft pastels and B612 instruments. */
-#mission-demo{--demo-line:#2b3d51;--demo-muted:#a5b8cb;--demo-light:#eaf0f5}
-#mission-demo button,#mission-demo select{font-family:'B612 Mono',monospace;font-size:12px;min-height:44px;cursor:pointer}
-#mission-demo button:focus-visible,#mission-demo select:focus-visible,#mission-demo summary:focus-visible{outline:3px solid var(--v2);outline-offset:3px}
-#mission-demo button:disabled,#mission-demo select:disabled{opacity:.45;cursor:default}
-.demo-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 24px 12px}
-.demo-presets button{display:flex;align-items:center;gap:12px;text-align:left;background:#142235;border:1px solid var(--demo-line);border-radius:9px;color:#a5b8cb;padding:12px 16px}
-.demo-presets span{color:#7190ac;font-size:11px}.demo-presets b{font-weight:400}
-.demo-presets button[aria-pressed=true]{background:#25372f;border-color:var(--v3);color:#edf3ef}.demo-presets button[aria-pressed=true] span{color:var(--v3)}
-.demo-toolbar{display:flex;gap:16px;align-items:center;padding:0 24px 12px;flex-wrap:wrap}
-.demo-transport,.demo-speed{display:flex;gap:6px}
-.demo-toolbar button,.demo-command button{border:1px solid #3a5068;border-radius:7px;background:#152538;color:var(--demo-light);padding:9px 14px}
-.demo-toolbar #demo-play{background:var(--v3);border-color:var(--v3);color:#203025;min-width:132px}
-.demo-speed button{min-width:44px;padding:8px}.demo-speed button[aria-pressed=true]{border-color:var(--v2);color:var(--v2);background:#32291f}
-.demo-time{margin-left:auto;display:flex;align-items:center;gap:16px}.demo-time span{font-size:10px;color:var(--demo-muted)}.demo-time b{font:22px 'B612 Mono',monospace;color:var(--v1);font-weight:400}
-.demo-scenario-copy{margin:0;padding:0 24px 18px;color:#bdcddd;font-size:12px;line-height:1.8;min-height:39px;border-bottom:1px solid var(--demo-line)}
-#mission-demo .mission-layout{grid-template-columns:minmax(0,1fr) 335px}
-.demo-map-column{min-width:0;border-right:1px solid var(--demo-line)}
-#mission-demo .airspace{border:0;padding:10px 10px 0}
-#mission-demo .map-caption{color:#9bb1c5;font-size:10px}
-.demo-route{fill:none;stroke-width:1.6;stroke-dasharray:5 7}.demo-trail{fill:none;stroke-width:2;opacity:.38}
-#mission-demo .map-aircraft.landed use{opacity:.5}#mission-demo .heliport.closed rect{stroke:var(--v4);fill:#35282c}#mission-demo .heliport.closed>path:not(.pad-cross){opacity:.15}
-.pad-cross{display:none;stroke:var(--v4)!important}#mission-demo .heliport.closed .pad-cross{display:block}#mission-demo .heliport.occupied rect{stroke:var(--v3);fill:#20372e}
-.demo-fleet{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 22px 22px}.demo-fleet-item{padding:11px;border:1px solid var(--demo-line);border-top:2px solid var(--vehicle);border-radius:7px;display:grid;gap:7px;font:10px 'B612 Mono',monospace;color:#a9bed0}
-.demo-fleet-item b{color:var(--vehicle);font-size:13px}.demo-site{color:#d8e1e8}
-.demo-log{padding:0 24px 20px}.demo-log-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;font:10px 'B612 Mono',monospace;color:#9ab0c7;border-top:1px solid var(--demo-line);padding-top:16px}.demo-log-heading b{font-size:16px;color:var(--v3);margin-left:8px}
-#demo-events{list-style:none;padding:0;margin:13px 0 0;min-height:110px}#demo-events li{display:flex;gap:15px;font:11px 'B612 Mono',monospace;line-height:1.8;color:#b7c9da;padding:3px 0}#demo-events time{color:#7f9ab4;flex:0 0 42px}
-#mission-demo .mission-detail{padding:23px;border-top:0}#mission-demo .aircraft-switch{margin-bottom:22px}#mission-demo .selected-vehicle{margin-bottom:13px}
-.demo-vehicle-state{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px;color:var(--demo-light);font:17px 'B612 Mono',monospace}.demo-vehicle-state b{width:36px;height:36px;display:grid;place-items:center;border:1px solid #4c657d;border-radius:8px;color:var(--v2);font-size:17px}
-.demo-label{font:10px 'B612 Mono',monospace;letter-spacing:.04em;color:var(--demo-muted);display:block}
-.demo-command{display:flex;gap:8px;margin-top:10px}.demo-command select{min-width:0;flex:1;border:1px solid #42617a;border-radius:7px;padding:10px;background:#16273a;color:#edf3f7;font-size:11px!important}.demo-command button{padding:8px 11px}
-#mission-demo .demo-control-help{font-size:11px;line-height:1.85;color:var(--demo-muted);min-height:0;margin:13px 0 24px}
-.demo-pads-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:20px;border-top:1px solid var(--demo-line);margin-bottom:12px}.demo-pads-heading small{font-size:10px;color:#9cb3c7}
-.demo-pad-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.demo-pad-grid button{display:flex;align-items:center;gap:9px;border:1px solid #36516a;border-radius:7px;background:#122438;color:#b8d0e2;padding:11px;text-align:left}.demo-pad-grid b{font-size:16px;font-weight:400;color:#d9e7f0}.demo-pad-grid span{font-size:10px;line-height:1.5}.demo-pad-grid button.closed{background:#35282c;border-color:#b27973;color:#f4b7ac}.demo-pad-grid button.occupied{border-color:#a4b6a2}
-.demo-scope{border-top:1px solid var(--demo-line);padding-top:8px}.demo-scope summary{font-size:11px;line-height:1.7;color:var(--v2);cursor:pointer;padding:12px 0;min-height:44px}.demo-scope p{font-size:11px;line-height:1.9;color:#a5b8cb;margin:9px 0}
-.demo-bottom-note{font-size:10px;line-height:1.8;padding:14px 24px;border-top:1px solid var(--demo-line);color:#a6bacb;background:#101e2f}
-@media(max-width:1050px){#mission-demo .mission-layout{grid-template-columns:minmax(0,1fr) 300px}.demo-time span{display:none}.demo-toolbar{gap:10px}.demo-toolbar button{padding:9px 11px}.demo-fleet{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:800px){#mission-demo .mission-layout{grid-template-columns:1fr}.demo-map-column{border-right:0;border-bottom:1px solid var(--demo-line)}#mission-demo .mission-detail{border-top:2px solid var(--selected-vehicle)}.demo-fleet{grid-template-columns:repeat(4,1fr)}.demo-pad-grid{grid-template-columns:repeat(3,1fr)}.demo-presets{padding:16px 18px 12px}.demo-toolbar{padding:0 18px 12px}.demo-presets button{padding:11px;gap:7px}.demo-scenario-copy{padding:0 18px 16px}.demo-scope p{max-width:65ch}.demo-time span{display:inline}}
-@media(max-width:520px){#mission-demo .console-head{padding:17px 16px;gap:10px;flex-wrap:wrap}.demo-presets{gap:6px;padding:14px 12px 12px}.demo-presets button{display:block;text-align:center;padding:8px 5px;font-size:10px!important;min-height:60px!important}.demo-presets span{display:block;margin-bottom:6px;font-size:9px}.demo-toolbar{padding:0 12px 12px;gap:10px;justify-content:space-between}.demo-transport{width:100%;display:grid;grid-template-columns:1.3fr 1fr 1fr}.demo-toolbar #demo-play{min-width:0}.demo-speed{gap:6px}.demo-time{gap:8px}.demo-time span{font-size:9px}.demo-time b{font-size:19px}.demo-scenario-copy{padding:0 16px 15px;min-height:65px;font-size:11px}.demo-fleet{grid-template-columns:repeat(2,1fr);margin:8px 14px 20px}.demo-fleet-item{grid-template-columns:auto 1fr auto;align-items:center;gap:8px;font-size:9px;padding:10px}.demo-log{padding:0 16px 16px}.demo-log-heading{font-size:9px}#demo-events li{font-size:10px;gap:9px}#mission-demo .mission-detail{padding:20px 16px}.demo-pad-grid{grid-template-columns:repeat(2,1fr)}#mission-demo .map-caption{font-size:8px;padding:5px 5px 10px;gap:10px}.demo-bottom-note{padding:13px 16px}#mission-demo .heliport text,#mission-demo .map-aircraft text{font-size:28px}#mission-demo .heliport rect{stroke-width:2.5}.demo-route{stroke-width:2.5}.demo-trail{stroke-width:3}}
+/* Technical Atlas / selected concept 03. Browser-local teaching model unchanged. */
+#mission-demo{--atlas-ink:#19384b;--atlas-muted:#627787;--atlas-line:#d5dede;--atlas-paper:#f7f8f4;display:flex;flex-direction:column;background:#fff;color:var(--atlas-ink);border:1px solid #cbd7da;border-radius:14px;box-shadow:0 18px 50px #16374b0b;overflow:hidden}
+#mission-demo button,#mission-demo select,#mission-demo summary{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:.01em;cursor:pointer}
+#mission-demo button{min-height:44px;line-height:1.4}
+#mission-demo button:focus-visible,#mission-demo summary:focus-visible,#mission-demo .map-aircraft:focus-visible{outline:3px solid #5183a0;outline-offset:3px}
+#mission-demo button:disabled{opacity:.45;cursor:default}
+#mission-demo{scroll-margin-top:108px}
+#mission-demo .console-head{order:1;display:flex;gap:22px;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--atlas-line);background:#fff;color:var(--atlas-ink);font-family:inherit;font-size:14px;letter-spacing:0;flex-wrap:wrap}
+.atlas-title{display:flex;align-items:center;gap:20px;white-space:nowrap}
+.atlas-wordmark{font-size:16px;letter-spacing:.3em}
+.atlas-title>span+span{font-size:17px;border-left:1px solid var(--atlas-line);padding-left:20px;letter-spacing:.025em}
+#mission-demo .demo-presets{display:flex;align-items:center;gap:4px;padding:0;background:#f7f9f9;border:1px solid #dce4e6;border-radius:7px}
+#mission-demo .demo-presets button{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid transparent;background:transparent;color:#546c7b;border-radius:5px;white-space:nowrap}
+#mission-demo .demo-presets b{font-weight:400}
+#mission-demo .demo-presets button>span{font-size:10px;color:#899da8}
+#mission-demo .demo-presets button[aria-pressed=true]{background:#dcecf4;color:#18394e;border-color:#b8d4e2}
+#mission-demo .demo-presets button[aria-pressed=true]>span{color:#4c7388}
+#mission-demo .demo-scenario-copy{order:2;margin:0;padding:12px 24px;font-size:11px;line-height:1.7;min-height:0;background:#fafbf9;color:var(--atlas-muted);border-bottom:1px solid var(--atlas-line)}
+#mission-demo .mission-layout{order:3;display:grid;grid-template-columns:minmax(0,1fr) 290px}
+#mission-demo .demo-map-column{min-width:0;background:var(--atlas-paper);display:flex;flex-direction:column;border-right:1px solid #b9c9cf}
+#mission-demo .airspace{padding:10px 12px 0;border:0;flex:1;display:flex;align-items:center}
+#mission-demo .airspace>svg{width:100%;height:auto;display:block;overflow:visible}
+#mission-demo .heliport rect{fill:#f9fbf8;stroke:#7c939c;stroke-width:1.2}
+#mission-demo .heliport circle{fill:#e5ebe6;stroke:#8ca0a7;stroke-width:.8}
+#mission-demo .heliport>path{fill:none;stroke:#657f8a;stroke-width:1.6}
+#mission-demo .heliport text{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;fill:#294c60;paint-order:stroke;stroke:#f7f8f4;stroke-width:4;stroke-linejoin:round}
+#mission-demo .heliport.closed rect{stroke:#bb7068;fill:#fbe9e4}
+#mission-demo .heliport.closed circle{fill:#f4d5ce;stroke:#bb7068}
+#mission-demo .heliport.closed>path:not(.pad-cross){opacity:.15}
+#mission-demo .pad-cross{display:none;stroke:#af655e!important;stroke-width:2.5}
+#mission-demo .heliport.closed .pad-cross{display:block}
+#mission-demo .heliport.occupied rect{stroke:#6e8e73;fill:#e4ece2}
+#mission-demo .map-aircraft{cursor:pointer;outline:none}
+#mission-demo .map-aircraft text{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;fill:#17394e;paint-order:stroke;stroke:#f7f8f4;stroke-width:5;stroke-linejoin:round}
+#mission-demo .map-aircraft .selection-ring{fill:none;stroke:#6c9ab1;stroke-width:1;stroke-dasharray:2 4;opacity:0}
+#mission-demo .map-aircraft.selected .selection-ring,#mission-demo .map-aircraft:focus-visible .selection-ring{opacity:.7}
+#mission-demo .map-aircraft.landed use{opacity:.55}
+#mission-demo .map-compass{stroke:#6b8999;fill:none;stroke-width:1.2}
+#mission-demo .map-compass text{fill:#6b8999;stroke:none;font:11px 'Plus Jakarta Sans',sans-serif}
+#mission-demo .demo-route{fill:none;stroke-width:1.6;stroke-dasharray:5 6}
+#mission-demo .demo-trail{fill:none;stroke-width:1.7;opacity:.4}
+#mission-demo .map-caption{display:flex;justify-content:space-between;gap:18px;padding:12px 22px 16px;line-height:1.6;font-size:9px;letter-spacing:.045em;color:#718792}
+#mission-demo .mission-detail{padding:20px;min-width:0;border:0;background:#fcfdfb;color:var(--atlas-ink)}
+#mission-demo .selected-vehicle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0}
+#mission-demo .selected-vehicle strong{font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:32px;line-height:1.2;color:var(--atlas-ink);letter-spacing:.03em}
+#demo-vehicle-status{font-size:10px;color:#4e6a58;background:#e9efe5;padding:6px 9px;border-radius:5px;line-height:1.5}
+.atlas-aircraft-preview{margin:8px 0 20px;display:grid;justify-items:center;background:radial-gradient(ellipse at center,#e4e9e4 0%,#fcfdfb 65%);color:var(--selected-vehicle);border-bottom:1px solid var(--atlas-line);padding-bottom:12px}
+.atlas-aircraft-preview svg{width:150px;height:154px;overflow:visible}
+.atlas-aircraft-preview>span{font-size:9px;letter-spacing:.06em;color:#81949c;margin-top:4px}
+.atlas-target-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+#mission-demo .demo-label{font:10px/1.5 'Plus Jakarta Sans',sans-serif;letter-spacing:.09em;color:#5f7786;display:block;margin:0}
+.atlas-target-heading>b{font-size:13px;font-weight:400;color:var(--atlas-ink)}
+.demo-target-buttons{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+#mission-demo .demo-target-buttons button{padding:5px 2px;background:#fff;border:1px solid #c5d2d8;color:#23465c;border-radius:5px;min-height:44px}
+#mission-demo .demo-target-buttons button[aria-pressed=true]{background:#d4e8f3;border-color:#87b4cc;color:#17394e}
+#mission-demo .demo-target-buttons button.target-closed{color:#b1685e;border-style:dashed}
+#mission-demo #demo-hold{width:100%;min-height:44px;margin-top:8px;border:1px solid #cbd7d9;background:#e8ecea;color:#284755;border-radius:5px}
+.atlas-fleet-panel{border-top:1px solid var(--atlas-line);margin-top:20px;padding-top:16px}
+#mission-demo .demo-fleet{display:grid;gap:0;margin:8px 0 12px}
+#mission-demo .demo-fleet-item{display:grid;grid-template-columns:10px 28px minmax(0,1fr) auto;align-items:center;gap:9px;text-align:left;padding:11px 7px;background:transparent;border:0;border-bottom:1px solid #e0e7e6;border-radius:0;line-height:1.4;color:#637987;font-size:10px}
+#mission-demo .demo-fleet-item[aria-pressed=true]{background:#eaf3f7}
+#mission-demo .demo-fleet-item b{color:var(--atlas-ink);font-weight:400;font-size:12px}
+.atlas-dot{width:9px;height:9px;border-radius:50%;background:var(--vehicle);box-shadow:0 0 0 1px #71878c44}
+#mission-demo .demo-site{color:#315369;font-size:11px;white-space:nowrap}
+.atlas-sites,.demo-scope{border-top:1px solid var(--atlas-line)}
+#mission-demo .atlas-sites summary,#mission-demo .demo-scope summary{color:#466473;line-height:1.7;min-height:44px;padding:13px 0;font-size:10px}
+#mission-demo .demo-control-help,#mission-demo .demo-scope p{font-size:10px;line-height:1.8;color:#71838d;margin:8px 0 14px;min-height:0}
+#mission-demo .demo-pad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:8px 0 15px}
+#mission-demo .demo-pad-grid button{display:flex;align-items:center;gap:6px;justify-content:center;padding:6px;background:#f1f6f6;border:1px solid #c5d6de;border-radius:5px;color:#547482}
+#mission-demo .demo-pad-grid b{font-size:12px;font-weight:400;color:#264d62}
+#mission-demo .demo-pad-grid span{font-size:9px;overflow-wrap:anywhere}
+#mission-demo .demo-pad-grid button.closed{background:#f9e5df;border-color:#d3a298;color:#9d5e55}
+#mission-demo .demo-pad-grid button.occupied{border-color:#8fa88e;background:#edf1e8}
+#mission-demo .demo-log{margin:0 22px 13px;padding:0;border-top:1px solid var(--atlas-line)}
+#mission-demo .demo-log-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;line-height:1.6;color:#617d8b;cursor:pointer;padding:12px 0;min-height:44px}
+#mission-demo .demo-log-heading>span:first-child:before{content:'+';margin-right:9px;color:#55788b}
+#mission-demo .demo-log[open] .demo-log-heading>span:first-child:before{content:'−'}
+#mission-demo .demo-log-heading b{font-weight:400;color:#385c70;margin-left:8px}
+#mission-demo .demo-log-heading span,#mission-demo .demo-log-heading b{font-size:10px;line-height:1.6;letter-spacing:0}
+#demo-events{list-style:none;padding:0;margin:0 0 8px;min-height:0}
+#demo-events li{display:flex;gap:14px;font:10px/1.9 'Plus Jakarta Sans',sans-serif;color:#546f7e;padding:2px 0}
+#demo-events time{color:#8b9da7;font-variant-numeric:tabular-nums;flex:0 0 38px}
+#mission-demo .demo-toolbar{order:4;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:15px 22px;background:#142d3e;border-top:1px solid #183b50;color:#e8eff1}
+#mission-demo .demo-transport,#mission-demo .demo-speed{display:flex;gap:5px}
+#mission-demo .demo-toolbar button{background:transparent;color:#c9dae4;border:1px solid #3d596b;border-radius:5px;padding:9px 13px;min-width:44px}
+#mission-demo .demo-toolbar #demo-play{background:#c8e2f0;border-color:#c8e2f0;color:#183d52;min-width:126px}
+#mission-demo .demo-speed button{padding:8px 10px}
+#mission-demo .demo-speed button[aria-pressed=true]{background:#d1e5ef;color:#183d52;border-color:#d1e5ef}
+#mission-demo .demo-time{display:flex;align-items:center;gap:12px;margin-left:auto;margin-right:12px}
+#mission-demo .demo-time b{font:400 24px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:.03em;font-variant-numeric:tabular-nums;color:#f1f6f7}
+#mission-demo .demo-time span{font-size:9px;letter-spacing:.025em;color:#9eb7c8;max-width:125px;line-height:1.5}
+#mission-demo .demo-bottom-note{order:5;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:10px 22px;background:#edf3f5;border-top:1px solid #d0dce2;color:#788d98;font:9px/1.8 'Plus Jakarta Sans',sans-serif}
+#mission-demo .console-tag{color:#577485;font-family:inherit;font-size:9px;letter-spacing:.02em}
+@media(min-width:1500px){#mission-demo .mission-layout{grid-template-columns:minmax(0,1fr) 310px}.atlas-aircraft-preview svg{width:172px;height:174px}}
+@media(max-width:1100px){#mission-demo .console-head{gap:14px;padding:16px 20px}.atlas-title{gap:14px}.atlas-wordmark{font-size:14px;letter-spacing:.24em}.atlas-title>span+span{font-size:14px;padding-left:14px}#mission-demo .demo-presets button{padding:8px 10px;font-size:11px}.atlas-aircraft-preview svg{width:130px;height:134px}#mission-demo .mission-layout{grid-template-columns:minmax(0,1fr) 268px}#mission-demo .mission-detail{padding:18px}.demo-target-buttons{gap:4px}#mission-demo .demo-time span{display:none}}
+@media(max-width:800px){#mission-demo .mission-layout{grid-template-columns:1fr;order:4}#mission-demo .demo-toolbar{order:3;gap:12px}#mission-demo .demo-map-column{border-right:0;border-bottom:1px solid #bacbd3}#mission-demo .console-head{justify-content:flex-start}#mission-demo .demo-presets{margin-left:auto}#mission-demo .mission-detail{display:grid;grid-template-columns:160px minmax(0,1fr);gap:0 24px;padding:22px}#mission-demo .selected-vehicle{grid-column:1/-1;margin-bottom:12px}.atlas-aircraft-preview{margin:0;border:0;grid-column:1;grid-row:2}.atlas-aircraft-preview svg{width:140px;height:144px}.atlas-command-panel{grid-column:2;grid-row:2;align-self:center}.atlas-fleet-panel{grid-column:1/-1}.atlas-sites,.demo-scope{grid-column:1/-1}#mission-demo .demo-fleet{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}#mission-demo .demo-target-buttons button{min-height:44px}#mission-demo #demo-hold{min-height:44px}#mission-demo .demo-time{margin-right:0}.demo-target-buttons{grid-template-columns:repeat(3,1fr)}#mission-demo .demo-bottom-note{order:5}}
+@media(max-width:560px){#mission-demo{border-radius:10px}#mission-demo .console-head{padding:16px 14px;gap:15px}.atlas-title{width:100%;justify-content:space-between}.atlas-title>span+span{border-left:0;font-size:14px}.atlas-wordmark{font-size:14px}#mission-demo .demo-presets{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;gap:2px}#mission-demo .demo-presets button{padding:8px 4px;justify-content:center;font-size:10px!important;white-space:normal;gap:5px;min-height:44px}#mission-demo .demo-presets button>span{font-size:8px}#mission-demo .demo-scenario-copy{padding:10px 16px;font-size:10px;min-height:52px}#mission-demo .demo-toolbar{padding:12px;display:grid;grid-template-columns:1fr auto;gap:11px}#mission-demo .demo-transport{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:6px}#mission-demo .demo-toolbar button{font-size:11px!important;padding:9px 5px}#mission-demo .demo-toolbar #demo-play{min-width:0}#mission-demo .demo-time{grid-column:1;grid-row:2;margin:0;gap:8px}#mission-demo .demo-time span{display:none}#mission-demo .demo-time b{font-size:22px}#mission-demo .demo-speed{grid-column:2;grid-row:2}#mission-demo .demo-speed button{min-width:42px}#mission-demo .airspace{padding:8px 4px 0}#mission-demo .map-caption{padding:9px 14px;font-size:8px;gap:12px}#mission-demo .map-caption>span:first-child{white-space:nowrap}#mission-demo .mission-detail{padding:16px;grid-template-columns:104px minmax(0,1fr);gap:0 16px}#mission-demo .selected-vehicle strong{font-size:28px}.atlas-aircraft-preview svg{width:104px;height:120px}.atlas-aircraft-preview>span{font-size:8px}.atlas-fleet-panel{margin-top:18px;padding-top:14px}#mission-demo .demo-fleet{grid-template-columns:1fr;gap:0}#mission-demo .demo-fleet-item{font-size:11px;grid-template-columns:10px 30px minmax(0,1fr) auto;padding:12px 8px}#mission-demo .demo-log{margin:0 14px 10px}#mission-demo .demo-bottom-note{padding:10px 14px;gap:1px}#mission-demo .map-aircraft text{font-size:23px}#mission-demo .heliport text{font-size:23px}}
+@media(max-width:560px){#mission-demo .demo-speed button{min-width:44px}}
+@media(max-width:380px){#mission-demo .mission-detail{grid-template-columns:1fr}.atlas-aircraft-preview{grid-column:1;grid-row:2;margin-bottom:14px}.atlas-aircraft-preview svg{width:126px;height:132px}.atlas-command-panel{grid-column:1;grid-row:3}#mission-demo .demo-target-buttons{grid-template-columns:repeat(3,1fr)}}
